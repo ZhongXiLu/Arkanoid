@@ -17,3 +17,8 @@ void Vector2D::operator=(const Vector2D &other) {
 	x = other.x;
 	y = other.y;
 }
+
+ostream& operator<<(ostream& stream, Vector2D& vector) {
+	stream << "(" << vector.x << ", " << vector.y << ")";
+	return stream;
+}

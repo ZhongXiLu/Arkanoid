@@ -44,6 +44,16 @@ public:
 	*/
 	void operator=(const Vector2D &other);
 
+	/*
+	* '<<' Overloader.
+	*
+	* Prints the values of this Vector2D (debugging reasons).
+	*
+	* @param stream The stream where the outputs is in.
+	* @param vector The vector of which the output is printed.
+	*/
+	friend ostream& operator<<(ostream& stream, Vector2D& vector);
+
 };
 
 #endif /* VECTOR2D_H */
