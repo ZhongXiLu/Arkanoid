@@ -11,6 +11,15 @@ class Player {
 private:
 	Vector2D playerPos;	///< The current position of the Player (in the 9x7 grid).
 
+	/*
+	* Moves the Player.
+	*
+	* @param newPos	The Vector2D over which the Player will be translated.
+	*
+	* @return True if move was valid and made, otherwise False.
+	*/
+	bool move(Vector2D &newPos);
+
 public:
 
 	/**
@@ -38,13 +47,18 @@ public:
 	Vector2D getPos() const;
 
 	/*
-	* Moves the Player.
-	*
-	* @param newPos	The Vector2D over which the Player will be translated.
+	* Moves the Player one "block" to the left.
 	*
 	* @return True if move was valid and made, otherwise False.
 	*/
-	bool move(Vector2D newPos);
+	bool moveLeft();
+
+	/*
+	* Moves the Player one "block" to the right.
+	*
+	* @return True if move was valid and made, otherwise False.
+	*/
+	bool moveRight();
 	
 };
 

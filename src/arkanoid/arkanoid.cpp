@@ -26,9 +26,9 @@ void Arkanoid::run() {
 			if(event.type == sf::Event::KeyPressed) {
 
 				if(event.key.code == sf::Keyboard::Left) {
-					// move player to left
+					world.player.moveLeft();
 				} else if(event.key.code == sf::Keyboard::Right) {
-					// move player to right
+					world.player.moveRight();
 				}
 
 			}

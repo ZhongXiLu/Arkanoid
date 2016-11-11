@@ -1,6 +1,8 @@
 #ifndef ARKANOID_H
 #define ARKANOID_H
 
+#include "game_logic/world.h"
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -9,6 +11,10 @@ using namespace std;
 /// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
 class Arkanoid {
 private:
+	// Game Logic
+	World world;
+
+	// Game GUI
 	sf::RenderWindow window;
 
 public:
