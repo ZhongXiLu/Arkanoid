@@ -5,12 +5,11 @@
 #include <iostream>
 
 using namespace std;
-using namespace sf;
 
 /// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
 class Arkanoid {
 private:
-	RenderWindow window;
+	sf::RenderWindow window;
 
 public:
 
