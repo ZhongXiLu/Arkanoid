@@ -6,13 +6,9 @@
 
 using namespace std;
 
-Player::Player() : playerPos(0, 0) {}
+Player::Player() : Entity(0, 0) {}
 
-Player::Player(int x, int y) : playerPos(x, y) {}
-
-Vector2D Player::getPos() const {
-	return playerPos;
-}
+Player::Player(int x, int y) : Entity(x, y) {}
 
 bool Player::move(Vector2D &newPos) {
 

@@ -1,7 +1,7 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include "player/player.h"
+#include "entity/player/player.h"
 
 #include <iostream>
 

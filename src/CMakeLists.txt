@@ -15,9 +15,11 @@ SET(SRC
 	
 	arkanoid/game_logic/world.cpp
 
-	arkanoid/game_logic/player/player.cpp
-	arkanoid/game_logic/math/random.cpp
-	arkanoid/game_logic/math/vector2D.cpp
+	arkanoid/game_logic/entity/entity.cpp
+
+	arkanoid/game_logic/entity/player/player.cpp
+	arkanoid/game_logic/entity/math/random.cpp
+	arkanoid/game_logic/entity/math/vector2D.cpp
 )
 
 ADD_EXECUTABLE(arkanoid ${SRC})
