@@ -7,6 +7,7 @@
 
 using namespace std;
 
+/// The Player in the Arkanoid game that represents a "rectangle".
 class Player {
 private:
 	Vector2D playerPos;	///< The current position of the Player (in the 9x7 grid).

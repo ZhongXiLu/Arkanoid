@@ -5,6 +5,7 @@
 
 using namespace std;
 
+/// Representation of a vector.
 class Vector2D {
 public:
 
