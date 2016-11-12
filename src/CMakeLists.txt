@@ -9,16 +9,24 @@ FIND_PACKAGE(SFML 2 COMPONENTS system window graphics)
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 
 SET(SRC 
-	main.cpp
-
-	arkanoid/arkanoid.cpp
-	
 	arkanoid/game_logic/world.cpp
 
 	arkanoid/game_logic/entity/entity.cpp
 
 	arkanoid/game_logic/entity/player/player.cpp
-	arkanoid/game_logic/entity/math/random.cpp
+	arkanoid/game_logic/entity/math/vector2D.cpp
+
+	arkanoid/arkanoid.cpp
+
+	main.cpp
+)
+
+ADD_LIBRARY(game_logic STATIC
+	arkanoid/game_logic/world.cpp
+
+	arkanoid/game_logic/entity/entity.cpp
+
+	arkanoid/game_logic/entity/player/player.cpp
 	arkanoid/game_logic/entity/math/vector2D.cpp
 )
 
