@@ -15,7 +15,10 @@ namespace arkanoid {
 	bool Player::move(Vector2D &newPos) {
 
 		// TBI: Check if new playerPos is in Grid.
+
+		// cout << "moving player from " << playerPos;
 		playerPos = playerPos + newPos;
+		// cout << " to " << playerPos << endl;
 
 		return true;
 	}

@@ -7,6 +7,6 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	World::World() {}
+	World::World() : player(1, 4, "player.png") {}
 
 }

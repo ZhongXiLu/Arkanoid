@@ -5,6 +5,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -12,6 +13,8 @@ namespace arkanoidSFML {
 
 	/// The SFML element that represents the Player in the game.
 	class PlayerSFML : public arkanoid::Player {
+	public:
+		sf::Texture texture;
 
 	public:
 		sf::Sprite sprite; ///< The sprite of the Player.
@@ -31,7 +34,7 @@ namespace arkanoidSFML {
 		* @param x	The x (in the grid) position of the Player.
 		* @param y	The y (in the grid) position of the Player.
 		*/
-		PlayerSFML(int x, int y);
+		PlayerSFML(int x, int y, const string &textureFile);
 
 	};
 

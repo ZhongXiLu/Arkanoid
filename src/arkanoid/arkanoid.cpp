@@ -15,7 +15,11 @@ namespace SCREEN {
 }
 // ---
 
-Arkanoid::Arkanoid() : window(sf::VideoMode(SCREEN::WIDTH, SCREEN::HEIGHT), SCREEN::NAME) {}
+Arkanoid::Arkanoid() : window(sf::VideoMode(SCREEN::WIDTH, SCREEN::HEIGHT), SCREEN::NAME) {
+	window.clear();
+	window.draw(world.player.sprite);
+	window.display();
+}
 
 void Arkanoid::run() {
 	while(window.isOpen()) {
@@ -36,7 +40,6 @@ void Arkanoid::run() {
 			if(event.type == sf::Event::Closed) {
 				window.close();
 			}
-
 		}
 	}
 }

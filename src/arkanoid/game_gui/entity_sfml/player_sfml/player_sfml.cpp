@@ -9,10 +9,16 @@ using namespace std;
 namespace arkanoidSFML {
 
 	PlayerSFML::PlayerSFML() {
-		sprite.setColor(sf::Color(0, 255, 0));
+		sprite.setPosition(sf::Vector2f(100, 100));
 	}
 
-	PlayerSFML::PlayerSFML(int x, int y) : Player(x, y) {
+	PlayerSFML::PlayerSFML(int x, int y, const string &textureFile) : Player(x, y) {
+		if(!texture.loadFromFile(textureFile)) {
+			throw runtime_error("Couldn't load texture image.");
+		}
+
+		sprite.setTexture(texture);
+
 		// Translate to screen pixels
 		// sf::Vector2f position = toScreenPixels(x, y);
 		// sprite.setPosition(position);
