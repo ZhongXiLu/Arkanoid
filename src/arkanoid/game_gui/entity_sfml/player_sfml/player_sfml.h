@@ -17,22 +17,24 @@ namespace arkanoidSFML {
 		sf::Texture texture;
 
 	public:
-		sf::Sprite sprite; ///< The sprite of the Player.
+		sf::Sprite sprite; ///< The sprite of the PlayerSFML.
 
 		/**
 		* Default Constructor.
 		*
-		* Creates a Player sprite in the World at origin ([0, 0]) in the game window.
+		* Creates a (empty) PlayerSFML sprite in the World at origin ([0, 0]) in the game window.
 		*/
 		PlayerSFML();
 
 		/**
 		* Default Constructor.
 		*
-		* Creates a Player sprite in the World at a specific position in the game window.
+		* Creates a PlayerSFML sprite in the World at a specific position in the game window.
+		* Also applies the texture to this PlayerSFML.
 		*
-		* @param x	The x (in the grid) position of the Player.
-		* @param y	The y (in the grid) position of the Player.
+		* @param x				The x (in the grid) position of the Player.
+		* @param y				The y (in the grid) position of the Player.
+		* @param textureFile 	The file that contains the texture of the PlayerSFML.
 		*/
 		PlayerSFML(int x, int y, const string &textureFile);
 

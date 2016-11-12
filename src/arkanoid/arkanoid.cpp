@@ -7,14 +7,6 @@
 
 using namespace std;
 
-// TEMPORARY: MIGHT CHANGE IT LATER --> READ FROM INPUT FILE
-namespace SCREEN {
-	const string NAME("Arkanoid");
-	const int WIDTH(800);
-	const int HEIGHT(600);
-}
-// ---
-
 Arkanoid::Arkanoid() : window(sf::VideoMode(SCREEN::WIDTH, SCREEN::HEIGHT), SCREEN::NAME) {
 	window.clear();
 	window.draw(world.player.sprite);
