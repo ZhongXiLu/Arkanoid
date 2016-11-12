@@ -6,30 +6,34 @@
 
 using namespace std;
 
-Player::Player() : Entity(0, 0) {}
+namespace arkanoid {
 
-Player::Player(int x, int y) : Entity(x, y) {}
+	Player::Player() : Entity(0, 0) {}
 
-bool Player::move(Vector2D &newPos) {
+	Player::Player(int x, int y) : Entity(x, y) {}
 
-	// TBI: Check if new playerPos is in Grid.
-	playerPos = playerPos + newPos;
+	bool Player::move(Vector2D &newPos) {
 
-	return true;
-}
+		// TBI: Check if new playerPos is in Grid.
+		playerPos = playerPos + newPos;
 
-bool Player::moveLeft() {
-	Vector2D left(-1, 0);
-	if(move(left)) {
 		return true;
 	}
-	return false;
-}
 
-bool Player::moveRight() {
-	Vector2D right(1, 0);
-	if(move(right)) {
-		return true;
+	bool Player::moveLeft() {
+		Vector2D left(-1, 0);
+		if(move(left)) {
+			return true;
+		}
+		return false;
 	}
-	return false;
+
+	bool Player::moveRight() {
+		Vector2D right(1, 0);
+		if(move(right)) {
+			return true;
+		}
+		return false;
+	}
+
 }

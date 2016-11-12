@@ -5,4 +5,8 @@
 
 using namespace std;
 
-World::World() {}
+namespace arkanoid {
+
+	World::World() {}
+
+}

@@ -5,56 +5,61 @@
 
 using namespace std;
 
-/// Representation of a vector.
-class Vector2D {
-public:
 
-	int x;	///< The 'x' component of the Vector2D.
-	int y;	///< The 'y' component of the Vector2D.
+namespace arkanoid {
 
-	/**
-	* Default Constructor.
-	*/
-	Vector2D();
+	/// Representation of a vector.
+	class Vector2D {
+	public:
 
-	/*
-	* Constructor.
-	*
-	* @param newX	The 'x' component of the new constructed Vector2D.
-	* @param newY	The 'y' component of the new constructed Vector2D.
-	*/
-	Vector2D(int newX, int newY);
+		int x;	///< The 'x' component of the Vector2D.
+		int y;	///< The 'y' component of the Vector2D.
 
-	/*
-	* '+' Overloader.
-	*
-	* Translates the Vector2D over the other Vector2D.
-	*
-	* @param other	The other Vector2D on which this Vector2D will be translated on.
-	*
-	* @return The result of the translation.
-	*/
-	Vector2D operator+(const Vector2D &other);
+		/**
+		* Default Constructor.
+		*/
+		Vector2D();
 
-	/*
-	* '=' Overloader.
-	*
-	* Asign new values to this Vector2D.
-	*
-	* @param other The Vector2D that contains the new values 'x' and 'y'.
-	*/
-	void operator=(const Vector2D &other);
+		/*
+		* Constructor.
+		*
+		* @param newX	The 'x' component of the new constructed Vector2D.
+		* @param newY	The 'y' component of the new constructed Vector2D.
+		*/
+		Vector2D(int newX, int newY);
 
-	/*
-	* '<<' Overloader.
-	*
-	* Prints the values of this Vector2D (debugging reasons).
-	*
-	* @param stream The stream where the outputs is in.
-	* @param vector The vector of which the output is printed.
-	*/
-	friend ostream& operator<<(ostream& stream, Vector2D& vector);
+		/*
+		* '+' Overloader.
+		*
+		* Translates the Vector2D over the other Vector2D.
+		*
+		* @param other	The other Vector2D on which this Vector2D will be translated on.
+		*
+		* @return The result of the translation.
+		*/
+		Vector2D operator+(const Vector2D &other);
 
-};
+		/*
+		* '=' Overloader.
+		*
+		* Asign new values to this Vector2D.
+		*
+		* @param other The Vector2D that contains the new values 'x' and 'y'.
+		*/
+		void operator=(const Vector2D &other);
+
+		/*
+		* '<<' Overloader.
+		*
+		* Prints the values of this Vector2D (debugging reasons).
+		*
+		* @param stream The stream where the outputs is in.
+		* @param vector The vector of which the output is printed.
+		*/
+		friend ostream& operator<<(ostream& stream, Vector2D& vector);
+
+	};
+
+}
 
 #endif /* VECTOR2D_H */

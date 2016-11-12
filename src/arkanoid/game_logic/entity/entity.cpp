@@ -6,10 +6,15 @@
 
 using namespace std;
 
-Entity::Entity() : playerPos(0, 0) {}
 
-Entity::Entity(int x, int y) : playerPos(x, y) {}
+namespace arkanoid {
 
-Vector2D Entity::getPos() const {
-	return playerPos;
+	Entity::Entity() : playerPos(0, 0) {}
+
+	Entity::Entity(int x, int y) : playerPos(x, y) {}
+
+	Vector2D Entity::getPos() const {
+		return playerPos;
+	}
+
 }

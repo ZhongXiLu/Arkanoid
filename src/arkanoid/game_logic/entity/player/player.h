@@ -8,51 +8,56 @@
 
 using namespace std;
 
-/// The Player in the Arkanoid game that represents a "rectangle".
-class Player : public Entity {
-private:
-	/*
-	* Moves the Player.
-	*
-	* @param newPos	The Vector2D over which the Player will be translated.
-	*
-	* @return True if move was valid and made, otherwise False.
-	*/
-	bool move(Vector2D &newPos);
 
-public:
+namespace arkanoid {
 
-	/**
-	* Default Constructor.
-	*
-	* Initialise the Player at origin ([0, 0]) in the World.
-	*/
-	Player();
+	/// The Player in the Arkanoid game that represents a "rectangle".
+	class Player : public Entity {
+	private:
+		/*
+		* Moves the Player.
+		*
+		* @param newPos	The Vector2D over which the Player will be translated.
+		*
+		* @return True if move was valid and made, otherwise False.
+		*/
+		bool move(Vector2D &newPos);
 
-	/*
-	* Constructor
-	*
-	* Initialise the Player at a specific position in the World.
-	*
-	* @param x 	The x position of the Player.
-	* @param y 	The y position of the Player.
-	*/
-	Player(int x, int y);
+	public:
 
-	/*
-	* Moves the Player one "block" to the left.
-	*
-	* @return True if move was valid and made, otherwise False.
-	*/
-	bool moveLeft();
+		/**
+		* Default Constructor.
+		*
+		* Initialise the Player at origin ([0, 0]) in the World.
+		*/
+		Player();
 
-	/*
-	* Moves the Player one "block" to the right.
-	*
-	* @return True if move was valid and made, otherwise False.
-	*/
-	bool moveRight();
-	
-};
+		/*
+		* Constructor
+		*
+		* Initialise the Player at a specific position in the World.
+		*
+		* @param x 	The x position of the Player.
+		* @param y 	The y position of the Player.
+		*/
+		Player(int x, int y);
+
+		/*
+		* Moves the Player one "block" to the left.
+		*
+		* @return True if move was valid and made, otherwise False.
+		*/
+		bool moveLeft();
+
+		/*
+		* Moves the Player one "block" to the right.
+		*
+		* @return True if move was valid and made, otherwise False.
+		*/
+		bool moveRight();
+		
+	};
+
+}
 
 #endif /* PLAYER_H */

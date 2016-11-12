@@ -12,7 +12,7 @@ using namespace std;
 class Arkanoid {
 private:
 	// Game Logic
-	World world;
+	arkanoid::World world;
 
 	// Game GUI
 	sf::RenderWindow window;
