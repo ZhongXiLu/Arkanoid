@@ -1,7 +1,7 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include "math/vector2D.h"
+#include "../math/vector2D.h"
 
 #include <iostream>
 

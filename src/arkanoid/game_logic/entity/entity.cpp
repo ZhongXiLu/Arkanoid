@@ -1,6 +1,6 @@
 
 #include "entity.h"
-#include "math/vector2D.h"
+#include "../math/vector2D.h"
 
 #include <iostream>
 

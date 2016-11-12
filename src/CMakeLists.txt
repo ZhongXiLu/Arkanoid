@@ -14,7 +14,7 @@ SET(SRC
 	arkanoid/game_logic/entity/entity.cpp
 
 	arkanoid/game_logic/entity/player/player.cpp
-	arkanoid/game_logic/entity/math/vector2D.cpp
+	arkanoid/game_logic/math/vector2D.cpp
 
 	arkanoid/arkanoid.cpp
 
@@ -27,7 +27,7 @@ ADD_LIBRARY(game_logic STATIC
 	arkanoid/game_logic/entity/entity.cpp
 
 	arkanoid/game_logic/entity/player/player.cpp
-	arkanoid/game_logic/entity/math/vector2D.cpp
+	arkanoid/game_logic/math/vector2D.cpp
 )
 
 ADD_EXECUTABLE(arkanoid ${SRC})
