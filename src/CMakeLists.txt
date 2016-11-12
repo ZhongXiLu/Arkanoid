@@ -9,12 +9,12 @@ FIND_PACKAGE(SFML 2 COMPONENTS system window graphics)
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 
 SET(SRC 
-	arkanoid/game_logic/world.cpp
-
 	arkanoid/game_logic/entity/entity.cpp
-
 	arkanoid/game_logic/entity/player/player.cpp
 	arkanoid/game_logic/math/vector2D.cpp
+
+	arkanoid/game_gui/world.cpp
+	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
 
 	arkanoid/arkanoid.cpp
 
@@ -22,12 +22,14 @@ SET(SRC
 )
 
 ADD_LIBRARY(game_logic STATIC
-	arkanoid/game_logic/world.cpp
-
 	arkanoid/game_logic/entity/entity.cpp
-
 	arkanoid/game_logic/entity/player/player.cpp
 	arkanoid/game_logic/math/vector2D.cpp
+)
+
+ADD_LIBRARY(game_gui STATIC
+	arkanoid/game_gui/world.cpp
+	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
 )
 
 ADD_EXECUTABLE(arkanoid ${SRC})

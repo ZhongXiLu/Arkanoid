@@ -37,8 +37,8 @@ namespace arkanoid {
 		*
 		* Initialise the Player at a specific position in the World.
 		*
-		* @param x 	The x position of the Player.
-		* @param y 	The y position of the Player.
+		* @param x 	The x position (in the grid) of the Player.
+		* @param y 	The y position (in the grid) of the Player.
 		*/
 		Player(int x, int y);
 

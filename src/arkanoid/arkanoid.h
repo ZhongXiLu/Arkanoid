@@ -1,7 +1,7 @@
 #ifndef ARKANOID_H
 #define ARKANOID_H
 
-#include "game_logic/world.h"
+#include "game_gui/world.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -12,7 +12,7 @@ using namespace std;
 class Arkanoid {
 private:
 	// Game Logic
-	arkanoid::World world;
+	arkanoidSFML::World world;
 
 	// Game GUI
 	sf::RenderWindow window;

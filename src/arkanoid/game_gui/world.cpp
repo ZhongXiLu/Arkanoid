@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace arkanoid {
+namespace arkanoidSFML {
 
 	World::World() {}
 
