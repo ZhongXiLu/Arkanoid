@@ -24,4 +24,16 @@ namespace arkanoidSFML {
 		sprite.setPosition(std::move(toScreenPixels(playerPos)));
 	}
 
+	bool PlayerSFML::moveLeft() {
+		Player::moveLeft();
+		sprite.setPosition(std::move(toScreenPixels(playerPos)));
+		return true;
+	}
+
+	bool PlayerSFML::moveRight() {
+		Player::moveRight();
+		sprite.setPosition(std::move(toScreenPixels(playerPos)));
+		return true;
+	}
+
 }

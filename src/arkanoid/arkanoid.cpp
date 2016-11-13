@@ -23,10 +23,15 @@ void Arkanoid::run() {
 
 				if(event.key.code == sf::Keyboard::Left) {
 					world.player.moveLeft();
+					window.clear();
+					window.draw(world.player.sprite);
+					window.display();
 				} else if(event.key.code == sf::Keyboard::Right) {
 					world.player.moveRight();
+					window.clear();
+					window.draw(world.player.sprite);
+					window.display();
 				}
-
 			}
 
 			if(event.type == sf::Event::Closed) {

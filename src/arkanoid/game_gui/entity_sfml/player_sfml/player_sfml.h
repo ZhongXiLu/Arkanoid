@@ -38,6 +38,20 @@ namespace arkanoidSFML {
 		*/
 		PlayerSFML(int x, int y, const string &textureFile);
 
+		/*
+		* Moves the PlayerSFML one "block" to the left on the screen and in the grid.
+		*
+		* @return True if move was valid and made, otherwise False.
+		*/
+		bool moveLeft();
+
+		/*
+		* Moves the PlayerSFML one "block" to the right on the screen and in the grid.
+		*
+		* @return True if move was valid and made, otherwise False.
+		*/
+		bool moveRight();
+
 	};
 
 }
