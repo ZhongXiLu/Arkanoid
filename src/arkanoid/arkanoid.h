@@ -8,21 +8,16 @@
 
 using namespace std;
 
-// TEMPORARY: MIGHT CHANGE IT LATER --> READ FROM INPUT FILE
-namespace SCREEN {
-	const string NAME("Arkanoid");
-	const int WIDTH(800);
-	const int HEIGHT(600);
-}
-namespace GRID {
-	const int WIDTH(9);
-	const int HEIGHT(7);
-}
-// ---
-
 /// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
 class Arkanoid {
 private:
+	// Game window and grid
+	string windowName;	///< The title of the game window.
+	int windowWidth;	///< The width of the game window.
+	int windowHeight;	///< The height of the game window.
+	int gridWidth;		///< The width of the grid.
+	int gridHeight;		///< The height of the grid.
+
 	// Game Logic
 	arkanoidSFML::World world;
 

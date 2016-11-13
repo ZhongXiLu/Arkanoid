@@ -1,13 +1,20 @@
 
 #include "arkanoid.h"
+#include "game_gui/math/transformation.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <memory>
 #include <string>
 
 using namespace std;
 
-Arkanoid::Arkanoid() : window(sf::VideoMode(SCREEN::WIDTH, SCREEN::HEIGHT), SCREEN::NAME) {
+// MIGHT CHANGE IT LATER --> READ FROM CONFIG FILE
+Arkanoid::Arkanoid() : 
+	windowName("Arkanoid"), windowWidth(800), windowHeight(600), gridWidth(9), gridHeight(7), 
+	window(sf::VideoMode(windowWidth, windowHeight), "Arkanoid"),
+	world(make_shared<arkanoidSFML::Transformation>(gridWidth, gridHeight, windowWidth, windowHeight)) {
+	
 	window.clear();
 	window.draw(world.player.sprite);
 	window.display();

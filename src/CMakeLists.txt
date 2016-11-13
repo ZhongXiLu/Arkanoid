@@ -14,7 +14,7 @@ SET(SRC
 	arkanoid/game_logic/math/vector2D.cpp
 
 	arkanoid/game_gui/world.cpp
-	arkanoid/game_gui/math/screen.cpp
+	arkanoid/game_gui/math/transformation.cpp
 	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
 
 	arkanoid/arkanoid.cpp
@@ -30,7 +30,7 @@ ADD_LIBRARY(game_logic STATIC
 
 ADD_LIBRARY(game_gui STATIC
 	arkanoid/game_gui/world.cpp
-	arkanoid/game_gui/math/screen.cpp
+	arkanoid/game_gui/math/transformation.cpp
 	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
 )
 
