@@ -1,5 +1,4 @@
 
-#include "../../arkanoid.h"		// GLOBAL VARIABLES (SCREEN::WIDTH, GRID::WIDTH, ...)
 #include "transformation.h"
 
 #include <SFML/Graphics.hpp>
