@@ -37,4 +37,4 @@ namespace arkanoid {
 
 }
 
-#endif /* PLAYER_H */
+#endif /* WALL_H */

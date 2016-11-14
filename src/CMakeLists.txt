@@ -17,6 +17,7 @@ SET(SRC
 	arkanoid/game_gui/world.cpp
 	arkanoid/game_gui/math/transformation.cpp
 	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
+	arkanoid/game_gui/entity_sfml/wall_sfml/wall_sfml.cpp
 
 	arkanoid/arkanoid.cpp
 
@@ -34,6 +35,7 @@ ADD_LIBRARY(game_gui STATIC
 	arkanoid/game_gui/world.cpp
 	arkanoid/game_gui/math/transformation.cpp
 	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
+	arkanoid/game_gui/entity_sfml/wall_sfml/wall_sfml.cpp
 )
 
 ADD_EXECUTABLE(arkanoid ${SRC})
