@@ -21,7 +21,7 @@ namespace arkanoidSFML {
 		}
 		sprite.setTexture(texture);
 		
-		sprite.setOrigin(50, 0);
+		// sprite.setOrigin(50, 0);
 		sprite.setPosition(std::move(transformation->toScreenPixels(playerPos)));
 	}
 
