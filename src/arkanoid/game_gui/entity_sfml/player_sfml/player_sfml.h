@@ -40,7 +40,7 @@ namespace arkanoidSFML {
 		* @param textureFile 	The file that contains the texture of the PlayerSFML.
 		* @param transform 		The Transformation object thats needed to convert coordinates to screen pixels.
 		*/
-		PlayerSFML(int x, int y, const string &textureFile, shared_ptr<Transformation> transform);
+		PlayerSFML(double x, double y, const string &textureFile, shared_ptr<Transformation> transform);
 
 		/*
 		* Moves the PlayerSFML one "block" to the left on the screen and in the grid.

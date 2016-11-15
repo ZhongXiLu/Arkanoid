@@ -13,10 +13,10 @@ namespace arkanoidSFML {
 	/// This class provides a method to convert coordinates from the grid to the corresponding screen pixels.
 	class Transformation {
 	private:
-		int widthScale;
-		int heightScale;
+		double widthScale;
+		double heightScale;
 
-		int maxWindowHeight;
+		double maxWindowHeight;
 
 	public:
 		/**
@@ -34,7 +34,7 @@ namespace arkanoidSFML {
 		* @param windowWidth	The width of the screen (game window).
 		* @param windowHeight 	The height of the screen (game window).
 		*/
-		Transformation(int gridWidth, int gridHeight, int windowWidth, int windowHeight);
+		Transformation(double gridWidth, double gridHeight, double windowWidth, double windowHeight);
 
 		/*
 		* Converts coordinates (of the grid) to screen pixels.

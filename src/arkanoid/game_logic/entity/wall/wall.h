@@ -31,7 +31,7 @@ namespace arkanoid {
 		* @param x 	The x position (in the grid) of the Wall.
 		* @param y 	The y position (in the grid) of the Wall.
 		*/
-		Wall(int x, int y);
+		Wall(double x, double y);
 		
 	};
 

@@ -10,7 +10,7 @@ namespace arkanoidSFML {
 
 	Transformation::Transformation() {}
 
-	Transformation::Transformation(int gridWidth, int gridHeight, int windowWidth, int windowHeight)
+	Transformation::Transformation(double gridWidth, double gridHeight, double windowWidth, double windowHeight)
 	: widthScale(windowWidth/gridWidth), heightScale(windowHeight/gridHeight), maxWindowHeight(windowHeight) {}
 
 	sf::Vector2f Transformation::toScreenPixels(const arkanoid::Vector2D &vector) {

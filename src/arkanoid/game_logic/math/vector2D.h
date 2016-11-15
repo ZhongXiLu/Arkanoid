@@ -12,8 +12,8 @@ namespace arkanoid {
 	class Vector2D {
 	public:
 
-		int x;	///< The 'x' component of the Vector2D.
-		int y;	///< The 'y' component of the Vector2D.
+		double x;	///< The 'x' component of the Vector2D.
+		double y;	///< The 'y' component of the Vector2D.
 
 		/**
 		* Default Constructor.
@@ -26,7 +26,7 @@ namespace arkanoid {
 		* @param newX	The 'x' component of the new constructed Vector2D.
 		* @param newY	The 'y' component of the new constructed Vector2D.
 		*/
-		Vector2D(int newX, int newY);
+		Vector2D(double newX, double newY);
 
 		/*
 		* '+' Overloader.

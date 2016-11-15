@@ -8,9 +8,9 @@ using namespace std;
 
 namespace arkanoid {
 
-	Player::Player() : Entity(0, 0) {}
+	Player::Player() : Entity(0.0, 0.0) {}
 
-	Player::Player(int x, int y) : Entity(x, y) {}
+	Player::Player(double x, double y) : Entity(x, y) {}
 
 	bool Player::move(Vector2D &newPos) {
 
@@ -24,7 +24,7 @@ namespace arkanoid {
 	}
 
 	bool Player::moveLeft() {
-		Vector2D left(-1, 0);
+		Vector2D left(-1.0, 0.0);
 		if(move(left)) {
 			return true;
 		}
@@ -32,7 +32,7 @@ namespace arkanoid {
 	}
 
 	bool Player::moveRight() {
-		Vector2D right(1, 0);
+		Vector2D right(1.0, 0.0);
 		if(move(right)) {
 			return true;
 		}

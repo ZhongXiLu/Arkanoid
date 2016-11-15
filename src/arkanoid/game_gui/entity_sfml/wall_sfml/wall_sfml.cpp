@@ -14,7 +14,7 @@ namespace arkanoidSFML {
 		transformation = nullptr;
 	}
 
-	WallSFML::WallSFML(int x, int y, const string &textureFile, shared_ptr<Transformation> transform) : transformation(transform), Wall(x, y) {
+	WallSFML::WallSFML(double x, double y, const string &textureFile, shared_ptr<Transformation> transform) : transformation(transform), Wall(x, y) {
 
 		if(!texture.loadFromFile(textureFile)) {
 			throw runtime_error("Couldn't load texture image.");

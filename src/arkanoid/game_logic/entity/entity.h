@@ -31,7 +31,7 @@ namespace arkanoid {
 		* @param x 	The x position of the Entity.
 		* @param y 	The y position of the Entity.
 		*/
-		Entity(int x, int y);
+		Entity(double x, double y);
 
 		/*
 		* Get the current position of the Entity.

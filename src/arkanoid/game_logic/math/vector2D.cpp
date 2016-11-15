@@ -9,7 +9,7 @@ namespace arkanoid {
 
 	Vector2D::Vector2D() {};
 
-	Vector2D::Vector2D(int newX, int newY) : x(newX), y(newY) {}
+	Vector2D::Vector2D(double newX, double newY) : x(newX), y(newY) {}
 
 	Vector2D Vector2D::operator+(const Vector2D &other) {
 		return Vector2D(x + other.x, y + other.y);

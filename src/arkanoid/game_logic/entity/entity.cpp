@@ -9,9 +9,9 @@ using namespace std;
 
 namespace arkanoid {
 
-	Entity::Entity() : playerPos(0, 0) {}
+	Entity::Entity() : playerPos(0.0, 0.0) {}
 
-	Entity::Entity(int x, int y) : playerPos(x, y) {}
+	Entity::Entity(double x, double y) : playerPos(x, y) {}
 
 	Vector2D Entity::getPos() const {
 		return playerPos;

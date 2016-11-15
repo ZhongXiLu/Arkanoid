@@ -40,7 +40,7 @@ namespace arkanoid {
 		* @param x 	The x position (in the grid) of the Player.
 		* @param y 	The y position (in the grid) of the Player.
 		*/
-		Player(int x, int y);
+		Player(double x, double y);
 
 		/*
 		* Moves the Player one "block" to the left.

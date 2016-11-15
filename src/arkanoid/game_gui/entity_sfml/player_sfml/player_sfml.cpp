@@ -14,7 +14,7 @@ namespace arkanoidSFML {
 		transformation = nullptr;
 	}
 
-	PlayerSFML::PlayerSFML(int x, int y, const string &textureFile, shared_ptr<Transformation> transform) : transformation(transform), Player(x, y) {
+	PlayerSFML::PlayerSFML(double x, double y, const string &textureFile, shared_ptr<Transformation> transform) : transformation(transform), Player(x, y) {
 
 		if(!texture.loadFromFile(textureFile)) {
 			throw runtime_error("Couldn't load texture image.");

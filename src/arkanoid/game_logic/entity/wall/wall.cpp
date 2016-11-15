@@ -8,8 +8,8 @@ using namespace std;
 
 namespace arkanoid {
 
-	Wall::Wall() : Entity(0, 0) {}
+	Wall::Wall() : Entity(0.0, 0.0) {}
 
-	Wall::Wall(int x, int y) : Entity(x, y) {}
+	Wall::Wall(double x, double y) : Entity(x, y) {}
 
 }

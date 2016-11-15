@@ -10,14 +10,14 @@
 using namespace std;
 
 struct Window {
-	string name;		///< The title of the game window.
-	int width;			///< The width of the game window.
-	int height;			///< The height of the game window.
+	string name;			///< The title of the game window.
+	double width;			///< The width of the game window.
+	double height;			///< The height of the game window.
 };
 
 struct Grid {
-	int width;			///< The width of the grid.
-	int height;			///< The height of the grid.
+	double width;			///< The width of the grid.
+	double height;			///< The height of the grid.
 };
 
 /// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
