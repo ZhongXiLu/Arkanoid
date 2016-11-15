@@ -15,7 +15,7 @@ namespace arkanoidSFML {
 
 	/// The SFML element that represents the Wall in the game.
 	class WallSFML : public arkanoid::Wall {
-	public:
+	private:
 		sf::Texture texture;
 		shared_ptr<Transformation> transformation;
 

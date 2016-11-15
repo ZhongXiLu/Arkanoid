@@ -15,7 +15,7 @@ namespace arkanoidSFML {
 
 	/// The SFML element that represents the Player in the game.
 	class PlayerSFML : public arkanoid::Player {
-	public:
+	private:
 		sf::Texture texture;
 		shared_ptr<Transformation> transformation;
 

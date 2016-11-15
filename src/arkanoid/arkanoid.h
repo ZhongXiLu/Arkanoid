@@ -2,8 +2,8 @@
 #define ARKANOID_H
 
 #include "game_gui/world.h"
-#include "grid_window/grid.h"
-#include "grid_window/window.h"
+#include "field/grid.h"
+#include "field/window.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
