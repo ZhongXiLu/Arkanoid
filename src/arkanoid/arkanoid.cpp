@@ -15,8 +15,12 @@ Arkanoid::Arkanoid() :
 	windowSFML(sf::VideoMode(window.width, window.height), window.name),
 	world(make_shared<arkanoidSFML::Transformation>(grid.width, grid.height, window.width, window.height)) {
 	
+	// TBI: draw function
 	windowSFML.clear();
 	windowSFML.draw(world.player.sprite);
+	for(int w = 0; w < world.walls.size(); w++) {
+		windowSFML.draw(world.walls[w]->sprite);
+	}
 	windowSFML.display();
 }
 
@@ -30,13 +34,21 @@ void Arkanoid::run() {
 
 				if(event.key.code == sf::Keyboard::Left) {
 					world.player.moveLeft();
+					// TBI: draw function
 					windowSFML.clear();
 					windowSFML.draw(world.player.sprite);
+					for(int w = 0; w < world.walls.size(); w++) {
+						windowSFML.draw(world.walls[w]->sprite);
+					}
 					windowSFML.display();
 				} else if(event.key.code == sf::Keyboard::Right) {
 					world.player.moveRight();
+					// TBI: draw function
 					windowSFML.clear();
 					windowSFML.draw(world.player.sprite);
+					for(int w = 0; w < world.walls.size(); w++) {
+						windowSFML.draw(world.walls[w]->sprite);
+					}
 					windowSFML.display();
 				}
 			}

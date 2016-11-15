@@ -19,10 +19,9 @@ namespace arkanoidSFML {
 	private:
 		shared_ptr<Transformation> transformation;	///< Transformation object for translations between coordinates and pixels.
 
-		vector<unique_ptr<WallSFML> > walls;		///< The Wall on the sides (left/top/right).
-
 	public:
 		PlayerSFML player;	///< The only Player in this World.
+		vector<unique_ptr<WallSFML> > walls;		///< The Wall on the sides (left/top/right).
 
 		/**
 		* Default Constructor.

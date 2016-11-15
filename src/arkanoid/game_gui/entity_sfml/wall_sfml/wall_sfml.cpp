@@ -21,8 +21,8 @@ namespace arkanoidSFML {
 		}
 		sprite.setTexture(texture);
 		
-		// sprite.setOrigin(50, 0);
-		// sprite.setPosition(std::move(transformation->toScreenPixels(playerPos)));
+		sprite.scale(3, 3);
+		sprite.setPosition(x*100.0, y*100.0);		// TBI: Transformation: make other conversion
 	}
 
 }
