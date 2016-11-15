@@ -13,8 +13,8 @@ namespace arkanoidSFML {
 	Transformation::Transformation(double gridWidth, double gridHeight, double windowWidth, double windowHeight)
 	: widthScale(windowWidth/gridWidth), heightScale(windowHeight/gridHeight), maxWindowHeight(windowHeight) {}
 
-	sf::Vector2f Transformation::toScreenPixels(const arkanoid::Vector2D &vector) {
-		return sf::Vector2f(vector.x * widthScale, maxWindowHeight - (vector.y * heightScale));
+	arkanoid::Vector2D Transformation::toGrid(const sf::Vector2f &vector) {
+		return arkanoid::Vector2D(vector.x / widthScale, maxWindowHeight - (vector.y / heightScale));
 	}
 
 }

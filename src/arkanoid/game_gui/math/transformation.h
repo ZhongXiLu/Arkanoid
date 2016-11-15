@@ -43,7 +43,7 @@ namespace arkanoidSFML {
 		*
 		* @return 			The converted screen pixels (of the game window).
 		*/
-		sf::Vector2f toScreenPixels(const arkanoid::Vector2D &vector);
+		arkanoid::Vector2D toGrid(const sf::Vector2f &vector);
 
 	};
 

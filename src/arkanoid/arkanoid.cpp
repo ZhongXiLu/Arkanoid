@@ -11,7 +11,7 @@ using namespace std;
 
 // MIGHT CHANGE IT LATER --> READ FROM CONFIG FILE
 Arkanoid::Arkanoid() : 
-	window {"arkanoid", 800.0, 600.0}, grid {9.0, 7.0},
+	window {"arkanoid", 900.0, 700.0}, grid {9.0, 7.0},
 	windowSFML(sf::VideoMode(window.width, window.height), window.name),
 	world(make_shared<arkanoidSFML::Transformation>(grid.width, grid.height, window.width, window.height)) {
 	

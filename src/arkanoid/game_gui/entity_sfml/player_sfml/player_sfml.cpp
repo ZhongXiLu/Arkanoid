@@ -9,7 +9,6 @@ using namespace std;
 namespace arkanoidSFML {
 
 	PlayerSFML::PlayerSFML() {
-		sprite.setOrigin(50, 0);
 		sprite.setPosition(0, 0);
 		transformation = nullptr;
 	}
@@ -21,18 +20,18 @@ namespace arkanoidSFML {
 		}
 		sprite.setTexture(texture);
 		
-		sprite.setPosition(std::move(transformation->toScreenPixels(playerPos)));
+		sprite.setPosition(400, 600);		// CHANGE THIS LATER?
 	}
 
 	bool PlayerSFML::moveLeft() {
-		Player::moveLeft();
-		sprite.setPosition(std::move(transformation->toScreenPixels(playerPos)));
+		sprite.move(-50.0, 0.0);
+		Player::setPosition(std::move(transformation->toGrid(sprite.getPosition())));
 		return true;
 	}
 
 	bool PlayerSFML::moveRight() {
-		Player::moveRight();
-		sprite.setPosition(std::move(transformation->toScreenPixels(playerPos)));
+		sprite.move(50.0, 0.0);
+		Player::setPosition(std::move(transformation->toGrid(sprite.getPosition())));
 		return true;
 	}
 

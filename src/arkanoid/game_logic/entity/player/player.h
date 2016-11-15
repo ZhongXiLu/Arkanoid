@@ -13,16 +13,6 @@ namespace arkanoid {
 
 	/// The Player in the Arkanoid game that represents a "rectangle".
 	class Player : public Entity {
-	private:
-		/*
-		* Moves the Player.
-		*
-		* @param newPos	The Vector2D over which the Player will be translated.
-		*
-		* @return True if move was valid and made, otherwise False.
-		*/
-		bool move(Vector2D &newPos);
-
 	public:
 
 		/**
@@ -43,19 +33,14 @@ namespace arkanoid {
 		Player(double x, double y);
 
 		/*
-		* Moves the Player one "block" to the left.
+		* Moves the Player.
+		*
+		* @param newPos	The Vector2D over which the Player will be translated.
 		*
 		* @return True if move was valid and made, otherwise False.
 		*/
-		bool moveLeft();
+		bool move(Vector2D &newPos);
 
-		/*
-		* Moves the Player one "block" to the right.
-		*
-		* @return True if move was valid and made, otherwise False.
-		*/
-		bool moveRight();
-		
 	};
 
 }
