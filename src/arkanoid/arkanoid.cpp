@@ -11,38 +11,38 @@ using namespace std;
 
 // MIGHT CHANGE IT LATER --> READ FROM CONFIG FILE
 Arkanoid::Arkanoid() : 
-	windowName("Arkanoid"), windowWidth(800), windowHeight(600), gridWidth(9), gridHeight(7), 
-	window(sf::VideoMode(windowWidth, windowHeight), "Arkanoid"),
-	world(make_shared<arkanoidSFML::Transformation>(gridWidth, gridHeight, windowWidth, windowHeight)) {
+	window {"arkanoid", 800, 600}, grid {9, 7},
+	windowSFML(sf::VideoMode(window.width, window.height), window.name),
+	world(make_shared<arkanoidSFML::Transformation>(grid.width, grid.height, window.width, window.height)) {
 	
-	window.clear();
-	window.draw(world.player.sprite);
-	window.display();
+	windowSFML.clear();
+	windowSFML.draw(world.player.sprite);
+	windowSFML.display();
 }
 
 void Arkanoid::run() {
-	while(window.isOpen()) {
+	while(windowSFML.isOpen()) {
 		sf::Event event;
 
-		while(window.pollEvent(event)) {
+		while(windowSFML.pollEvent(event)) {
 
 			if(event.type == sf::Event::KeyPressed) {
 
 				if(event.key.code == sf::Keyboard::Left) {
 					world.player.moveLeft();
-					window.clear();
-					window.draw(world.player.sprite);
-					window.display();
+					windowSFML.clear();
+					windowSFML.draw(world.player.sprite);
+					windowSFML.display();
 				} else if(event.key.code == sf::Keyboard::Right) {
 					world.player.moveRight();
-					window.clear();
-					window.draw(world.player.sprite);
-					window.display();
+					windowSFML.clear();
+					windowSFML.draw(world.player.sprite);
+					windowSFML.display();
 				}
 			}
 
 			if(event.type == sf::Event::Closed) {
-				window.close();
+				windowSFML.close();
 			}
 		}
 	}

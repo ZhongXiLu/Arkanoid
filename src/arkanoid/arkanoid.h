@@ -5,24 +5,33 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <string>
 
 using namespace std;
+
+struct Window {
+	string name;		///< The title of the game window.
+	int width;			///< The width of the game window.
+	int height;			///< The height of the game window.
+};
+
+struct Grid {
+	int width;			///< The width of the grid.
+	int height;			///< The height of the grid.
+};
 
 /// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
 class Arkanoid {
 private:
 	// Game window and grid
-	string windowName;	///< The title of the game window.
-	int windowWidth;	///< The width of the game window.
-	int windowHeight;	///< The height of the game window.
-	int gridWidth;		///< The width of the grid.
-	int gridHeight;		///< The height of the grid.
+	Window window;
+	Grid grid;
 
 	// Game Logic
 	arkanoidSFML::World world;
 
 	// Game GUI
-	sf::RenderWindow window;
+	sf::RenderWindow windowSFML;
 
 public:
 
