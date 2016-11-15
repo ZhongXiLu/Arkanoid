@@ -4,6 +4,8 @@
 #include "entity_sfml/player_sfml/player_sfml.h"
 #include "entity_sfml/wall_sfml/wall_sfml.h"
 #include "math/transformation.h"
+#include "../grid_window/grid.h"
+#include "../grid_window/window.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -18,6 +20,9 @@ namespace arkanoidSFML {
 	/// The World of the Arkanoid game that contains all Entity objects.
 	class World {
 	private:
+		shared_ptr<Game::Window> window;
+		shared_ptr<Game::Grid> grid;
+
 		shared_ptr<Transformation> transformation;	///< Transformation object for translations between coordinates and pixels.
 
 	public:
@@ -34,7 +39,7 @@ namespace arkanoidSFML {
 		*
 		* @param transform 	The Transformation object thats needed to convert coordinates to screen pixels.
 		*/
-		World(shared_ptr<Transformation> transform);
+		World(shared_ptr<Transformation> transform, shared_ptr<Game::Window> window, shared_ptr<Game::Grid> grid);
 
 		/**
 		* Draws all the Entity objects in this World on the window.

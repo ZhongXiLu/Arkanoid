@@ -2,30 +2,22 @@
 #define ARKANOID_H
 
 #include "game_gui/world.h"
+#include "grid_window/grid.h"
+#include "grid_window/window.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <memory>
 #include <string>
 
 using namespace std;
-
-struct Window {
-	string name;			///< The title of the game window.
-	double width;			///< The width of the game window.
-	double height;			///< The height of the game window.
-};
-
-struct Grid {
-	double width;			///< The width of the grid.
-	double height;			///< The height of the grid.
-};
 
 /// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
 class Arkanoid {
 private:
 	// Game window and grid
-	Window window;
-	Grid grid;
+	shared_ptr<Game::Window> window;
+	shared_ptr<Game::Grid> grid;
 
 	// Game Logic
 	arkanoidSFML::World world;

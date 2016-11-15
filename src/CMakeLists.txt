@@ -9,6 +9,9 @@ FIND_PACKAGE(SFML 2 COMPONENTS system window graphics)
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 
 SET(SRC 
+	arkanoid/grid_window/grid.cpp
+	arkanoid/grid_window/window.cpp
+
 	arkanoid/game_logic/entity/entity.cpp
 	arkanoid/game_logic/entity/player/player.cpp
 	arkanoid/game_logic/entity/wall/wall.cpp
