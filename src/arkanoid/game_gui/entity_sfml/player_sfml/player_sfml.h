@@ -3,6 +3,7 @@
 
 #include "../../../game_logic/entity/player/player.h"
 #include "../../math/transformation.h"
+#include "../../../field/window.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -16,6 +17,10 @@ namespace arkanoidSFML {
 	/// The SFML element that represents the Player in the game.
 	class PlayerSFML : public arkanoid::Player {
 	private:
+		shared_ptr<Game::Window> window;
+
+		double scale;	///< Determines the size of the sprites, movementes
+
 		sf::Texture texture;
 		shared_ptr<Transformation> transformation;
 
@@ -40,7 +45,7 @@ namespace arkanoidSFML {
 		* @param textureFile 	The file that contains the texture of the PlayerSFML.
 		* @param transform 		The Transformation object thats needed to convert coordinates to screen pixels.
 		*/
-		PlayerSFML(double x, double y, const string &textureFile, shared_ptr<Transformation> transform);
+		PlayerSFML(double x, double y, const string &textureFile, shared_ptr<Game::Window> gameWindow, shared_ptr<Transformation> transform);
 
 		/*
 		* Moves the PlayerSFML one "block" to the left on the screen and in the grid.

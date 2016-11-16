@@ -22,7 +22,7 @@ namespace arkanoidSFML {
 		sprite.setTexture(texture);
 		
 		sprite.scale(3, 3);
-		sprite.setPosition(x*100.0, y*100.0);		// TBI: Transformation: make other conversion
+		sprite.setPosition(x*100.0, y*100.0);		// TBI: Transformation: make other conversion (double scale)
 	}
 
 }

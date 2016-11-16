@@ -12,7 +12,7 @@ namespace arkanoidSFML {
 	World::World(shared_ptr<Transformation> transform, shared_ptr<Game::Window> w, shared_ptr<Game::Grid> gr) :
 	window(w), grid(gr),
 	transformation(transform),
-	player(4, 1, "sprites/player/player.png", transformation) {
+	player(4, 1, "sprites/player/player.png", window, transformation) {
 
 		// TBI: create Walls on sides
 		for(int w = 0; w < 9; w++) {
