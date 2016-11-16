@@ -35,12 +35,10 @@ namespace arkanoidSFML {
 
 
 	void World::drawAll(sf::RenderWindow &window) {
-		window.clear();
 		window.draw(player.sprite);
 		for(int w = 0; w < walls.size(); w++) {
 			window.draw(walls[w]->sprite);
 		}
-		window.display();
 	}
 
 
