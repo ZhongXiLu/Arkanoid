@@ -3,7 +3,7 @@
 
 #include "../../../game_logic/entity/player/player.h"
 #include "../../math/transformation.h"
-#include "../../../field/window.h"
+#include "../../../entity_creator/window/window.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>

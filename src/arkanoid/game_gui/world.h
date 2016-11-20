@@ -4,8 +4,8 @@
 #include "entity_sfml/player_sfml/player_sfml.h"
 #include "entity_sfml/wall_sfml/wall_sfml.h"
 #include "math/transformation.h"
-#include "../field/grid.h"
-#include "../field/window.h"
+#include "../game_logic/grid/grid.h"
+#include "../entity_creator/window/window.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
