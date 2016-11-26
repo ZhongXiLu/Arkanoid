@@ -1,7 +1,7 @@
 #ifndef ARKANOID_H
 #define ARKANOID_H
 
-#include "game_gui/world.h"
+#include "game_logic/world.h"
 #include "game_logic/grid/grid.h"
 #include "window/window.h"
 

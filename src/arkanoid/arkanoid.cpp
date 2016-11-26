@@ -36,14 +36,14 @@ void Arkanoid::processInput() {
 	sf::Event event;
 	while(windowSFML.pollEvent(event)) {
 
-		if(event.type == sf::Event::KeyPressed) {
+		// if(event.type == sf::Event::KeyPressed) {
 
-			if(event.key.code == sf::Keyboard::Left) {
-				world.player.moveLeft();
-			} else if(event.key.code == sf::Keyboard::Right) {
-				world.player.moveRight();
-			}
-		}
+		// 	if(event.key.code == sf::Keyboard::Left) {
+		// 		world.player.moveLeft();
+		// 	} else if(event.key.code == sf::Keyboard::Right) {
+		// 		world.player.moveRight();
+		// 	}
+		// }
 
 		if(event.type == sf::Event::Closed) {
 			windowSFML.close();
@@ -53,6 +53,6 @@ void Arkanoid::processInput() {
 
 void Arkanoid::render() {
 	windowSFML.clear();
-	world.drawAll(windowSFML);
+	// world.drawAll(windowSFML);
 	windowSFML.display();
 }

@@ -1,13 +1,11 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include "entity_sfml/player_sfml/player_sfml.h"
-#include "entity_sfml/wall_sfml/wall_sfml.h"
-#include "math/transformation.h"
-#include "../game_logic/grid/grid.h"
+#include "entity/entity.h"
+#include "grid/grid.h"
 #include "../window/window.h"
+#include "../game_gui/math/transformation.h"
 
-#include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>
 #include <memory>
@@ -25,10 +23,9 @@ namespace arkanoidSFML {
 
 		shared_ptr<Transformation> transformation;	///< Transformation object for translations between coordinates and pixels.
 
-	public:
-		PlayerSFML player;	///< The only Player in this World.
-		vector<unique_ptr<WallSFML> > walls;		///< The Wall on the sides (left/top/right).
+		vector<arkanoid::Entity*> entities;		///< List of all Entity in the World.
 
+	public:
 		/**
 		* Default Constructor.
 		*/
@@ -42,11 +39,12 @@ namespace arkanoidSFML {
 		World(shared_ptr<Transformation> transform, shared_ptr<Game::Window> window, shared_ptr<Game::Grid> grid);
 
 		/**
-		* Draws all the Entity objects in this World on the window.
+		* Add an Entity to the World.
 		*
-		* @param window 	The window where all the sprites will be drawn on.
+		* @param entity		The Entity that will be added.
 		*/
-		void drawAll(sf::RenderWindow &window);
+		void addEntity(arkanoid::Entity* entity);
+
 	};
 
 }
