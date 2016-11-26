@@ -3,7 +3,7 @@
 
 #include "game_logic/world.h"
 #include "game_logic/grid/grid.h"
-#include "window/window.h"
+#include "game_gui/math/transformation.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -15,7 +15,6 @@ using namespace std;
 /// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
 class Arkanoid {
 private:
-	shared_ptr<Game::Window> window;
 	shared_ptr<Game::Grid> grid;
 
 	shared_ptr<arkanoidSFML::Transformation> transformation;	///< Transformation object for translations between coordinates and pixels.

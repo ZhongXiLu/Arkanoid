@@ -8,13 +8,13 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	WallSFML::WallSFML() {
-		sprite.setOrigin(50, 0);
-		sprite.setPosition(0, 0);
-		transformation = nullptr;
-	}
+	// WallSFML::WallSFML() {
+	// 	sprite.setOrigin(50, 0);
+	// 	sprite.setPosition(0, 0);
+	// 	transformation = nullptr;
+	// }
 
-	WallSFML::WallSFML(double x, double y, const string &textureFile, shared_ptr<Transformation> transform) : transformation(transform), Wall(x, y) {
+	WallSFML::WallSFML(double x, double y, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform) : windowSFML(window), transformation(transform), Wall(x, y) {
 
 		if(!texture.loadFromFile(textureFile)) {
 			throw runtime_error("Couldn't load texture image.");

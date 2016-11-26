@@ -2,9 +2,8 @@
 #define WORLD_H
 
 #include "entity/entity.h"
-#include "grid/grid.h"
-#include "../window/window.h"
-#include "../game_gui/math/transformation.h"
+// #include "grid/grid.h"
+// #include "../game_gui/math/transformation.h"
 
 #include <iostream>
 #include <vector>

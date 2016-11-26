@@ -16,8 +16,6 @@ SET(SRC
 	arkanoid/game_logic/math/vector2D.cpp
 	arkanoid/game_logic/world.cpp
 
-	arkanoid/window/window.cpp
-
 	arkanoid/factory/sfml_factory.cpp
 
 	arkanoid/game_gui/math/transformation.cpp

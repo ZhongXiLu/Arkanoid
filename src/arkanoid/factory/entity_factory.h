@@ -4,7 +4,6 @@
 #include "../game_logic/entity/player/player.h"
 #include "../game_logic/entity/wall/wall.h"
 #include "../game_gui/math/transformation.h"
-#include "../window/window.h"
 
 #include <iostream>
 #include <memory>
@@ -18,7 +17,7 @@ public:
 	/**
 	* Creates a Player.
 	*/
-	virtual arkanoid::Player* createPlayer(shared_ptr<arkanoidSFML::Transformation> transform, shared_ptr<Game::Window> window) = 0;
+	virtual arkanoid::Player* createPlayer(shared_ptr<arkanoidSFML::Transformation> transform) = 0;
 
 	/*
 	* Create a Wall.

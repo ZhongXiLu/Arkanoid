@@ -16,18 +16,13 @@ namespace arkanoidSFML {
 	/// The SFML element that represents the Wall in the game.
 	class WallSFML : public arkanoid::Wall {
 	private:
+		sf::RenderWindow &windowSFML;
+
 		sf::Texture texture;
 		shared_ptr<Transformation> transformation;
 
 	public:
 		sf::Sprite sprite; ///< The sprite of the WallSFML.
-
-		/**
-		* Default Constructor.
-		*
-		* Creates a (empty) WallSFML sprite in the World at origin ([0, 0]) in the game window.
-		*/
-		WallSFML();
 
 		/**
 		* Constructor.
@@ -40,7 +35,7 @@ namespace arkanoidSFML {
 		* @param textureFile 	The file that contains the texture of the WallSFML.
 		* @param transform 		The Transformation object thats needed to convert coordinates to screen pixels.
 		*/
-		WallSFML(double x, double y, const string &textureFile, shared_ptr<Transformation> transform);
+		WallSFML(double x, double y, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform);
 
 		/*
 		* Destructor.

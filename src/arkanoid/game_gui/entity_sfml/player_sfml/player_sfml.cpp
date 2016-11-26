@@ -8,13 +8,14 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	PlayerSFML::PlayerSFML() {
-		sprite.setPosition(0, 0);
-		window = nullptr;
-		transformation = nullptr;
-	}
+	// PlayerSFML::PlayerSFML() {
+	// 	sprite.setPosition(0, 0);
+	// 	window = nullptr;
+	// 	transformation = nullptr;
+	// }
 
-	PlayerSFML::PlayerSFML(double x, double y, const string &textureFile, shared_ptr<Game::Window> gameWindow, shared_ptr<Transformation> transform) : window(gameWindow), transformation(transform), Player(x, y) {
+	PlayerSFML::PlayerSFML(double x, double y, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform) :
+	windowSFML(window), transformation(transform), Player(x, y) {
 
 		// scale = ...
 
@@ -23,7 +24,7 @@ namespace arkanoidSFML {
 		}
 		sprite.setTexture(texture);
 		
-		sprite.setPosition((gameWindow->width/2)-50, gameWindow->height-100);
+		sprite.setPosition((windowSFML.getSize().x/2)-50, windowSFML.getSize().y-100);
 	}
 
 	PlayerSFML::~PlayerSFML() {}

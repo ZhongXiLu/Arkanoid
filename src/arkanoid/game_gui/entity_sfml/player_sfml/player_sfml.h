@@ -3,7 +3,6 @@
 
 #include "../../../game_logic/entity/player/player.h"
 #include "../../math/transformation.h"
-#include "../../../window/window.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -17,7 +16,7 @@ namespace arkanoidSFML {
 	/// The SFML element that represents the Player in the game.
 	class PlayerSFML : public arkanoid::Player {
 	private:
-		shared_ptr<Game::Window> window;
+		sf::RenderWindow &windowSFML;
 
 		double scale;	///< Determines the size of the sprites, movementes
 
@@ -28,13 +27,6 @@ namespace arkanoidSFML {
 		sf::Sprite sprite; ///< The sprite of the PlayerSFML.
 
 		/**
-		* Default Constructor.
-		*
-		* Creates a (empty) PlayerSFML sprite in the World at origin ([0, 0]) in the game window.
-		*/
-		PlayerSFML();
-
-		/**
 		* Constructor.
 		*
 		* Creates a PlayerSFML sprite in the World at a specific position in the game window.
@@ -42,10 +34,11 @@ namespace arkanoidSFML {
 		*
 		* @param x				The x (in the grid) position of the Player.
 		* @param y				The y (in the grid) position of the Player.
-		* @param textureFile 	The file that contains the texture of the PlayerSFML.
-		* @param transform 		The Transformation object thats needed to convert coordinates to screen pixels.
+		* @param window			The SFML window.
+		* @param textureFile	The file that contains the texture of the PlayerSFML.
+		* @param transform		The Transformation object thats needed to convert coordinates to screen pixels.
 		*/
-		PlayerSFML(double x, double y, const string &textureFile, shared_ptr<Game::Window> gameWindow, shared_ptr<Transformation> transform);
+		PlayerSFML(double x, double y, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform);
 
 		/*
 		* Destructor.

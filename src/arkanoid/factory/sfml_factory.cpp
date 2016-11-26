@@ -9,14 +9,16 @@
 
 using namespace std;
 
-arkanoid::Player* SFMLFactory::createPlayer(shared_ptr<arkanoidSFML::Transformation> transform, shared_ptr<Game::Window> window) {
-	arkanoidSFML::PlayerSFML* player = new arkanoidSFML::PlayerSFML(4, 1, "sprites/player/player.png", window, transform);
+SFMLFactory::SFMLFactory(sf::RenderWindow &window) : windowSFML(window) {}
+
+arkanoid::Player* SFMLFactory::createPlayer(shared_ptr<arkanoidSFML::Transformation> transform) {
+	arkanoidSFML::PlayerSFML* player = new arkanoidSFML::PlayerSFML(4, 1, windowSFML, "sprites/player/player.png", transform);
 
 	return player;
 }
 
 arkanoid::Wall* SFMLFactory::createWall(shared_ptr<arkanoidSFML::Transformation> transform) {
-	arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0, 0, "sprites/wall/wall.png", transform);
+	arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0, 0, windowSFML, "sprites/wall/wall.png", transform);
 
 	return wall;
 }
