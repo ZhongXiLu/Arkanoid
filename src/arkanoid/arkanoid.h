@@ -18,16 +18,23 @@ private:
 	shared_ptr<Game::Window> window;
 	shared_ptr<Game::Grid> grid;
 
+	shared_ptr<arkanoidSFML::Transformation> transformation;	///< Transformation object for translations between coordinates and pixels.
+
 	arkanoidSFML::World world;
 	sf::RenderWindow windowSFML;
 
 	/**
-	* Check for user input in the game window and process this input.
+	* Creates all Entity for the World.
+	*/
+	void initialise();
+
+	/**
+	* Checks for user input in the game window and process this input.
 	*/
 	void processInput();
 
 	/**
-	* Render all the sprites of the World in the window.
+	* Renders all the sprites of the World in the window.
 	*/
 	void render();
 

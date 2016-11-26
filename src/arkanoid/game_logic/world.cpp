@@ -9,9 +9,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	World::World(shared_ptr<Transformation> transform, shared_ptr<Game::Window> w, shared_ptr<Game::Grid> gr) :
-	window(w), grid(gr),
-	transformation(transform) {
+	World::World() {
 
 	// 	// TBI: create Walls on sides
 	// 	for(int w = 0; w < 9; w++) {
@@ -30,6 +28,12 @@ namespace arkanoidSFML {
 	// 		unique_ptr<WallSFML> wall(new WallSFML(w, 0, "sprites/wall/wall.png", transformation));
 	// 		walls.push_back(std::move(wall));
 	// 	}
+	}
+
+	World::~World() {
+		for(auto e: entities) {
+			delete e;
+		}
 	}
 
 	void World::addEntity(arkanoid::Entity* entity) {
