@@ -20,7 +20,7 @@ private:
 
 	shared_ptr<arkanoidSFML::Transformation> transformation;	///< Transformation object for translations between coordinates and pixels.
 
-	arkanoidSFML::World world;
+	arkanoid::World world;
 	sf::RenderWindow windowSFML;
 
 	/**

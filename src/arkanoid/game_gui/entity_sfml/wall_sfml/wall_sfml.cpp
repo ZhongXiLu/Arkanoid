@@ -25,4 +25,10 @@ namespace arkanoidSFML {
 		sprite.setPosition(x*100.0, y*100.0);		// TBI: Transformation: make other conversion (double scale)
 	}
 
+	WallSFML::~WallSFML() {}
+
+	void WallSFML::update() {
+		// ...
+	}
+
 }

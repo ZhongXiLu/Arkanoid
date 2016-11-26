@@ -12,4 +12,9 @@ namespace arkanoid {
 
 	Wall::Wall(double x, double y) : Entity(x, y) {}
 
+	Wall::~Wall() {}
+
+	void Wall::update() {
+		// ...
+	}
 }

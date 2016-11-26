@@ -26,6 +26,24 @@ namespace arkanoidSFML {
 		sprite.setPosition((gameWindow->width/2)-50, gameWindow->height-100);
 	}
 
+	PlayerSFML::~PlayerSFML() {}
+
+	void PlayerSFML::update() {
+		// reference of SFML window as member
+
+		// sf::Event event;
+		// pollEvent(event);
+
+		// if(event.type == sf::Event::KeyPressed) {
+
+		// 	if(event.key.code == sf::Keyboard::Left) {
+		// 		moveLeft();
+		// 	} else if(event.key.code == sf::Keyboard::Right) {
+		// 		moveRight();
+		// 	}
+		// }
+	}
+
 	bool PlayerSFML::moveLeft() {
 		sprite.move(-50.0, 0.0);
 		Player::setPosition(std::move(transformation->toGrid(sprite.getPosition())));

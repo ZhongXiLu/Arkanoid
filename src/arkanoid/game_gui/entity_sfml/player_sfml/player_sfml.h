@@ -48,6 +48,16 @@ namespace arkanoidSFML {
 		PlayerSFML(double x, double y, const string &textureFile, shared_ptr<Game::Window> gameWindow, shared_ptr<Transformation> transform);
 
 		/*
+		* Destructor.
+		*/
+		~PlayerSFML();
+
+		/*
+		* Check for user input and make the corresponding move if necessary.
+		*/
+		void update();
+
+		/*
 		* Moves the PlayerSFML one "block" to the left on the screen and in the grid.
 		*
 		* @return True if move was valid and made, otherwise False.

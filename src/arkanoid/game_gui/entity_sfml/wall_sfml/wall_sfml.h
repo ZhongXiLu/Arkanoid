@@ -42,6 +42,16 @@ namespace arkanoidSFML {
 		*/
 		WallSFML(double x, double y, const string &textureFile, shared_ptr<Transformation> transform);
 
+		/*
+		* Destructor.
+		*/
+		~WallSFML();
+
+		/*
+		* Do nothing...
+		*/
+		void update();
+
 	};
 
 }

@@ -23,7 +23,7 @@ namespace arkanoid {
 		Player();
 
 		/*
-		* Constructor
+		* Constructor.
 		*
 		* Initialise the Player at a specific position in the World.
 		*
@@ -31,6 +31,16 @@ namespace arkanoid {
 		* @param y 	The y position (in the grid) of the Player.
 		*/
 		Player(double x, double y);
+
+		/*
+		* Destructor.
+		*/
+		~Player();
+
+		/*
+		* Do nothing...
+		*/
+		void update();
 
 		/*
 		* Moves the Player.

@@ -24,7 +24,7 @@ namespace arkanoid {
 		Wall();
 
 		/*
-		* Constructor
+		* Constructor.
 		*
 		* Initialise the Wall at a specific position in the World.
 		*
@@ -32,7 +32,16 @@ namespace arkanoid {
 		* @param y 	The y position (in the grid) of the Wall.
 		*/
 		Wall(double x, double y);
+
+		/*
+		* Destructor.
+		*/
+		~Wall();
 		
+		/*
+		* Do nothing...
+		*/
+		void update();
 	};
 
 }

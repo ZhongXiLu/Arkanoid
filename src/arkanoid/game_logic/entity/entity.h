@@ -34,6 +34,16 @@ namespace arkanoid {
 		Entity(double x, double y);
 
 		/*
+		* Destructor
+		*/
+		virtual ~Entity() {}
+
+		/**
+		* Based on what Entity, the Entity will update itself.
+		*/
+		virtual void update() = 0;
+
+		/*
 		* Get the current position of the Entity.
 		*
 		* @return	The current position of the Entity (in a Vector2D).

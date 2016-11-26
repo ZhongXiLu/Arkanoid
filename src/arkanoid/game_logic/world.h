@@ -13,10 +13,10 @@
 
 using namespace std;
 
-namespace arkanoidSFML {
+namespace arkanoid {
 
 	/// The World of the Arkanoid game that contains all Entity objects.
-	class World {
+	class World : public Entity {
 	private:
 		vector<arkanoid::Entity*> entities;		///< List of all Entity in the World.
 
@@ -32,7 +32,12 @@ namespace arkanoidSFML {
 		~World();
 
 		/**
-		* Add an Entity to the World.
+		* Updates all Entity in the World.
+		*/
+		void update();
+
+		/**
+		* Adds an Entity to the World.
 		*
 		* @param entity		The Entity that will be added.
 		*/

@@ -12,6 +12,12 @@ namespace arkanoid {
 
 	Player::Player(double x, double y) : Entity(x, y) {}
 
+	Player::~Player() {}
+
+	void Player::update() {
+		// ...
+	}
+
 	bool Player::move(Vector2D &newPos) {
 
 		// TBI: Check if new position is in Grid.
