@@ -3,7 +3,7 @@
 
 #include "game_gui/world.h"
 #include "game_logic/grid/grid.h"
-#include "entity_creator/window/window.h"
+#include "window/window.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
