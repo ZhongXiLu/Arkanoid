@@ -18,11 +18,12 @@ namespace arkanoidSFML {
 	private:
 		sf::RenderWindow &windowSFML;
 
+		sf::Sprite sprite; ///< The sprite of the WallSFML.
 		sf::Texture texture;
+		
 		shared_ptr<Transformation> transformation;
 
 	public:
-		sf::Sprite sprite; ///< The sprite of the WallSFML.
 
 		/**
 		* Constructor.

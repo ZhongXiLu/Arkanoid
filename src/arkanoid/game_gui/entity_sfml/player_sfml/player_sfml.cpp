@@ -43,6 +43,7 @@ namespace arkanoidSFML {
 		// 		moveRight();
 		// 	}
 		// }
+		windowSFML.draw(sprite);
 	}
 
 	bool PlayerSFML::moveLeft() {

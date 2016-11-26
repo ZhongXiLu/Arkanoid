@@ -18,14 +18,13 @@ namespace arkanoidSFML {
 	private:
 		sf::RenderWindow &windowSFML;
 
-		double scale;	///< Determines the size of the sprites, movementes
-
+		sf::Sprite sprite;	///< The sprite of the PlayerSFML.
 		sf::Texture texture;
+
+		double scale;	///< Determines the size of the sprites, movementes
 		shared_ptr<Transformation> transformation;
 
 	public:
-		sf::Sprite sprite; ///< The sprite of the PlayerSFML.
-
 		/**
 		* Constructor.
 		*

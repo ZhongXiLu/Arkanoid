@@ -28,7 +28,7 @@ namespace arkanoidSFML {
 	WallSFML::~WallSFML() {}
 
 	void WallSFML::update() {
-		// ...
+		windowSFML.draw(sprite);
 	}
 
 }
