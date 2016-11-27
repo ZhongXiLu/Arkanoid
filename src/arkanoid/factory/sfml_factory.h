@@ -8,6 +8,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <vector>
 #include <memory>
 
 using namespace std;
@@ -34,7 +35,7 @@ public:
 	/*
 	* Create a WallSMFL.
 	*/
-	arkanoid::Wall* createWall(shared_ptr<arkanoidSFML::Transformation> transform);
+	vector<arkanoid::Wall*> createWalls(shared_ptr<arkanoidSFML::Transformation> transform);
 };
 
 #endif /* SFML_FACTORY_H */

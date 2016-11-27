@@ -6,6 +6,7 @@
 #include "../game_gui/math/transformation.h"
 
 #include <iostream>
+#include <vector>
 #include <memory>
 
 using namespace std;
@@ -22,7 +23,7 @@ public:
 	/*
 	* Create a Wall.
 	*/
-	virtual arkanoid::Wall* createWall(shared_ptr<arkanoidSFML::Transformation> transform) = 0;
+	virtual vector<arkanoid::Wall*> createWalls(shared_ptr<arkanoidSFML::Transformation> transform) = 0;
 };
 
 #endif /* ENTITY_FACTORY_H */
