@@ -22,7 +22,7 @@ namespace arkanoid {
 		*/
 		Player();
 
-		/*
+		/**
 		* Constructor.
 		*
 		* Initialise the Player at a specific position in the World.
@@ -32,24 +32,25 @@ namespace arkanoid {
 		*/
 		Player(double x, double y);
 
-		/*
+		/**
 		* Destructor.
 		*/
 		~Player();
 
-		/*
+		/**
 		* Do nothing...
 		*/
 		void update();
 
-		/*
+		/**
 		* Moves the Player.
 		*
-		* @param newPos	The Vector2D over which the Player will be translated.
+		* @param x	The x component over which the Player will be translated.
+		* @param y	The y component over which the Player will be translated.
 		*
 		* @return True if move was valid and made, otherwise False.
 		*/
-		bool move(Vector2D &newPos);
+		virtual bool move(double x, double y);
 
 	};
 

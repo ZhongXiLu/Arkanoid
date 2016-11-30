@@ -18,12 +18,13 @@ namespace arkanoid {
 		// ...
 	}
 
-	bool Player::move(Vector2D &newPos) {
+	bool Player::move(double x, double y) {
 
 		// TBI: Check if new position is in Grid.
 
 		// cout << "moving player from " << position;
-		position = position + newPos;
+		position.x += x;
+		position.y += y;
 		// cout << " to " << position << endl;
 
 		return true;

@@ -2,6 +2,7 @@
 #define WORLD_H
 
 #include "entity/entity.h"
+#include "entity/player/player.h"
 // #include "grid/grid.h"
 // #include "../game_gui/math/transformation.h"
 
@@ -20,6 +21,8 @@ namespace arkanoid {
 		vector<arkanoid::Entity*> entities;		///< List of all Entity in the World.
 
 	public:
+		Player* player;		///< The Player in the game.
+
 		/**
 		* Default Constructor.
 		*/

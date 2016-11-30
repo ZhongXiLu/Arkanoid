@@ -39,29 +39,25 @@ namespace arkanoidSFML {
 		*/
 		PlayerSFML(double x, double y, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform);
 
-		/*
+		/**
 		* Destructor.
 		*/
 		~PlayerSFML();
 
-		/*
+		/**
 		* Check for user input and make the corresponding move if necessary.
 		*/
 		void update();
 
-		/*
-		* Moves the PlayerSFML one "block" to the left on the screen and in the grid.
+		/**
+		* Moves the Player and the sprite.
+		*
+		* @param x	The x component over which the Player will be translated.
+		* @param y	The y component over which the Player will be translated.
 		*
 		* @return True if move was valid and made, otherwise False.
 		*/
-		bool moveLeft();
-
-		/*
-		* Moves the PlayerSFML one "block" to the right on the screen and in the grid.
-		*
-		* @return True if move was valid and made, otherwise False.
-		*/
-		bool moveRight();
+		bool move(double x, double y);
 
 	};
 
