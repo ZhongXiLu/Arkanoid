@@ -26,18 +26,18 @@ vector<arkanoid::Wall*> SFMLFactory::createWalls(shared_ptr<arkanoidSFML::Transf
 
 	// arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0, 0, windowSFML, "sprites/wall/wall.png", transform);
 
-	for(int w = 0; w < 9; w++) {
+	for(double w = 0.0; w < 27.0; w++) {
 		{
-			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0, w, windowSFML, "sprites/wall/wall.png", transform);
+			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0.0, w/3, windowSFML, "sprites/wall/wall.png", transform);
 			walls.push_back(wall);
 		}
 		{
-			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(8, w, windowSFML, "sprites/wall/wall.png", transform);
+			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(8.666, w/3, windowSFML, "sprites/wall/wall.png", transform);
 			walls.push_back(wall);
 		}
 	}
-	for(int w = 1; w < 8; w++) {
-		arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(w, 0, windowSFML, "sprites/wall/wall.png", transform);
+	for(double w = 1; w < 27.0; w++) {
+		arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(w/3, 0.0, windowSFML, "sprites/wall/wall.png", transform);
 		walls.push_back(wall);
 	}
 

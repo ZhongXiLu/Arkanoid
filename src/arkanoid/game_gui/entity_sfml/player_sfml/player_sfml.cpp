@@ -18,7 +18,7 @@ namespace arkanoidSFML {
 		}
 		sprite.setTexture(texture);
 		
-		sprite.setPosition((windowSFML.getSize().x/2)-50, windowSFML.getSize().y-100);
+		sprite.setPosition((windowSFML.getSize().x/2)-66, windowSFML.getSize().y-100);
 	}
 
 	PlayerSFML::~PlayerSFML() {}

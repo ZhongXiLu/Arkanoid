@@ -63,9 +63,9 @@ void Arkanoid::processInput() {
 
 		if(event.type == sf::Event::KeyPressed) {
 			if(event.key.code == sf::Keyboard::Left) {
-				world.player->move(-50.0, 0);
+				world.player->move(-35.0, 0);
 			} else if(event.key.code == sf::Keyboard::Right) {
-				world.player->move(50.0, 0);
+				world.player->move(35.0, 0);
 			}
 		}
 
