@@ -12,6 +12,7 @@ SET(SRC
 	arkanoid/game_logic/grid/grid.cpp
 	arkanoid/game_logic/entity/entity.cpp
 	arkanoid/game_logic/entity/player/player.cpp
+	arkanoid/game_logic/entity/ball/ball.cpp
 	arkanoid/game_logic/entity/wall/wall.cpp
 	arkanoid/game_logic/math/vector2D.cpp
 	arkanoid/game_logic/world.cpp
@@ -20,6 +21,7 @@ SET(SRC
 
 	arkanoid/game_gui/math/transformation.cpp
 	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
+	arkanoid/game_gui/entity_sfml/ball_sfml/ball_sfml.cpp
 	arkanoid/game_gui/entity_sfml/wall_sfml/wall_sfml.cpp
 
 	arkanoid/arkanoid.cpp
@@ -31,6 +33,7 @@ ADD_LIBRARY(game_logic STATIC
 	arkanoid/game_logic/grid/grid.cpp
 	arkanoid/game_logic/entity/entity.cpp
 	arkanoid/game_logic/entity/player/player.cpp
+	arkanoid/game_logic/entity/ball/ball.cpp
 	arkanoid/game_logic/entity/wall/wall.cpp
 	arkanoid/game_logic/math/vector2D.cpp
 	arkanoid/game_logic/world.cpp
@@ -39,6 +42,7 @@ ADD_LIBRARY(game_logic STATIC
 ADD_LIBRARY(game_gui STATIC
 	arkanoid/game_gui/math/transformation.cpp
 	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
+	arkanoid/game_gui/entity_sfml/ball_sfml/ball_sfml.cpp
 	arkanoid/game_gui/entity_sfml/wall_sfml/wall_sfml.cpp
 )
 
