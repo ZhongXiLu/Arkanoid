@@ -1,6 +1,7 @@
 
 #include "sfml_factory.h"
 #include "../game_gui/entity_sfml/player_sfml/player_sfml.h"
+#include "../game_gui/entity_sfml/ball_sfml/ball_sfml.h"
 #include "../game_gui/entity_sfml/wall_sfml/wall_sfml.h"
 
 #include <iostream>
@@ -15,7 +16,7 @@ SFMLFactory::SFMLFactory(sf::RenderWindow &window) : windowSFML(window) {}
 // TBI: read data from file?
 
 arkanoid::Player* SFMLFactory::createPlayer(shared_ptr<arkanoidSFML::Transformation> transform) {
-	arkanoidSFML::PlayerSFML* player = new arkanoidSFML::PlayerSFML(4, 1, windowSFML, "sprites/player/player.png", transform);
+	arkanoidSFML::PlayerSFML* player = new arkanoidSFML::PlayerSFML(4, 1, 10, windowSFML, "sprites/player/player.png", transform);
 
 	return player;
 }
@@ -42,4 +43,10 @@ vector<arkanoid::Wall*> SFMLFactory::createWalls(shared_ptr<arkanoidSFML::Transf
 	}
 
 	return walls;
+}
+
+arkanoid::Ball* SFMLFactory::createBall(shared_ptr<arkanoidSFML::Transformation> transform) {
+	arkanoidSFML::BallSFML* ball = new arkanoidSFML::BallSFML(4, 4, 8, windowSFML, "sprites/ball/ball.png", transform);
+
+	return ball;
 }

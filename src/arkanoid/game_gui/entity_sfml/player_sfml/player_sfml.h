@@ -21,7 +21,6 @@ namespace arkanoidSFML {
 		sf::Sprite sprite;	///< The sprite of the PlayerSFML.
 		sf::Texture texture;
 
-		double scale;	///< Determines the size of the sprites, movementes
 		shared_ptr<Transformation> transformation;
 
 	public:
@@ -33,11 +32,12 @@ namespace arkanoidSFML {
 		*
 		* @param x				The x (in the grid) position of the Player.
 		* @param y				The y (in the grid) position of the Player.
+		* @param speed			The speed of the Player.
 		* @param window			The SFML window.
 		* @param textureFile	The file that contains the texture of the PlayerSFML.
 		* @param transform		The Transformation object thats needed to convert coordinates to screen pixels.
 		*/
-		PlayerSFML(double x, double y, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform);
+		PlayerSFML(double x, double y, double speed, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform);
 
 		/**
 		* Destructor.
@@ -48,16 +48,6 @@ namespace arkanoidSFML {
 		* Check for user input and make the corresponding move if necessary.
 		*/
 		void update();
-
-		/**
-		* Moves the Player and the sprite.
-		*
-		* @param x	The x component over which the Player will be translated.
-		* @param y	The y component over which the Player will be translated.
-		*
-		* @return True if move was valid and made, otherwise False.
-		*/
-		bool move(double x, double y);
 
 	};
 

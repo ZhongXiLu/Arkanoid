@@ -13,9 +13,8 @@ namespace arkanoid {
 
 	/// The Ball in the Arkanoid game.
 	class Ball : public Entity {
-	private:
+	protected:
 		Vector2D velocity;
-		double speed;
 
 	public:
 
@@ -31,10 +30,11 @@ namespace arkanoid {
 		*
 		* Initialise the Ball at a specific position in the World.
 		*
-		* @param x 	The x position (in the grid) of the Ball.
-		* @param y 	The y position (in the grid) of the Ball.
+		* @param x		The x position (in the grid) of the Ball.
+		* @param y		The y position (in the grid) of the Ball.
+		* @param speed	The speed of the Ball.
 		*/
-		Ball(double x, double y);
+		Ball(double x, double y, double speed);
 
 		/**
 		* Destructor.

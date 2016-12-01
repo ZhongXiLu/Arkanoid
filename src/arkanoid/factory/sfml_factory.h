@@ -3,6 +3,7 @@
 
 #include "entity_factory.h"
 #include "../game_logic/entity/player/player.h"
+#include "../game_logic/entity/ball/ball.h"
 #include "../game_logic/entity/wall/wall.h"
 #include "../game_gui/math/transformation.h"
 
@@ -20,7 +21,7 @@ private:
 
 public:
 
-	/*
+	/**
 	* Constructor.
 	*
 	* @param window		The SFML window.
@@ -32,10 +33,15 @@ public:
 	*/
 	arkanoid::Player* createPlayer(shared_ptr<arkanoidSFML::Transformation> transform);
 
-	/*
+	/**
 	* Create a WallSMFL.
 	*/
 	vector<arkanoid::Wall*> createWalls(shared_ptr<arkanoidSFML::Transformation> transform);
+
+	/**
+	* Creates a BallSFML.
+	*/
+	arkanoid::Ball* createBall(shared_ptr<arkanoidSFML::Transformation> transform);
 };
 
 #endif /* SFML_FACTORY_H */

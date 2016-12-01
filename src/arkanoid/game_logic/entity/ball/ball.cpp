@@ -8,15 +8,9 @@ using namespace std;
 
 namespace arkanoid {
 
-	Ball::Ball() : speed(5), Entity(0.0, 0.0) {
-		Vector2D v(-speed, -speed);
-		velocity = v;
-	}
+	Ball::Ball() : Entity(0.0, 0.0) {}
 
-	Ball::Ball(double x, double y) : speed(5), Entity(x, y) {
-		Vector2D v(-speed, -speed);
-		velocity = v;
-	}
+	Ball::Ball(double x, double y, double speed) : velocity(-speed, -speed), Entity(x, y) {}
 
 	Ball::~Ball() {}
 

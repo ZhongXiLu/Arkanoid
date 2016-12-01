@@ -13,6 +13,10 @@ namespace arkanoid {
 
 	/// The Player in the Arkanoid game that represents a "rectangle".
 	class Player : public Entity {
+	protected:
+		Vector2D velocity;
+		double speed;
+
 	public:
 
 		/**
@@ -27,10 +31,11 @@ namespace arkanoid {
 		*
 		* Initialise the Player at a specific position in the World.
 		*
-		* @param x 	The x position (in the grid) of the Player.
-		* @param y 	The y position (in the grid) of the Player.
+		* @param x			The x position (in the grid) of the Player.
+		* @param y			The y position (in the grid) of the Player.
+		* @param newSpeed	The speed of the Player.
 		*/
-		Player(double x, double y);
+		Player(double x, double y, double newSpeed);
 
 		/**
 		* Destructor.
@@ -41,16 +46,6 @@ namespace arkanoid {
 		* Do nothing...
 		*/
 		void update();
-
-		/**
-		* Moves the Player.
-		*
-		* @param x	The x component over which the Player will be translated.
-		* @param y	The y component over which the Player will be translated.
-		*
-		* @return True if move was valid and made, otherwise False.
-		*/
-		virtual bool move(double x, double y);
 
 	};
 
