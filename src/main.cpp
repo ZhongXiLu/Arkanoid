@@ -14,7 +14,6 @@
 * mkdir build
 * cd build
 * cmake ..
-* make
 * make install
 * cd ../bin
 * ./arkanoid
@@ -28,8 +27,8 @@
 *
 * \section controls Controls
 * <ul>
-* 	<li>Left arrow: move "one block" to the left</li>
-* 	<li>Right arrow: move "one block" to the right</li>
+* 	<li>Left arrow: move the player to the left</li>
+* 	<li>Right arrow: move the player to the right</li>
 * </ul>
 *
 * \section remarks Remarks
