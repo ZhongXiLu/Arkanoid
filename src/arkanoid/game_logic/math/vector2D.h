@@ -20,7 +20,7 @@ namespace arkanoid {
 		*/
 		Vector2D();
 
-		/*
+		/**
 		* Constructor.
 		*
 		* @param newX	The 'x' component of the new constructed Vector2D.
@@ -28,7 +28,7 @@ namespace arkanoid {
 		*/
 		Vector2D(double newX, double newY);
 
-		/*
+		/**
 		* '+' Overloader.
 		*
 		* Translates the Vector2D over the other Vector2D.
@@ -39,7 +39,7 @@ namespace arkanoid {
 		*/
 		Vector2D operator+(const Vector2D &other);
 
-		/*
+		/**
 		* '=' Overloader.
 		*
 		* Asign new values to this Vector2D.
@@ -48,7 +48,7 @@ namespace arkanoid {
 		*/
 		void operator=(const Vector2D &other);
 
-		/*
+		/**
 		* '<<' Overloader.
 		*
 		* Prints the values of this Vector2D (debugging reasons).

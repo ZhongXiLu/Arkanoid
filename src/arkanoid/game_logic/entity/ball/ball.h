@@ -32,9 +32,9 @@ namespace arkanoid {
 		*
 		* @param x		The x position (in the grid) of the Ball.
 		* @param y		The y position (in the grid) of the Ball.
-		* @param speed	The speed of the Ball.
+		* @param speed	(optional) The speed of the Ball.
 		*/
-		Ball(double x, double y, double speed);
+		Ball(double x, double y, double speed = 8.0);
 
 		/**
 		* Destructor.

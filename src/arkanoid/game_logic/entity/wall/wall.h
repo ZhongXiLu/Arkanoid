@@ -23,7 +23,7 @@ namespace arkanoid {
 		*/
 		Wall();
 
-		/*
+		/**
 		* Constructor.
 		*
 		* Initialise the Wall at a specific position in the World.
@@ -33,17 +33,17 @@ namespace arkanoid {
 		*/
 		Wall(double x, double y);
 
-		/*
+		/**
 		* Destructor.
 		*/
 		~Wall();
 		
-		/*
+		/**
 		* Do nothing...
 		*/
 		void update();
 
-		/*
+		/**
 		* Do nothing...
 		*/
 		void draw() const;

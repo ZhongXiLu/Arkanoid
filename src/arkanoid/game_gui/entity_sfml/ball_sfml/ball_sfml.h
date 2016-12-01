@@ -32,12 +32,12 @@ namespace arkanoidSFML {
 		*
 		* @param x				The x (in the grid) position of the Ball.
 		* @param y				The y (in the grid) position of the Ball.
-		* @param speed			The speed of the Ball.
 		* @param window			The SFML window.
-		* @param textureFile	The file that contains the texture of the BallSFML.
 		* @param transform		The Transformation object thats needed to convert coordinates to screen pixels.
+		* @param speed			(optional) The speed of the Ball.
+		* @param textureFile	(optional) The file that contains the texture of the BallSFML.
 		*/
-		BallSFML(double x, double y, double speed, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform);
+		BallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed = 8.0, const string &textureFile = "sprites/ball/ball.png");
 
 		/**
 		* Destructor.

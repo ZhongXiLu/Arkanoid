@@ -36,7 +36,7 @@ namespace arkanoidSFML {
 		*/
 		Transformation(double gridWidth, double gridHeight, double windowWidth, double windowHeight);
 
-		/*
+		/**
 		* Converts coordinates (of the grid) to screen pixels.
 		*
 		* @param vector 	The vector2D (in the grid) that needs to converted to screen pixels.

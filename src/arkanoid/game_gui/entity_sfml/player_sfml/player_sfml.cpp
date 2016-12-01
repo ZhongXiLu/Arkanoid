@@ -8,7 +8,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	PlayerSFML::PlayerSFML(double x, double y, double speed, sf::RenderWindow &window, const string &textureFile, shared_ptr<Transformation> transform) :
+	PlayerSFML::PlayerSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed, const string &textureFile) :
 	windowSFML(window), transformation(transform), Player(x, y, speed) {
 
 		if(!texture.loadFromFile(textureFile)) {
