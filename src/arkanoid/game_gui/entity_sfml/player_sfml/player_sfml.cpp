@@ -36,6 +36,10 @@ namespace arkanoidSFML {
 
 		sprite.move(velocity.x, velocity.y);
 		Player::setPosition(std::move(transformation->toGrid(sprite.getPosition())));
+		// windowSFML.draw(sprite);
+	}
+
+	void PlayerSFML::draw() const {
 		windowSFML.draw(sprite);
 	}
 }

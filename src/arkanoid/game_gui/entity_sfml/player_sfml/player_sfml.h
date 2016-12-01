@@ -49,6 +49,10 @@ namespace arkanoidSFML {
 		*/
 		void update();
 
+		/**
+		* Draws the PlayerSFML in the game window.
+		*/
+		void draw() const;
 	};
 
 }

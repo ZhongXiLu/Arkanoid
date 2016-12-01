@@ -28,6 +28,10 @@ namespace arkanoidSFML {
 	WallSFML::~WallSFML() {}
 
 	void WallSFML::update() {
+		// windowSFML.draw(sprite);
+	}
+
+	void WallSFML::draw() const {
 		windowSFML.draw(sprite);
 	}
 

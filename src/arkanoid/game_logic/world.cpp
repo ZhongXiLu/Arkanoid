@@ -14,14 +14,20 @@ namespace arkanoid {
 	}
 
 	World::~World() {
-		for(auto e: entities) {
+		for(auto &e: entities) {
 			delete e;
 		}
 	}
 
 	void World::update() {
-		for(auto e: entities) {
+		for(auto &e: entities) {
 			e->update();
+		}
+	}
+
+	void World::draw() const {
+		for(const auto &e: entities) {
+			e->draw();
 		}
 	}
 

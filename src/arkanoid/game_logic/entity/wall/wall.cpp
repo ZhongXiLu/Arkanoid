@@ -17,4 +17,8 @@ namespace arkanoid {
 	void Wall::update() {
 		// ...
 	}
+
+	void Wall::draw() const {
+		// ...
+	}
 }

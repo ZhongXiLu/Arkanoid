@@ -42,13 +42,14 @@ namespace arkanoid {
 		~Ball();
 
 		/**
-		* Moves the Ball one frame further.
+		* Do nothing...
 		*/
 		void update();
 
 		/**
-		* Set the spee
+		* Do nothing...
 		*/
+		void draw() const ;
 
 	};
 

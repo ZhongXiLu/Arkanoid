@@ -48,6 +48,11 @@ namespace arkanoidSFML {
 		*/
 		void update();
 
+		/**
+		* Draws the WallSFML in the game window.
+		*/
+		void draw() const;
+		
 	};
 
 }

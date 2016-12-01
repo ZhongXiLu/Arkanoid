@@ -17,5 +17,9 @@ namespace arkanoid {
 	void Player::update() {
 		// ...
 	}
+
+	void Player::draw() const {
+		// ...
+	}
 	
 }

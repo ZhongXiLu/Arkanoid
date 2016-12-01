@@ -25,8 +25,6 @@ vector<arkanoid::Wall*> SFMLFactory::createWalls(shared_ptr<arkanoidSFML::Transf
 
 	vector<arkanoid::Wall*> walls;
 
-	// arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0, 0, windowSFML, "sprites/wall/wall.png", transform);
-
 	for(double w = 0.0; w < 27.0; w++) {
 		{
 			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0.0, w/3, windowSFML, "sprites/wall/wall.png", transform);

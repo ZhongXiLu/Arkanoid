@@ -47,6 +47,10 @@ namespace arkanoid {
 		*/
 		void update();
 
+		/**
+		* Do nothing...
+		*/
+		void draw() const;
 	};
 
 }

@@ -43,6 +43,11 @@ namespace arkanoid {
 		*/
 		virtual void update() = 0;
 
+		/**
+		* Draw the Entity.
+		*/
+		virtual void draw() const = 0;
+
 		/*
 		* Get the current position of the Entity.
 		*

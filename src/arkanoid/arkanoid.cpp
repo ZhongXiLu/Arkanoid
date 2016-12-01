@@ -18,7 +18,7 @@ grid(make_shared<Game::Grid>(9.0, 7.0)),
 windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid"),
 transformation(make_shared<arkanoidSFML::Transformation>(grid->width, grid->height, windowSFML.getSize().x, windowSFML.getSize().y)) {
 
-	render();	
+	render();
 	windowSFML.setFramerateLimit(60);
 }
 
@@ -26,16 +26,14 @@ void Arkanoid::initialise() {
 	SFMLFactory factory(windowSFML);
 
 	// Create Player
-	arkanoid::Player* player = factory.createPlayer(transformation);
-	world.addEntity(player);
-	world.player = player;
+	world.addEntity(factory.createPlayer(transformation));
 
 	// Create Ball
 	world.addEntity(factory.createBall(transformation));
 
 	// Create Walls
 	vector<arkanoid::Wall*> walls = factory.createWalls(transformation);
-	for(auto w: walls) {
+	for(auto &w: walls) {
 		world.addEntity(w);
 	}
 }
@@ -47,10 +45,9 @@ void Arkanoid::run() {
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
 	while(windowSFML.isOpen()) {
-		windowSFML.clear();
 
-		sf::Time dt = clock.restart();
-		timeSinceLastUpdate += dt;
+		sf::Time deltaTime = clock.restart();
+		timeSinceLastUpdate += deltaTime;
 
 		while(timeSinceLastUpdate > TIME_PER_FRAME) {
 			processInput();
@@ -66,14 +63,6 @@ void Arkanoid::processInput() {
 	sf::Event event;
 	while(windowSFML.pollEvent(event)) {
 
-		// if(event.type == sf::Event::KeyPressed) {
-		// 	if(event.key.code == sf::Keyboard::Left) {
-		// 		world.player->move(-35.0, 0);
-		// 	} else if(event.key.code == sf::Keyboard::Right) {
-		// 		world.player->move(35.0, 0);
-		// 	}
-		// }
-
 		if(event.type == sf::Event::Closed) {
 			windowSFML.close();
 		}
@@ -81,6 +70,7 @@ void Arkanoid::processInput() {
 }
 
 void Arkanoid::render() {
-	// world.update();
+	windowSFML.clear();
+	world.draw();
 	windowSFML.display();
 }

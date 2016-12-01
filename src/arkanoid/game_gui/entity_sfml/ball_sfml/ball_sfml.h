@@ -49,6 +49,10 @@ namespace arkanoidSFML {
 		*/
 		void update();
 
+		/**
+		* Draws the BallSFML in the game window.
+		*/
+		void draw() const;
 	};
 
 }

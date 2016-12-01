@@ -28,7 +28,10 @@ namespace arkanoidSFML {
 		// Move the ball
 		sprite.move(velocity.x, velocity.y);
 
-		windowSFML.draw(sprite);
+		// windowSFML.draw(sprite);
 	}
 
+	void BallSFML::draw() const {
+		windowSFML.draw(sprite);
+	}
 }

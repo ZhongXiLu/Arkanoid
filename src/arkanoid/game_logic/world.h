@@ -21,8 +21,6 @@ namespace arkanoid {
 		vector<arkanoid::Entity*> entities;		///< List of all Entity in the World.
 
 	public:
-		Player* player;		///< The Player in the game.
-
 		/**
 		* Default Constructor.
 		*/
@@ -37,6 +35,11 @@ namespace arkanoid {
 		* Updates all Entity in the World.
 		*/
 		void update();
+
+		/**
+		* Draws all Entity in the World.
+		*/
+		void draw() const;
 
 		/**
 		* Adds an Entity to the World.

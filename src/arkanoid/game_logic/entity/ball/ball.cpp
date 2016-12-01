@@ -15,7 +15,11 @@ namespace arkanoid {
 	Ball::~Ball() {}
 
 	void Ball::update() {
-		position = position + velocity;
+		// ...
+	}
+
+	void Ball::draw() const {
+		// ...
 	}
 
 }
