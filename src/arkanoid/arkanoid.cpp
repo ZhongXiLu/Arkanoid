@@ -14,9 +14,8 @@ const sf::Time TIME_PER_FRAME = sf::seconds(1.0/60.0);
 
 // MIGHT CHANGE IT LATER --> READ FROM CONFIG FILE
 Arkanoid::Arkanoid() : 
-grid(make_shared<Game::Grid>(9.0, 7.0)),
 windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid"),
-transformation(make_shared<arkanoidSFML::Transformation>(grid->width, grid->height, windowSFML.getSize().x, windowSFML.getSize().y)) {
+transformation(make_shared<arkanoidSFML::Transformation>(9, 7, windowSFML.getSize().x, windowSFML.getSize().y)) {
 
 	render();
 	windowSFML.setFramerateLimit(60);

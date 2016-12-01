@@ -9,7 +9,6 @@ FIND_PACKAGE(SFML 2 COMPONENTS system window graphics)
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 
 SET(SRC 
-	arkanoid/game_logic/grid/grid.cpp
 	arkanoid/game_logic/entity/entity.cpp
 	arkanoid/game_logic/entity/player/player.cpp
 	arkanoid/game_logic/entity/ball/ball.cpp
@@ -30,7 +29,6 @@ SET(SRC
 )
 
 ADD_LIBRARY(game_logic STATIC
-	arkanoid/game_logic/grid/grid.cpp
 	arkanoid/game_logic/entity/entity.cpp
 	arkanoid/game_logic/entity/player/player.cpp
 	arkanoid/game_logic/entity/ball/ball.cpp

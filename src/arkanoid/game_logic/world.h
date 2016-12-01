@@ -3,7 +3,6 @@
 
 #include "entity/entity.h"
 #include "entity/player/player.h"
-// #include "grid/grid.h"
 // #include "../game_gui/math/transformation.h"
 
 #include <iostream>
