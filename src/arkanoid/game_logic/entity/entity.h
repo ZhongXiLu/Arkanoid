@@ -91,7 +91,7 @@ namespace arkanoid {
 		*
 		* @return	True if intersecting, otherwise false.
 		*/
-		bool intersectsWith(unique_ptr<Entity> const &other) const;
+		bool collidesWith(unique_ptr<Entity> const &other) const;
 
 	};
 	

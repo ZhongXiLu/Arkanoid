@@ -18,8 +18,8 @@ namespace arkanoid {
 		// And check for collision
 		for(auto &e: entities) {
 			e->update();
-			if(ball->intersectsWith(e)) {
-				// cout << "intersecting" << endl;
+			if(ball->collidesWith(e)) {
+				cout << "collision!" << endl;
 			}
 		}
 		ball->update();
