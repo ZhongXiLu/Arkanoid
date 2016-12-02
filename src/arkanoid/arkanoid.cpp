@@ -14,8 +14,10 @@ const sf::Time TIME_PER_FRAME = sf::seconds(1.0/60.0);
 
 // MIGHT CHANGE IT LATER --> READ FROM CONFIG FILE
 Arkanoid::Arkanoid() : 
-windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid"),
-transformation(make_shared<arkanoidSFML::Transformation>(9, 7, windowSFML.getSize().x, windowSFML.getSize().y)) {
+windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid") {
+
+	// Create singleton Transformation?
+	transformation = make_shared<arkanoidSFML::Transformation>(9, 7, windowSFML.getSize().x, windowSFML.getSize().y);
 
 	render();
 	windowSFML.setFramerateLimit(60);

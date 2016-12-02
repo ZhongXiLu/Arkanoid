@@ -28,8 +28,8 @@ namespace arkanoid {
 		*
 		* Initialise the Wall at a specific position in the World.
 		*
-		* @param x 	The x position (in the grid) of the Wall.
-		* @param y 	The y position (in the grid) of the Wall.
+		* @param x		The x position (in the grid) of the Wall.
+		* @param y		The y position (in the grid) of the Wall.
 		*/
 		Wall(double x, double y);
 

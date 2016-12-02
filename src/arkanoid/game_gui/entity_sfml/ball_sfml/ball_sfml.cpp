@@ -9,7 +9,7 @@ using namespace std;
 namespace arkanoidSFML {
 
 	BallSFML::BallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed, const string &textureFile) :
-	windowSFML(window), transformation(transform), Ball(x, y, speed) {
+	windowSFML(window), transformation(transform), Ball(transform->convertX(x), transform->convertY(y), speed) {
 
 		if(!texture.loadFromFile(textureFile)) {
 			throw runtime_error("Couldn't load texture image.");
@@ -19,7 +19,8 @@ namespace arkanoidSFML {
 
 		// On top of the Player
 		// TBI: remove magic numbers?
-		sprite.setPosition((windowSFML.getSize().x/2)-50, windowSFML.getSize().y-120);
+		sprite.setPosition(x, y);
+		// sprite.setPosition((windowSFML.getSize().x/2)-50, windowSFML.getSize().y-120);
 	}
 
 	BallSFML::~BallSFML() {}

@@ -25,17 +25,21 @@ namespace arkanoid {
 		Entity();
 
 		/**
-		* Constructor
+		* Constructor.
 		*
 		* Initialise the Entity at a specific position in the World.
 		*
-		* @param x 	The x position of the Entity.
-		* @param y 	The y position of the Entity.
+		* @param x			The x position of the Entity.
+		* @param y			The y position of the Entity.
+		@ @param newSize	The size (width and height respectively) of the Entity.
 		*/
-		Entity(double x, double y);
+		Entity(double x, double y, pair<double, double> newSize = make_pair(1, 1));
+		// ###
+		// ### ^ REMOVE DEFAULT ARGUMENT
+		// ###
 
 		/**
-		* Destructor
+		* Destructor.
 		*/
 		virtual ~Entity() {}
 

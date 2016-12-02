@@ -8,13 +8,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	// WallSFML::WallSFML() {
-	// 	sprite.setOrigin(50, 0);
-	// 	sprite.setPosition(0, 0);
-	// 	transformation = nullptr;
-	// }
-
-	WallSFML::WallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, const string &textureFile) : windowSFML(window), transformation(transform), Wall(x, y) {
+	WallSFML::WallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, const string &textureFile) : windowSFML(window), transformation(transform), Wall(transform->convertX(x), transform->convertY(y)) {
 
 		if(!texture.loadFromFile(textureFile)) {
 			throw runtime_error("Couldn't load texture image.");
@@ -22,7 +16,8 @@ namespace arkanoidSFML {
 		sprite.setTexture(texture);
 		
 		// sprite.scale(3, 3);
-		sprite.setPosition(x*100.0, y*100.0);		// TBI: Transformation: make other conversion (double scale)
+		sprite.setPosition(x, y);
+		// sprite.setPosition(x*100.0, y*100.0);
 	}
 
 	WallSFML::~WallSFML() {}

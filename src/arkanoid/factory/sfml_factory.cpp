@@ -16,7 +16,7 @@ SFMLFactory::SFMLFactory(sf::RenderWindow &window, shared_ptr<arkanoidSFML::Tran
 // TBI: read data from file?
 
 arkanoid::Player* SFMLFactory::createPlayer() {
-	arkanoidSFML::PlayerSFML* player = new arkanoidSFML::PlayerSFML(4, 1, windowSFML, transform);
+	arkanoidSFML::PlayerSFML* player = new arkanoidSFML::PlayerSFML(400.0, 600.0, windowSFML, transform);
 	return player;
 }
 
@@ -24,18 +24,18 @@ vector<arkanoid::Wall*> SFMLFactory::createWalls() {
 
 	vector<arkanoid::Wall*> walls;
 
-	for(double w = 0.0; w < 27.0; w++) {
+	for(double w = 0.0; w < 700.0; w += 30.0) {
 		{
-			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0.0, w/3, windowSFML, transform);
+			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(0.0, w, windowSFML, transform);
 			walls.push_back(wall);
 		}
 		{
-			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(8.666, w/3, windowSFML, transform);
+			arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(866.0, w, windowSFML, transform);
 			walls.push_back(wall);
 		}
 	}
-	for(double w = 1; w < 27.0; w++) {
-		arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(w/3, 0.0, windowSFML, transform);
+	for(double w = 0.0; w < 900.0; w += 30) {
+		arkanoidSFML::WallSFML* wall = new arkanoidSFML::WallSFML(w, 0.0, windowSFML, transform);
 		walls.push_back(wall);
 	}
 
@@ -43,6 +43,6 @@ vector<arkanoid::Wall*> SFMLFactory::createWalls() {
 }
 
 arkanoid::Ball* SFMLFactory::createBall() {
-	arkanoidSFML::BallSFML* ball = new arkanoidSFML::BallSFML(4, 4, windowSFML, transform);
+	arkanoidSFML::BallSFML* ball = new arkanoidSFML::BallSFML(400.00, 580.0, windowSFML, transform);
 	return ball;
 }

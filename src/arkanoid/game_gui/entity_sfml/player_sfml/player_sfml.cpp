@@ -9,7 +9,7 @@ using namespace std;
 namespace arkanoidSFML {
 
 	PlayerSFML::PlayerSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed, const string &textureFile) :
-	windowSFML(window), transformation(transform), Player(x, y, speed) {
+	windowSFML(window), transformation(transform), Player(transform->convertX(x), transform->convertY(y), speed) {
 
 		if(!texture.loadFromFile(textureFile)) {
 			throw runtime_error("Couldn't load texture image.");
@@ -17,7 +17,8 @@ namespace arkanoidSFML {
 		sprite.setTexture(texture);
 		
 		// Center of screen
-		sprite.setPosition((windowSFML.getSize().x/2)-66, windowSFML.getSize().y-100);
+		sprite.setPosition(x, y);
+		// sprite.setPosition((windowSFML.getSize().x/2)-66, windowSFML.getSize().y-100);
 	}
 
 	PlayerSFML::~PlayerSFML() {}
@@ -35,7 +36,7 @@ namespace arkanoidSFML {
 		}
 
 		sprite.move(velocity.x, velocity.y);
-		Player::setPosition(std::move(transformation->toGrid(sprite.getPosition())));
+		Player::setPosition(std::move(transformation->convertVector(sprite.getPosition())));
 		// windowSFML.draw(sprite);
 	}
 
