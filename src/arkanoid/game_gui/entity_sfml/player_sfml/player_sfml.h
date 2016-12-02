@@ -30,8 +30,8 @@ namespace arkanoidSFML {
 		* Creates a PlayerSFML sprite in the World at a specific position in the game window.
 		* Also applies the texture to this PlayerSFML.
 		*
-		* @param x				The x (in the grid) position of the Player.
-		* @param y				The y (in the grid) position of the Player.
+		* @param x				The x (on screen) position of the Player.
+		* @param y				The y (on screen) position of the Player.
 		* @param window			The SFML window.
 		* @param transform		The Transformation object thats needed to convert coordinates to screen pixels.
 		* @param speed			(optional) The speed of the Player.

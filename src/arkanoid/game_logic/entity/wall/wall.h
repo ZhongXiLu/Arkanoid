@@ -30,8 +30,9 @@ namespace arkanoid {
 		*
 		* @param x		The x position (in the grid) of the Wall.
 		* @param y		The y position (in the grid) of the Wall.
+		* @param size	(optional) The size (width and height respectively) of the Wall.
 		*/
-		Wall(double x, double y);
+		Wall(double x, double y, pair<double, double> size = make_pair(1, 1));
 
 		/**
 		* Destructor.

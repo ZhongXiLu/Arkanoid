@@ -34,8 +34,9 @@ namespace arkanoid {
 		* @param x			The x position (in the grid) of the Player.
 		* @param y			The y position (in the grid) of the Player.
 		* @param newSpeed	(optional) The speed of the Player.
+		* @param size		(optional) The size (width and height respectively) of the Player.
 		*/
-		Player(double x, double y, double newSpeed = 10.0);
+		Player(double x, double y, double newSpeed = 10.0, pair<double, double> size = make_pair(2.0, 1.0));
 
 		/**
 		* Destructor.

@@ -26,4 +26,11 @@ namespace arkanoid {
 		position = vector;
 	}
 
+	void Entity::setSize(pair<double, double> newSize) {
+		size = newSize;
+	}
+
+	pair<double, double> Entity::getSize() const {
+		return size;
+	}
 }

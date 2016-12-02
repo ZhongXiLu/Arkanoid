@@ -31,12 +31,9 @@ namespace arkanoid {
 		*
 		* @param x			The x position of the Entity.
 		* @param y			The y position of the Entity.
-		@ @param newSize	The size (width and height respectively) of the Entity.
+		* @param newSize	(optional) The size (width and height respectively) of the Entity.
 		*/
-		Entity(double x, double y, pair<double, double> newSize = make_pair(1, 1));
-		// ###
-		// ### ^ REMOVE DEFAULT ARGUMENT
-		// ###
+		Entity(double x, double y, pair<double, double> newSize = make_pair(1.0, 1.0));
 
 		/**
 		* Destructor.
@@ -74,6 +71,20 @@ namespace arkanoid {
 		* @param vector		The vector who this Entity will be equal to.
 		*/
 		void setPosition(const Vector2D &vector);
+
+		/**
+		* Set the size of the Entity.
+		*
+		* @param newSize	The new size of the Entity.
+		*/
+		void setSize(pair<double, double> newSize);
+
+		/**
+		* Get the size of the Entity.
+		*
+		* @return	The size of the Entity.
+		*/
+		pair<double, double> getSize() const;
 
 	};
 	

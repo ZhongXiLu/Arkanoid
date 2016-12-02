@@ -8,9 +8,9 @@ using namespace std;
 
 namespace arkanoid {
 
-	Wall::Wall() : Entity(0.0, 0.0) {}
+	Wall::Wall() {}
 
-	Wall::Wall(double x, double y) : Entity(x, y) {}
+	Wall::Wall(double x, double y, pair<double, double> size) : Entity(x, y, size) {}
 
 	Wall::~Wall() {}
 

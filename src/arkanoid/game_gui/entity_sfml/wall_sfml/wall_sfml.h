@@ -31,8 +31,8 @@ namespace arkanoidSFML {
 		* Creates a WallSFML sprite in the World at a specific position in the game window.
 		* Also applies the texture to this WallSFML.
 		*
-		* @param x				The x (in the grid) position of the Wall.
-		* @param y				The y (in the grid) position of the Wall.
+		* @param x				The x (on screen) position of the Wall.
+		* @param y				The y (on screen) position of the Wall.
 		* @param transform 		The Transformation object thats needed to convert coordinates to screen pixels.
 		* @param textureFile 	(optional) The file that contains the texture of the WallSFML.
 		*/

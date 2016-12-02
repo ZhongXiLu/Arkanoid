@@ -8,9 +8,9 @@ using namespace std;
 
 namespace arkanoid {
 
-	Player::Player() : Entity(0.0, 0.0) {}
+	Player::Player() {}
 
-	Player::Player(double x, double y, double newSpeed) : velocity(newSpeed, 0), speed(newSpeed), Entity(x, y) {}
+	Player::Player(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, 0), speed(newSpeed), Entity(x, y, size) {}
 
 	Player::~Player() {}
 
