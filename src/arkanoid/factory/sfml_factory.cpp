@@ -11,16 +11,16 @@
 
 using namespace std;
 
-SFMLFactory::SFMLFactory(sf::RenderWindow &window) : windowSFML(window) {}
+SFMLFactory::SFMLFactory(sf::RenderWindow &window, shared_ptr<arkanoidSFML::Transformation> transformation) : windowSFML(window), transform(transformation) {}
 
 // TBI: read data from file?
 
-arkanoid::Player* SFMLFactory::createPlayer(shared_ptr<arkanoidSFML::Transformation> transform) {
+arkanoid::Player* SFMLFactory::createPlayer() {
 	arkanoidSFML::PlayerSFML* player = new arkanoidSFML::PlayerSFML(4, 1, windowSFML, transform);
 	return player;
 }
 
-vector<arkanoid::Wall*> SFMLFactory::createWalls(shared_ptr<arkanoidSFML::Transformation> transform) {
+vector<arkanoid::Wall*> SFMLFactory::createWalls() {
 
 	vector<arkanoid::Wall*> walls;
 
@@ -42,7 +42,7 @@ vector<arkanoid::Wall*> SFMLFactory::createWalls(shared_ptr<arkanoidSFML::Transf
 	return walls;
 }
 
-arkanoid::Ball* SFMLFactory::createBall(shared_ptr<arkanoidSFML::Transformation> transform) {
+arkanoid::Ball* SFMLFactory::createBall() {
 	arkanoidSFML::BallSFML* ball = new arkanoidSFML::BallSFML(4, 4, windowSFML, transform);
 	return ball;
 }

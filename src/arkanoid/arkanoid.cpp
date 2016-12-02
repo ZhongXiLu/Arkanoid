@@ -22,16 +22,16 @@ transformation(make_shared<arkanoidSFML::Transformation>(9, 7, windowSFML.getSiz
 }
 
 void Arkanoid::initialise() {
-	SFMLFactory factory(windowSFML);
+	SFMLFactory factory(windowSFML, transformation);
 
 	// Create Player
-	world.addEntity(factory.createPlayer(transformation));
+	world.addEntity(factory.createPlayer());
 
 	// Create Ball
-	world.addEntity(factory.createBall(transformation));
+	world.addEntity(factory.createBall());
 
 	// Create Walls
-	vector<arkanoid::Wall*> walls = factory.createWalls(transformation);
+	vector<arkanoid::Wall*> walls = factory.createWalls();
 	for(auto &w: walls) {
 		world.addEntity(w);
 	}

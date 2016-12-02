@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <vector>
-#include <memory>
 
 using namespace std;
 
@@ -19,18 +18,18 @@ public:
 	/**
 	* Creates a Player.
 	*/
-	virtual arkanoid::Player* createPlayer(shared_ptr<arkanoidSFML::Transformation> transform) = 0;
+	virtual arkanoid::Player* createPlayer() = 0;
 
 	/**
 	* Create a Wall.
 	*/
-	virtual vector<arkanoid::Wall*> createWalls(shared_ptr<arkanoidSFML::Transformation> transform) = 0;
+	virtual vector<arkanoid::Wall*> createWalls() = 0;
 
 
 	/**
 	* Create a Ball.
 	*/
-	virtual arkanoid::Ball* createBall(shared_ptr<arkanoidSFML::Transformation> transform) = 0;
+	virtual arkanoid::Ball* createBall() = 0;
 
 };
 

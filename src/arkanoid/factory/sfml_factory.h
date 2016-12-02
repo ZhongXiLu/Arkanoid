@@ -17,31 +17,34 @@ using namespace std;
 /// Abstract Factory: Creates EntitySFML.
 class SFMLFactory : public EntityFactory {
 private:
-	sf::RenderWindow &windowSFML;	///< Needed to create Entity.
+	// Needed to create Entity.
+	sf::RenderWindow &windowSFML;
+	shared_ptr<arkanoidSFML::Transformation> transform;
 
 public:
 
 	/**
 	* Constructor.
 	*
-	* @param window		The SFML window.
+	* @param window				The SFML window.
+	* @param transformation		Transformation object for translations between coordinates and pixels.
 	*/
-	SFMLFactory(sf::RenderWindow &window);
+	SFMLFactory(sf::RenderWindow &window, shared_ptr<arkanoidSFML::Transformation> transformation);
 
 	/**
 	* Creates a PlayerSFML.
 	*/
-	arkanoid::Player* createPlayer(shared_ptr<arkanoidSFML::Transformation> transform);
+	arkanoid::Player* createPlayer();
 
 	/**
 	* Create a WallSMFL.
 	*/
-	vector<arkanoid::Wall*> createWalls(shared_ptr<arkanoidSFML::Transformation> transform);
+	vector<arkanoid::Wall*> createWalls();
 
 	/**
 	* Creates a BallSFML.
 	*/
-	arkanoid::Ball* createBall(shared_ptr<arkanoidSFML::Transformation> transform);
+	arkanoid::Ball* createBall();
 };
 
 #endif /* SFML_FACTORY_H */
