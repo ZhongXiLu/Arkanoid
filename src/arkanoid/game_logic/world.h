@@ -2,8 +2,7 @@
 #define WORLD_H
 
 #include "entity/entity.h"
-#include "entity/player/player.h"
-// #include "../game_gui/math/transformation.h"
+#include "entity/ball/ball.h"
 
 #include <iostream>
 #include <vector>
@@ -17,7 +16,11 @@ namespace arkanoid {
 	/// The World of the Arkanoid game that contains all Entity objects.
 	class World : public Entity {
 	private:
-		vector<arkanoid::Entity*> entities;		///< List of all Entity in the World.
+		///< List of all Entity in the World.
+		vector<unique_ptr<arkanoid::Entity>> entities;
+
+		///< Need to keep track of the Ball for collision detection.
+		unique_ptr<arkanoid::Ball> ball;
 
 	public:
 		/**
@@ -43,9 +46,16 @@ namespace arkanoid {
 		/**
 		* Adds an Entity to the World.
 		*
-		* @param entity		The Entity that will be added.
+		* @param entity		The Entity that will be added to the World.
 		*/
-		void addEntity(arkanoid::Entity* entity);
+		void addEntity(unique_ptr<arkanoid::Entity> entity);
+
+		/**
+		* Set the Ball of the World.
+		*
+		* @param newBall	The new Ball of the World.
+		*/
+		void setBall(unique_ptr<arkanoid::Ball> newBall);
 
 	};
 

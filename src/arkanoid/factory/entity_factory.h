@@ -7,6 +7,7 @@
 #include "../game_gui/math/transformation.h"
 
 #include <iostream>
+#include <memory>
 #include <vector>
 
 using namespace std;
@@ -18,18 +19,18 @@ public:
 	/**
 	* Creates a Player.
 	*/
-	virtual arkanoid::Player* createPlayer() = 0;
+	virtual unique_ptr<arkanoid::Player> createPlayer() = 0;
 
 	/**
 	* Create a Wall.
 	*/
-	virtual vector<arkanoid::Wall*> createWalls() = 0;
+	virtual vector<unique_ptr<arkanoid::Wall>> createWalls() = 0;
 
 
 	/**
 	* Create a Ball.
 	*/
-	virtual arkanoid::Ball* createBall() = 0;
+	virtual unique_ptr<arkanoid::Ball> createBall() = 0;
 
 };
 

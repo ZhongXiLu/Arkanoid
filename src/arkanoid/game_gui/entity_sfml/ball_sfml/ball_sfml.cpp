@@ -19,6 +19,7 @@ namespace arkanoidSFML {
 
 		// Set position
 		sprite.setPosition(x, y);
+		setPosition(std::move(transformation->convertVector(sprite.getPosition())));
 
 		// Set size (width and height) of PlayerSFML
 		sf::FloatRect rect = sprite.getLocalBounds();
@@ -30,8 +31,7 @@ namespace arkanoidSFML {
 	void BallSFML::update() {
 		// Move the ball
 		sprite.move(velocity.x, velocity.y);
-
-		// windowSFML.draw(sprite);
+		setPosition(std::move(transformation->convertVector(sprite.getPosition())));
 	}
 
 	void BallSFML::draw() const {

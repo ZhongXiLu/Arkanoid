@@ -19,7 +19,6 @@ windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid") {
 	// Create singleton Transformation?
 	transformation = make_shared<arkanoidSFML::Transformation>(9, 7, windowSFML.getSize().x, windowSFML.getSize().y);
 
-	render();
 	windowSFML.setFramerateLimit(60);
 }
 
@@ -27,15 +26,15 @@ void Arkanoid::initialise() {
 	SFMLFactory factory(windowSFML, transformation);
 
 	// Create Player
-	world.addEntity(factory.createPlayer());
+	world.addEntity(std::move(factory.createPlayer()));
 
 	// Create Ball
-	world.addEntity(factory.createBall());
+	world.setBall(std::move(factory.createBall()));
 
 	// Create Walls
-	vector<arkanoid::Wall*> walls = factory.createWalls();
+	vector<unique_ptr<arkanoid::Wall>> walls = std::move(factory.createWalls());
 	for(auto &w: walls) {
-		world.addEntity(w);
+		world.addEntity(std::move(w));
 	}
 }
 

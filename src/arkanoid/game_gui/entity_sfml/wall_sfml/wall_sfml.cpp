@@ -18,6 +18,7 @@ namespace arkanoidSFML {
 		
 		// Set position
 		sprite.setPosition(x, y);
+		setPosition(std::move(transformation->convertVector(sprite.getPosition())));
 
 		// Set size (width and height) of WallSFML
 		sf::FloatRect rect = sprite.getLocalBounds();

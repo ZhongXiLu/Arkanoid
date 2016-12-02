@@ -34,17 +34,17 @@ public:
 	/**
 	* Creates a PlayerSFML.
 	*/
-	arkanoid::Player* createPlayer();
+	unique_ptr<arkanoid::Player> createPlayer();
 
 	/**
 	* Create a WallSMFL.
 	*/
-	vector<arkanoid::Wall*> createWalls();
+	vector<unique_ptr<arkanoid::Wall>> createWalls();
 
 	/**
 	* Creates a BallSFML.
 	*/
-	arkanoid::Ball* createBall();
+	unique_ptr<arkanoid::Ball> createBall();
 };
 
 #endif /* SFML_FACTORY_H */

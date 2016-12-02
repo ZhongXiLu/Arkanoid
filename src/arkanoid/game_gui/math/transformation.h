@@ -16,8 +16,6 @@ namespace arkanoidSFML {
 		double widthScale;
 		double heightScale;
 
-		double maxWindowHeight;
-
 	public:
 		/**
 		* Default Constructor.

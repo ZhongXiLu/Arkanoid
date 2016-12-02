@@ -86,6 +86,13 @@ namespace arkanoid {
 		*/
 		pair<double, double> getSize() const;
 
+		/**
+		* Checks if this Entity is intersecting with another Entity.
+		*
+		* @return	True if intersecting, otherwise false.
+		*/
+		bool intersectsWith(unique_ptr<Entity> const &other) const;
+
 	};
 	
 }
