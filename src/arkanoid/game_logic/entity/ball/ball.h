@@ -17,6 +17,7 @@ namespace arkanoid {
 		Vector2D velocity;
 
 	public:
+		// bool isBouncing;		///< Check if ball is currently in bounce procedure (prevent multiple bounces at once).
 
 		/**
 		* Default Constructor.
@@ -51,6 +52,13 @@ namespace arkanoid {
 		* Do nothing...
 		*/
 		void draw() const ;
+
+		/**
+		* In case of a collision, rotate the Ball 's direction by around 90° to the right angle.
+		*
+		* @param other	The Entity on which the Ball is collided (needed to decide to correct angle).
+		*/
+		void bounce(unique_ptr<Entity> const &other);
 
 	};
 

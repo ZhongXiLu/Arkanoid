@@ -14,16 +14,19 @@ namespace arkanoid {
 	World::~World() {}
 
 	void World::update() {
+		
 		// Update all Entities + Balls
 		// And check for collision
+				ball->update();
+
+		bool ballHasCollided = false;		// Prevent multiple bounces in one frame
 		for(auto &e: entities) {
 			e->update();
-			if(ball->collidesWith(e)) {
-				cout << "collision!" << endl;
+			if(!ballHasCollided && ball->collidesWith(e)) {
+				ball->bounce(e);
+				ballHasCollided = true;
 			}
 		}
-		ball->update();
-
 	}
 
 	void World::draw() const {
