@@ -4,6 +4,7 @@
 #include "../math/vector2D.h"
 
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
