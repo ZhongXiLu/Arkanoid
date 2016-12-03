@@ -37,7 +37,7 @@ namespace arkanoidSFML {
 		* @param speed			(optional) The speed of the Player.
 		* @param textureFile	(optional) The file that contains the texture of the PlayerSFML.
 		*/
-		PlayerSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed = 10.0, const string &textureFile = "sprites/player/player.png");
+		PlayerSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed = 10.0, const string &textureFile = "data/sprites/player/player.png");
 
 		/**
 		* Destructor.

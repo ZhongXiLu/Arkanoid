@@ -37,7 +37,7 @@ namespace arkanoidSFML {
 		* @param speed			(optional) The speed of the Ball.
 		* @param textureFile	(optional) The file that contains the texture of the BallSFML.
 		*/
-		BallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed = 8.0, const string &textureFile = "sprites/ball/ball.png");
+		BallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed = 8.0, const string &textureFile = "data/sprites/ball/ball.png");
 
 		/**
 		* Destructor.

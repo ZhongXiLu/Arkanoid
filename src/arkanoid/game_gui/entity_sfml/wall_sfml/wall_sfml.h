@@ -36,7 +36,7 @@ namespace arkanoidSFML {
 		* @param transform 		The Transformation object thats needed to convert coordinates to screen pixels.
 		* @param textureFile 	(optional) The file that contains the texture of the WallSFML.
 		*/
-		WallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, const string &textureFile = "sprites/wall/wall.png");
+		WallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, const string &textureFile = "data/sprites/wall/wall.png");
 
 		/**
 		* Destructor.

@@ -17,8 +17,7 @@ namespace arkanoid {
 		
 		// Update all Entities + Balls
 		// And check for collision
-				ball->update();
-
+		ball->update();
 		bool ballHasCollided = false;		// Prevent multiple bounces in one frame
 		for(auto &e: entities) {
 			e->update();

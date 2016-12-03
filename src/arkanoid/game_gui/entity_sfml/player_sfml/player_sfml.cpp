@@ -23,7 +23,7 @@ namespace arkanoidSFML {
 
 		// Set size (width and height) of PlayerSFML
 		sf::FloatRect rect = sprite.getLocalBounds();
-		setSize(make_pair(transform->convertX(rect.width), transform->convertX(rect.height)));
+		setSize(make_pair(transform->convertX(rect.width), transform->convertY(rect.height)));
 	}
 
 	PlayerSFML::~PlayerSFML() {}
