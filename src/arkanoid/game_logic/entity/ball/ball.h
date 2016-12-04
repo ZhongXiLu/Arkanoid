@@ -6,6 +6,7 @@
 #include "../../math/vector2D.h"
 
 #include <iostream>
+#include <memory>
 #include <vector>
 
 using namespace std;

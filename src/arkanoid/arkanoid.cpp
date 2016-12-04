@@ -22,7 +22,7 @@ windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid") {
 	windowSFML.setFramerateLimit(60);
 
 	// Create background
-	if(!texture.loadFromFile("data/sprites/background/background.jpg")) {
+	if(!texture.loadFromFile("data/sprites/background/background.png")) {
 		throw runtime_error("Couldn't load background texture image: data/sprites/background/background.jpg");
 	}
 	texture.setSmooth(true);
