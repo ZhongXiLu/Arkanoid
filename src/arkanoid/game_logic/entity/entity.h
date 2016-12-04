@@ -4,7 +4,6 @@
 #include "../math/vector2D.h"
 
 #include <iostream>
-#include <memory>
 
 using namespace std;
 
@@ -92,7 +91,7 @@ namespace arkanoid {
 		*
 		* @return	True if intersecting, otherwise false.
 		*/
-		bool collidesWith(unique_ptr<Entity> const &other) const;
+		bool collidesWith(const Entity &other) const;
 
 	};
 	

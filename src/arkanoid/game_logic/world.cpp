@@ -16,12 +16,20 @@ namespace arkanoid {
 	void World::update() {
 		
 		// Update Ball + Check if there are collisions on the Ball
-		ball->update();
 		ball->bounce(entities);
+		ball->bounce(player);		// TBI: player bounce algorithm
 
 		// Update all Entities
 		for(int i = 0; i < entities.size(); i++) {
 			entities[i]->update();
+		}
+		ball->update();
+		player->update();
+
+		// Check if Ball has been missed
+		if(ball->getPosition().y > 7) {
+			player->reset();
+			ball->reset();
 		}
 
 	}
@@ -31,6 +39,7 @@ namespace arkanoid {
 			e->draw();
 		}
 		ball->draw();
+		player->draw();
 	}
 
 	void World::addEntity(unique_ptr<arkanoid::Entity> entity) {
@@ -39,6 +48,10 @@ namespace arkanoid {
 
 	void World::setBall(unique_ptr<arkanoid::Ball> newBall) {
 		ball = std::move(newBall);
+	}
+
+	void World::setPlayer(unique_ptr<arkanoid::Player> newPlayer) {
+		player = std::move(newPlayer);
 	}
 
 }

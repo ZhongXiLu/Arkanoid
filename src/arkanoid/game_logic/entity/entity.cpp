@@ -34,16 +34,16 @@ namespace arkanoid {
 		return size;
 	}
 
-	bool Entity::collidesWith(unique_ptr<Entity> const &other) const {
+	bool Entity::collidesWith(const Entity &other) const {
 
 		if(
 			// Check if left/right is in other's surface
-			position.x < other->getPosition().x + other->getSize().first
-			&& position.x + size.first > other->getPosition().x
+			position.x < other.getPosition().x + other.getSize().first
+			&& position.x + size.first > other.getPosition().x
 			
 			// Check if top/bottom is in other's surface
-			&& position.y < other->getPosition().y + other->getSize().second
-			&& position.y + size.second > other->getPosition().y
+			&& position.y < other.getPosition().y + other.getSize().second
+			&& position.y + size.second > other.getPosition().y
 		) {
 			return true;
 		}

@@ -14,11 +14,8 @@ namespace arkanoid {
 
 	Block::~Block() {}
 
-	void Block::update() {
-		// ...
-	}
+	void Block::update() {}
 
-	void Block::draw() const {
-		// ...
-	}
+	void Block::draw() const {}
+	
 }

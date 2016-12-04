@@ -16,6 +16,7 @@ namespace arkanoid {
 	protected:
 		Vector2D velocity;
 		double speed;
+		Vector2D origin;	///< The initial position of the Player.
 
 	public:
 
@@ -52,6 +53,12 @@ namespace arkanoid {
 		* Do nothing...
 		*/
 		void draw() const;
+
+		/**
+		* Reset the position of the Player to the one of the starting position.
+		* (-> call this method when the Player missed the Ball).
+		*/
+		virtual void reset();
 	};
 
 }

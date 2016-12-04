@@ -14,11 +14,8 @@ namespace arkanoid {
 
 	Wall::~Wall() {}
 
-	void Wall::update() {
-		// ...
-	}
+	void Wall::update() {}
 
-	void Wall::draw() const {
-		// ...
-	}
+	void Wall::draw() const {}
+	
 }

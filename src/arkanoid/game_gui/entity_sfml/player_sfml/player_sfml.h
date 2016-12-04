@@ -16,6 +16,8 @@ namespace arkanoidSFML {
 	/// The SFML element that represents the Player in the game.
 	class PlayerSFML : public arkanoid::Player {
 	private:
+		arkanoid::Vector2D screenOrigin;	///< The initial position of the PlayerSFML.
+
 		sf::RenderWindow &windowSFML;
 
 		sf::Sprite sprite;	///< The sprite of the PlayerSFML.
@@ -53,6 +55,13 @@ namespace arkanoidSFML {
 		* Draws the PlayerSFML in the game window.
 		*/
 		void draw() const;
+
+
+		/**
+		* Reset the position of the Player to the one of the starting position.
+		* (-> call this method when the Player missed the Ball).
+		*/
+		void reset();
 	};
 
 }

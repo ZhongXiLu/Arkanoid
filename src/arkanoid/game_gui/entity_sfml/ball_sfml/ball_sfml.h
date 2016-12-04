@@ -16,6 +16,8 @@ namespace arkanoidSFML {
 	/// The SFML element that represents the Ball in the game.
 	class BallSFML : public arkanoid::Ball {
 	private:
+		arkanoid::Vector2D screenOrigin;	///< The initial position of the BallSFML.
+
 		sf::RenderWindow &windowSFML;
 
 		sf::Sprite sprite;	///< The sprite of the BallSFML.
@@ -45,7 +47,7 @@ namespace arkanoidSFML {
 		~BallSFML();
 
 		/**
-		* Moves the BallSFML one frame further.
+		* Updates the BallSFML position.
 		*/
 		void update();
 
@@ -53,6 +55,12 @@ namespace arkanoidSFML {
 		* Draws the BallSFML in the game window.
 		*/
 		void draw() const;
+
+		/**
+		* Reset the position and direction of the Ball to the one of the starting position.
+		* (-> call this method when the Player missed the Ball).
+		*/
+		void reset();
 	};
 
 }

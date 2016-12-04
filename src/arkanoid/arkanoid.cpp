@@ -35,7 +35,7 @@ void Arkanoid::initialise() {
 	SFMLFactory factory(windowSFML, transformation);
 
 	// Create Player
-	world.addEntity(std::move(factory.createPlayer()));
+	world.setPlayer(std::move(factory.createPlayer()));
 
 	// Create Ball
 	world.setBall(std::move(factory.createBall()));

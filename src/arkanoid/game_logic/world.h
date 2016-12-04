@@ -3,6 +3,7 @@
 
 #include "entity/entity.h"
 #include "entity/ball/ball.h"
+#include "entity/player/player.h"
 
 #include <iostream>
 #include <vector>
@@ -16,11 +17,9 @@ namespace arkanoid {
 	/// The World of the Arkanoid game that contains all Entity objects.
 	class World : public Entity {
 	private:
-		///< List of all Entity in the World.
-		vector<unique_ptr<arkanoid::Entity>> entities;
-
-		///< Need to keep track of the Ball for collision detection.
 		unique_ptr<arkanoid::Ball> ball;
+		unique_ptr<arkanoid::Player> player;
+		vector<unique_ptr<arkanoid::Entity>> entities;
 
 	public:
 		/**
@@ -56,6 +55,13 @@ namespace arkanoid {
 		* @param newBall	The new Ball of the World.
 		*/
 		void setBall(unique_ptr<arkanoid::Ball> newBall);
+
+		/**
+		* Set the Player of the World.
+		*
+		* @param newPlayer	The new Player of the World.
+		*/
+		void setPlayer(unique_ptr<arkanoid::Player> newPlayer);
 
 	};
 

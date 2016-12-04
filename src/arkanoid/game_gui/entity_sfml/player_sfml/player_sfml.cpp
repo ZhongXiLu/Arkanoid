@@ -9,7 +9,7 @@ using namespace std;
 namespace arkanoidSFML {
 
 	PlayerSFML::PlayerSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed, const string &textureFile) :
-	windowSFML(window), transformation(transform), Player(transform->convertX(x), transform->convertY(y), speed) {
+	screenOrigin(x, y), windowSFML(window), transformation(transform), Player(transform->convertX(x), transform->convertY(y), speed) {
 
 		// Set texture
 		if(!texture.loadFromFile(textureFile)) {
@@ -47,5 +47,10 @@ namespace arkanoidSFML {
 
 	void PlayerSFML::draw() const {
 		windowSFML.draw(sprite);
+	}
+
+	void PlayerSFML::reset() {
+		sprite.setPosition(screenOrigin.x, screenOrigin.y);
+		Player::reset();
 	}
 }
