@@ -12,7 +12,7 @@ namespace arkanoidSFML {
 
 		// Set texture
 		if(!texture.loadFromFile(textureFile)) {
-			throw runtime_error("Couldn't load texture image.");
+			throw runtime_error("Couldn't load block texture image: " + textureFile);
 		}
 		texture.setSmooth(true);
 		sprite.setTexture(texture);

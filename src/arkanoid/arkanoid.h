@@ -14,10 +14,12 @@ using namespace std;
 /// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
 class Arkanoid {
 private:
+	arkanoid::World world;
 	shared_ptr<arkanoidSFML::Transformation> transformation;	///< Transformation object for translations between coordinates and pixels.
 
-	arkanoid::World world;
 	sf::RenderWindow windowSFML;
+	sf::Sprite background;
+	sf::Texture texture;	///< Texture of the background
 
 	/**
 	* Creates all Entity for the World.

@@ -20,6 +20,15 @@ windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid") {
 	transformation = make_shared<arkanoidSFML::Transformation>(9, 7, windowSFML.getSize().x, windowSFML.getSize().y);
 
 	windowSFML.setFramerateLimit(60);
+
+	// Create background
+	if(!texture.loadFromFile("data/sprites/background/background.jpg")) {
+		throw runtime_error("Couldn't load background texture image: data/sprites/background/background.jpg");
+	}
+	texture.setSmooth(true);
+	texture.setRepeated(true);
+	background.setTexture(texture);
+	background.setTextureRect(sf::IntRect(0, 0, windowSFML.getSize().x, windowSFML.getSize().y));
 }
 
 void Arkanoid::initialise() {
@@ -77,6 +86,7 @@ void Arkanoid::processInput() {
 
 void Arkanoid::render() {
 	windowSFML.clear();
+	windowSFML.draw(background);
 	world.draw();
 	windowSFML.display();
 }
