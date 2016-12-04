@@ -5,6 +5,7 @@
 #include "../../math/vector2D.h"
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -17,7 +18,6 @@ namespace arkanoid {
 		Vector2D velocity;
 
 	public:
-		// bool isBouncing;		///< Check if ball is currently in bounce procedure (prevent multiple bounces at once).
 
 		/**
 		* Default Constructor.
@@ -54,11 +54,11 @@ namespace arkanoid {
 		void draw() const ;
 
 		/**
-		* In case of a collision, rotate the Ball 's direction by around 90° to the right angle.
+		* Checks for all Entity if there's a collision, if there is, then "bounce" off the Entity, i.e. rotate approx 90° in the right direction.
 		*
-		* @param other	The Entity on which the Ball is collided (needed to decide to correct angle).
+		* @param entities	All the Entity of the World (Ball not included).
 		*/
-		void bounce(unique_ptr<Entity> const &other);
+		void bounce(vector<unique_ptr<Entity>> const &entities);
 
 	};
 

@@ -15,17 +15,15 @@ namespace arkanoid {
 
 	void World::update() {
 		
-		// Update all Entities + Balls
-		// And check for collision
+		// Update Ball + Check if there are collisions on the Ball
 		ball->update();
-		bool ballHasCollided = false;		// Prevent multiple bounces in one frame
-		for(auto &e: entities) {
-			e->update();
-			if(!ballHasCollided && ball->collidesWith(e)) {
-				ball->bounce(e);
-				ballHasCollided = true;
-			}
+		ball->bounce(entities);
+
+		// Update all Entities
+		for(int i = 0; i < entities.size(); i++) {
+			entities[i]->update();
 		}
+
 	}
 
 	void World::draw() const {

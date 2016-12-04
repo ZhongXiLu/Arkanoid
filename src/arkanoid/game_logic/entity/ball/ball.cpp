@@ -3,6 +3,7 @@
 #include "../../math/vector2D.h"
 
 #include <iostream>
+#include <vector>
 #include <cmath>
 
 using namespace std;
@@ -23,27 +24,54 @@ namespace arkanoid {
 		// ...
 	}
 
-	void Ball::bounce(unique_ptr<Entity> const &other) {
+	void Ball::bounce(vector<unique_ptr<Entity>> const &entities) {
 
-		// Calculate the gaps between the Entities on all sides
-		const double gapRight = abs((position.x + size.first) - other->getPosition().x);
-		const double gapLeft = abs(position.x - (other->getPosition().x + other->getSize().first));
-		const double gapTop = abs(position.y - (other->getPosition().y + other->getSize().second));
-		const double gapBottom = abs((position.y + size.second) - other->getPosition().y);
-
-		// Determine the smallest gaps, both horiztontally and vertically
-		const double minGapHor = min(gapRight, gapLeft);
-		const double minGapVer = min(gapTop, gapBottom);
-
-		// Change the Ball 's direction based on the calculation above
-		if(minGapHor < minGapVer) {
-			// Ball was coming from Right/Left
-			velocity.x *= -1;
-		} else {
-			// Ball was coming from Top/Bottom
-			velocity.y *= -1;
+		// Check for every Entity if there's a collision
+		vector<int> collisions;		// At most 2 collisions
+		for(int e = 0; e < entities.size(); e++) {
+			if(collidesWith(entities[e])) {
+				collisions.push_back(e);
+			}
 		}
-	
+
+		if(!collisions.empty()) {
+			if(collisions.size() == 2) { 
+				// Use procedure for two Entities:
+				// If two collided Entities are on top of each other:
+				//		-> Ball was coming from left/right
+				// Oterwise: Ball was coming from top/left
+				if(entities[collisions[0]]->getPosition().x == entities[collisions[1]]->getPosition().x) {
+					// Ball coming from left/right
+					velocity.x *= -1;
+				} else {
+					// Ball coming from top/bottom
+					velocity.y *= -1;
+				}
+			} else {
+				// Use procedure for one Entity
+
+				// Calculate the gaps between the Ball and the collided Entity on all sides
+				const double gapRight = abs((position.x + size.first) - entities[collisions[0]]->getPosition().x);
+				const double gapLeft = abs(position.x - (entities[collisions[0]]->getPosition().x + entities[collisions[0]]->getSize().first));
+				const double gapTop = abs(position.y - (entities[collisions[0]]->getPosition().y + entities[collisions[0]]->getSize().second));
+				const double gapBottom = abs((position.y + size.second) - entities[collisions[0]]->getPosition().y);
+
+				// Determine the smallest gaps, both horiztontally and vertically
+				const double minGapHor = min(gapRight, gapLeft);
+				const double minGapVer = min(gapTop, gapBottom);
+
+				if(!(abs(minGapHor - minGapVer) < 0.01) && !(minGapVer < 0.001 || minGapHor < 0.001)) {
+					// Change the Ball 's direction based on the calculation above
+					if(minGapHor < minGapVer) {
+						// Ball coming from left/right
+						velocity.x *= -1;
+					} else {
+						// Ball coming from top/bottom
+						velocity.y *= -1;
+					}
+				}
+			}
+		}
 	}
 
 }
