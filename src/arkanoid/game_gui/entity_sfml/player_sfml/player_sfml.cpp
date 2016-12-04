@@ -15,6 +15,7 @@ namespace arkanoidSFML {
 		if(!texture.loadFromFile(textureFile)) {
 			throw runtime_error("Couldn't load texture image.");
 		}
+		texture.setSmooth(true);
 		sprite.setTexture(texture);
 		
 		// Set position
