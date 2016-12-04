@@ -15,6 +15,7 @@ ADD_LIBRARY(game_logic STATIC
 	arkanoid/game_logic/entity/player/player.cpp
 	arkanoid/game_logic/entity/ball/ball.cpp
 	arkanoid/game_logic/entity/wall/wall.cpp
+	arkanoid/game_logic/entity/block/block.cpp
 	arkanoid/game_logic/math/vector2D.cpp
 	arkanoid/game_logic/world.cpp
 )
@@ -24,6 +25,7 @@ ADD_LIBRARY(game_gui STATIC
 	arkanoid/game_gui/entity_sfml/player_sfml/player_sfml.cpp
 	arkanoid/game_gui/entity_sfml/ball_sfml/ball_sfml.cpp
 	arkanoid/game_gui/entity_sfml/wall_sfml/wall_sfml.cpp
+	arkanoid/game_gui/entity_sfml/block_sfml/block_sfml.cpp
 )
 
 SET(SRC 
