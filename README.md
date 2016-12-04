@@ -27,4 +27,4 @@ cd ../bin
 
 # Remarks #
 
-* The directory "sprites" (in the project main directory) should be copied to the same directory of the executable. (sprites are needed for the program to work)
+* The directory "data" (in the project main directory) should be copied to the same directory of the executable.
