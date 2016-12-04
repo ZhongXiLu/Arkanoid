@@ -38,8 +38,14 @@
 */
 int main() {
 
-	Arkanoid arkanoid;
-	arkanoid.run();
+	try {
+
+		Arkanoid arkanoid;
+		arkanoid.run();
+
+	} catch(exception &e) {
+		cout << "ERROR: " << e.what() << endl;
+	}
 
 	return 0;
 }

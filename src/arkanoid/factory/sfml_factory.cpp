@@ -1,15 +1,20 @@
 
 #include "sfml_factory.h"
+#include "nlohmann/json.hpp"
 #include "../game_gui/entity_sfml/player_sfml/player_sfml.h"
 #include "../game_gui/entity_sfml/ball_sfml/ball_sfml.h"
 #include "../game_gui/entity_sfml/wall_sfml/wall_sfml.h"
+#include "../game_gui/entity_sfml/block_sfml/block_sfml.h"
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <memory>
 #include <string>
+#include <unordered_map> 	// needed for json parse library (represents json object)
 
 using namespace std;
+using json = nlohmann::json;
 
 SFMLFactory::SFMLFactory(sf::RenderWindow &window, shared_ptr<arkanoidSFML::Transformation> transformation) : windowSFML(window), transform(transformation) {}
 
@@ -40,6 +45,39 @@ vector<unique_ptr<arkanoid::Wall>> SFMLFactory::createWalls() {
 	}
 
 	return walls;
+}
+
+vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file) {
+	json jsonFile;
+	ifstream stream(file);
+
+	if(!stream.good()) {
+		throw runtime_error("Couldn't open data/levels/level_1/blocks.json.");
+	}
+	
+	// Parse json file
+	try {
+		stream >> jsonFile;
+	} catch(...) {
+		throw runtime_error("Couldn't parse data/levels/level_1/blocks.json.");
+	}
+
+	vector<unique_ptr<arkanoid::Block>> blocks;
+	try {
+
+		// Construct data
+		vector<unordered_map<string, json>> data = jsonFile["blocks"].get<vector<unordered_map<string, json>>>();
+
+		for(auto d: data) {
+			unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, transform, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+			blocks.push_back(std::move(block));
+		}
+
+	} catch(...) {
+		throw runtime_error("Invalid data in data/levels/level_1/blocks.json.");
+	}
+
+	return blocks;
 }
 
 unique_ptr<arkanoid::Ball> SFMLFactory::createBall() {

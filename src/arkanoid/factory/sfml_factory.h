@@ -5,6 +5,7 @@
 #include "../game_logic/entity/player/player.h"
 #include "../game_logic/entity/ball/ball.h"
 #include "../game_logic/entity/wall/wall.h"
+#include "../game_logic/entity/block/block.h"
 #include "../game_gui/math/transformation.h"
 
 #include <SFML/Graphics.hpp>
@@ -14,7 +15,7 @@
 
 using namespace std;
 
-/// Abstract Factory: Creates EntitySFML.
+/// Factory: Creates EntitySFML.
 class SFMLFactory : public EntityFactory {
 private:
 	// Needed to create Entity.
@@ -32,17 +33,32 @@ public:
 	SFMLFactory(sf::RenderWindow &window, shared_ptr<arkanoidSFML::Transformation> transformation);
 
 	/**
-	* Creates a PlayerSFML.
+	* Creates the PlayerSFML.
+	*
+	* @return The PlayerSFML.
 	*/
 	unique_ptr<arkanoid::Player> createPlayer();
 
 	/**
-	* Create a WallSMFL.
+	* Creates all the WallSMFL.
+	*
+	* @return List of all the WallSMFL.
 	*/
 	vector<unique_ptr<arkanoid::Wall>> createWalls();
 
 	/**
-	* Creates a BallSFML.
+	* Creates all the BlockSMFL.
+	*
+	* @param file	The file where all the BlockSMFL are specified.
+	*
+	* @return List of all the BlockSMFL.
+	*/
+	vector<unique_ptr<arkanoid::Block>> createBlocks(const string &file);
+
+	/**
+	* Creates the BallSFML.
+	*
+	* @return The BallSFML.
 	*/
 	unique_ptr<arkanoid::Ball> createBall();
 };
