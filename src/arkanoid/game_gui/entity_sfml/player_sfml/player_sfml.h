@@ -47,7 +47,7 @@ namespace arkanoidSFML {
 		~PlayerSFML();
 
 		/**
-		* Check for user input and make the corresponding move if necessary.
+		* Checks for user input and make the corresponding move if necessary and possible.
 		*/
 		void update();
 
@@ -58,7 +58,7 @@ namespace arkanoidSFML {
 
 
 		/**
-		* Reset the position of the Player to the one of the starting position.
+		* Resets the position of the Player to the one of the starting position.
 		* (-> call this method when the Player missed the Ball).
 		*/
 		void reset();
