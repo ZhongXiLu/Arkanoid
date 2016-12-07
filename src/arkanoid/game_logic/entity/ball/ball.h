@@ -60,15 +60,18 @@ namespace arkanoid {
 		* Checks for all Entity if there's a collision, if there is, then "bounce" off the Entity, i.e. rotate 90° in the right direction.
 		*
 		* @param entities	List of all the Entity of the World (Ball not included).
+		*
+		* @return The indeces in the list of the Entity that the Ball collided with.
 		*/
-		void bounce(vector<unique_ptr<Entity>> const &entities);
+		template<typename T>
+		vector<int> bounceIfPossible(vector<unique_ptr<T>> const &entities);
 
 		/**
 		* Checks if there's a collision with the Player, if there is, make the correct bounce (angle) depending on the point of collision.
 		*
 		* @param player		The Player of the World.
 		*/
-		void bounce(unique_ptr<Player> const &player);
+		void bounceIfPossible(unique_ptr<Player> const &player);
 
 		/**
 		* Reset the position and direction of the Ball to the one of the starting position.

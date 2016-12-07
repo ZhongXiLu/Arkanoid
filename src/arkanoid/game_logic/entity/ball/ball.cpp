@@ -1,5 +1,6 @@
 
 #include "ball.h"
+#include "../wall/wall.h"
 #include "../../math/vector2D.h"
 
 #include <iostream>
@@ -21,7 +22,8 @@ namespace arkanoid {
 
 	void Ball::draw() const {}
 
-	void Ball::bounce(vector<unique_ptr<Entity>> const &entities) {
+	template<typename T>
+	vector<int> Ball::bounceIfPossible(vector<unique_ptr<T>> const &entities) {
 
 		// Check for every Entity if there's a collision
 		vector<int> collisions;		// At most 2 collisions
@@ -69,10 +71,16 @@ namespace arkanoid {
 				}
 			}
 		}
+
+		return collisions;
 	}
 
+	// Prevent linker errors
+	template vector<int> Ball::bounceIfPossible<Entity>(vector<unique_ptr<Entity>> const &entities);
+	template vector<int> Ball::bounceIfPossible<Wall>(vector<unique_ptr<Wall>> const &entities);
+
 	// *** TBI
-	void Ball::bounce(unique_ptr<Player> const &player) {
+	void Ball::bounceIfPossible(unique_ptr<Player> const &player) {
 
 		if(collidesWith(*player)) {
 

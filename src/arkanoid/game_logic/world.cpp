@@ -2,6 +2,7 @@
 #include "world.h"
 
 #include <iostream>
+#include <vector>
 #include <memory>
 #include <string>
 
@@ -16,12 +17,24 @@ namespace arkanoid {
 	void World::update() {
 		
 		// Update Ball + Check if there are collisions on the Ball
-		ball->bounce(entities);
-		ball->bounce(player);		// TBI: player bounce algorithm
+		ball->bounceIfPossible<Wall>(walls);
+		
+		vector<int> collisions = std::move(ball->bounceIfPossible<Entity>(entities));
+		// Destroy all the Entities that collided
+		int entitiesDeleted = 0;
+		for(auto c: collisions) {
+			entities.erase(entities.begin() + c - entitiesDeleted);
+			entitiesDeleted++;
+		}
+		
+		ball->bounceIfPossible(player);		// TBI: player bounce algorithm
 
 		// Update all Entities
-		for(int i = 0; i < entities.size(); i++) {
-			entities[i]->update();
+		for(auto &e: entities) {
+			e->update();
+		}
+		for(auto &w: walls) {
+			w->update();
 		}
 		ball->update();
 		player->update();
@@ -40,10 +53,17 @@ namespace arkanoid {
 		}
 		ball->draw();
 		player->draw();
+		for(const auto &w: walls) {
+			w->draw();
+		}
 	}
 
 	void World::addEntity(unique_ptr<arkanoid::Entity> entity) {
 		entities.push_back(std::move(entity));
+	}
+
+	void World::addWall(unique_ptr<arkanoid::Wall> wall) {
+		walls.push_back(std::move(wall));
 	}
 
 	void World::setBall(unique_ptr<arkanoid::Ball> newBall) {

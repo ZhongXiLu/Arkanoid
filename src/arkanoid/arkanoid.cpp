@@ -43,7 +43,7 @@ void Arkanoid::initialise() {
 	// Create Walls
 	vector<unique_ptr<arkanoid::Wall>> walls = std::move(factory.createWalls());
 	for(auto &w: walls) {
-		world.addEntity(std::move(w));
+		world.addWall(std::move(w));
 	}
 
 	// Create Blocks
