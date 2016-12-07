@@ -59,15 +59,13 @@ namespace arkanoid {
 				const double minGapHor = min(gapRight, gapLeft);
 				const double minGapVer = min(gapTop, gapBottom);
 
-				if(!(abs(minGapHor - minGapVer) < 0.01) && !(minGapVer < 0.001 || minGapHor < 0.001)) {
-					// Change the Ball 's direction based on the calculation above
-					if(minGapHor < minGapVer) {
-						// Ball coming from left/right
-						velocity.x *= -1;
-					} else {
-						// Ball coming from top/bottom
-						velocity.y *= -1;
-					}
+				// Change the Ball 's direction based on the calculation above
+				if(minGapHor < minGapVer) {
+					// Ball coming from left/right
+					velocity.x *= -1;
+				} else {
+					// Ball coming from top/bottom
+					velocity.y *= -1;
 				}
 			}
 		}
@@ -94,15 +92,13 @@ namespace arkanoid {
 			const double minGapHor = min(gapRight, gapLeft);
 			const double minGapVer = min(gapTop, gapBottom);
 
-			if(!(abs(minGapHor - minGapVer) < 0.01) && !(minGapVer < 0.001 || minGapHor < 0.001)) {
-				// Change the Ball 's direction based on the calculation above
-				if(minGapHor < minGapVer) {
-					// Ball coming from left/right
-					velocity.x *= -1;
-				} else {
-					// Ball coming from top/bottom
-					velocity.y *= -1;
-				}
+			// Change the Ball 's direction based on the calculation above
+			if(minGapHor < minGapVer) {
+				// Ball coming from left/right
+				velocity.x *= -1;
+			} else {
+				// Ball coming from top/bottom
+				velocity.y *= -1;
 			}
 
 		}
