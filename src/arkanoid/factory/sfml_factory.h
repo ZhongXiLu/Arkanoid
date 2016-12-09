@@ -6,7 +6,6 @@
 #include "../game_logic/entity/ball/ball.h"
 #include "../game_logic/entity/wall/wall.h"
 #include "../game_logic/entity/block/block.h"
-#include "../game_gui/math/transformation.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -20,7 +19,6 @@ class SFMLFactory : public EntityFactory {
 private:
 	// Needed to create Entity.
 	sf::RenderWindow &windowSFML;
-	shared_ptr<arkanoidSFML::Transformation> transform;
 
 public:
 
@@ -28,9 +26,8 @@ public:
 	* Constructor.
 	*
 	* @param window				The SFML window.
-	* @param transformation		Transformation object for translations between coordinates and pixels.
 	*/
-	SFMLFactory(sf::RenderWindow &window, shared_ptr<arkanoidSFML::Transformation> transformation);
+	SFMLFactory(sf::RenderWindow &window);
 
 	/**
 	* Creates the PlayerSFML.

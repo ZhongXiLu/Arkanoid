@@ -8,7 +8,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	WallSFML::WallSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, const string &textureFile) : windowSFML(window), transformation(transform), Wall(transform->convertX(x), transform->convertY(y)) {
+	WallSFML::WallSFML(double x, double y, sf::RenderWindow &window, const string &textureFile) : windowSFML(window), transformation(Transformation::getInstance()) {
 
 		// Set texture
 		if(!texture.loadFromFile(textureFile)) {
@@ -23,7 +23,7 @@ namespace arkanoidSFML {
 
 		// Set size (width and height) of WallSFML
 		sf::FloatRect rect = sprite.getLocalBounds();
-		setSize(make_pair(transform->convertX(rect.width), transform->convertY(rect.height)));
+		setSize(make_pair(transformation->convertX(rect.width), transformation->convertY(rect.height)));
 	}
 
 	WallSFML::~WallSFML() {}

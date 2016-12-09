@@ -15,7 +15,7 @@ using namespace std;
 class Arkanoid {
 private:
 	arkanoid::World world;
-	shared_ptr<arkanoidSFML::Transformation> transformation;	///< Transformation object for translations between coordinates and pixels.
+	arkanoidSFML::Transformation* transformation;	///< Transformation object for translations between coordinates and pixels.
 
 	sf::RenderWindow windowSFML;
 	sf::Sprite background;

@@ -5,7 +5,6 @@
 #include "../game_logic/entity/ball/ball.h"
 #include "../game_logic/entity/wall/wall.h"
 #include "../game_logic/entity/block/block.h"
-#include "../game_gui/math/transformation.h"
 
 #include <iostream>
 #include <memory>

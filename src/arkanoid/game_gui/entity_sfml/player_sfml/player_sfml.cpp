@@ -8,8 +8,8 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	PlayerSFML::PlayerSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed, const string &textureFile) :
-	screenOrigin(x, y), windowSFML(window), transformation(transform), Player(transform->convertX(x), transform->convertY(y), speed) {
+	PlayerSFML::PlayerSFML(double x, double y, sf::RenderWindow &window, double speed, const string &textureFile) :
+	screenOrigin(x, y), windowSFML(window), transformation(Transformation::getInstance()), Player(0, 0, speed) {
 
 		// Set texture
 		if(!texture.loadFromFile(textureFile)) {
@@ -24,7 +24,7 @@ namespace arkanoidSFML {
 
 		// Set size (width and height) of PlayerSFML
 		sf::FloatRect rect = sprite.getLocalBounds();
-		setSize(make_pair(transform->convertX(rect.width), transform->convertY(rect.height)));
+		setSize(make_pair(transformation->convertX(rect.width), transformation->convertY(rect.height)));
 	}
 
 	PlayerSFML::~PlayerSFML() {}

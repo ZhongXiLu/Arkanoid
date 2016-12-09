@@ -16,8 +16,8 @@ const sf::Time TIME_PER_FRAME = sf::seconds(1.0/60.0);
 Arkanoid::Arkanoid() : 
 windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid") {
 
-	// Create singleton Transformation?
-	transformation = make_shared<arkanoidSFML::Transformation>(9, 7, windowSFML.getSize().x, windowSFML.getSize().y);
+	// Create singleton Transformation first instance
+	transformation = transformation->getInstance(9, 7, windowSFML.getSize().x, windowSFML.getSize().y);
 
 	windowSFML.setFramerateLimit(60);
 
@@ -32,7 +32,7 @@ windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid") {
 }
 
 void Arkanoid::initialise() {
-	SFMLFactory factory(windowSFML, transformation);
+	SFMLFactory factory(windowSFML);
 
 	// Create Player
 	world.setPlayer(std::move(factory.createPlayer()));

@@ -5,18 +5,20 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
 namespace arkanoidSFML {
 
-	/// This class provides a method to convert coordinates from the grid to the corresponding screen pixels.
+	/// Singleton: This class provides a method to convert screen pixels to their corresponding coordinates in the game world space.
 	class Transformation {
 	private:
 		double widthScale;
 		double heightScale;
 
-	public:
+		static Transformation* singleton;
+
 		/**
 		* Default Constructor.
 		*
@@ -33,6 +35,31 @@ namespace arkanoidSFML {
 		* @param windowHeight	The height of the screen (game window).
 		*/
 		Transformation(double gridWidth, double gridHeight, double windowWidth, double windowHeight);
+
+		// Not implemented (--> cant copy)
+		Transformation(Transformation const &other);
+		Transformation& operator=(Transformation const &other);
+
+	public:
+
+		/**
+		* Get an instance of the Transformation object.
+		*
+		* @return An instance of the Transformation object.
+		*/
+		static Transformation* getInstance();
+
+		/**
+		* Get an instance of the Transformation object.
+		*
+		* @param gridWidth		The width of the grid.
+		* @param gridHeight		The height of the grid.
+		* @param windowWidth	The width of the screen (game window).
+		* @param windowHeight	The height of the screen (game window).
+		*
+		* @return An instance of the Transformation object.
+		*/
+		static Transformation* getInstance(double gridWidth, double gridHeight, double windowWidth, double windowHeight);
 
 		/**
 		* Converts a screen pixel to their corresponding game world coordinate.

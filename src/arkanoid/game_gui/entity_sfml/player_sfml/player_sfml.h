@@ -23,7 +23,7 @@ namespace arkanoidSFML {
 		sf::Sprite sprite;	///< The sprite of the PlayerSFML.
 		sf::Texture texture;
 
-		shared_ptr<Transformation> transformation;
+		Transformation* transformation;
 
 	public:
 		/**
@@ -35,11 +35,10 @@ namespace arkanoidSFML {
 		* @param x				The x (on screen) position of the Player.
 		* @param y				The y (on screen) position of the Player.
 		* @param window			The SFML window.
-		* @param transform		The Transformation object thats needed to convert coordinates to screen pixels.
 		* @param speed			(optional) The speed of the Player.
 		* @param textureFile	(optional) The file that contains the texture of the PlayerSFML.
 		*/
-		PlayerSFML(double x, double y, sf::RenderWindow &window, shared_ptr<Transformation> transform, double speed = 10.0, const string &textureFile = "data/sprites/player/player.png");
+		PlayerSFML(double x, double y, sf::RenderWindow &window, double speed = 10.0, const string &textureFile = "data/sprites/player/player.png");
 
 		/**
 		* Destructor.
