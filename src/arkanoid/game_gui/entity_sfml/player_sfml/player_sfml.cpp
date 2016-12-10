@@ -31,18 +31,26 @@ namespace arkanoidSFML {
 
 	void PlayerSFML::update() {
 
-		// Note: prevents user from pressing both left and right arrow key
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && sprite.getPosition().x < windowSFML.getSize().x - 33 - sprite.getLocalBounds().width) {
-			velocity.x = speed;
-		} else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && sprite.getPosition().x > 33) {
-			velocity.x = -speed;
-		} else {
-			// Player is not moving
-			velocity.x = 0;
-		}
+		if(!notMoving) {
 
-		sprite.move(velocity.x, velocity.y);
-		setPosition(std::move(transformation->convertVector(sprite.getPosition())));
+			// Note: prevents user from pressing both left and right arrow key
+			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && sprite.getPosition().x < windowSFML.getSize().x - 33 - sprite.getLocalBounds().width) {
+				velocity.x = speed;
+			} else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && sprite.getPosition().x > 33) {
+				velocity.x = -speed;
+			} else {
+				// Player is not moving
+				velocity.x = 0;
+			}
+
+			sprite.move(velocity.x, velocity.y);
+			setPosition(std::move(transformation->convertVector(sprite.getPosition())));
+
+		} else {
+			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
+				notMoving = false;
+			}
+		}
 	}
 
 	void PlayerSFML::draw() const {

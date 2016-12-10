@@ -18,6 +18,8 @@ namespace arkanoid {
 		double speed;
 		Vector2D origin;	///< The initial position of the Player.
 
+		bool notMoving;
+
 	public:
 
 		/**

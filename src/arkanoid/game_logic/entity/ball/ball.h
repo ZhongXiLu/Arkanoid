@@ -18,7 +18,9 @@ namespace arkanoid {
 	class Ball : public Entity {
 	protected:
 		Vector2D velocity;
-		Vector2D origin;	///< The initial position of the Ball.
+		Vector2D origin;
+
+		bool notMoving;
 
 	public:
 
@@ -74,7 +76,7 @@ namespace arkanoid {
 		void bounceIfPossible(unique_ptr<Player> const &player);
 
 		/**
-		* Reset the position and direction of the Ball to the one of the starting position.
+		* Reset the direction of the Ball and set it at a specific position.
 		* (-> call this method when the Player missed the Ball).
 		*/
 		virtual void reset();

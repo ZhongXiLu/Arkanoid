@@ -27,6 +27,7 @@
 *
 * \section controls Controls
 * <ul>
+* 	<li>Spacebar: shoot the ball after start game or after death</li>
 * 	<li>Left arrow: move the player to the left</li>
 * 	<li>Right arrow: move the player to the right</li>
 * </ul>

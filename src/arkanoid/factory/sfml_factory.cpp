@@ -81,6 +81,6 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 }
 
 unique_ptr<arkanoid::Ball> SFMLFactory::createBall() {
-	unique_ptr<arkanoid::Ball> ball(new arkanoidSFML::BallSFML(400.00, 570.0, windowSFML));
+	unique_ptr<arkanoid::Ball> ball(new arkanoidSFML::BallSFML(400.00, 578.0, windowSFML));
 	return ball;
 }

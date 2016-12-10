@@ -10,7 +10,7 @@ namespace arkanoid {
 
 	Player::Player() {}
 
-	Player::Player(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, 0), speed(newSpeed), origin(x, y), Entity(x, y, size) {}
+	Player::Player(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, 0), speed(newSpeed), origin(x, y), notMoving(true), Entity(x, y, size) {}
 
 	Player::~Player() {}
 
@@ -20,6 +20,7 @@ namespace arkanoid {
 
 	void Player::reset() {
 		position = origin;
+		notMoving = true;
 	}
 	
 }

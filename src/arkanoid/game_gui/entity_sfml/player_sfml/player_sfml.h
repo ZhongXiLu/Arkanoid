@@ -55,7 +55,6 @@ namespace arkanoidSFML {
 		*/
 		void draw() const;
 
-
 		/**
 		* Resets the position of the Player to the one of the starting position.
 		* (-> call this method when the Player missed the Ball).

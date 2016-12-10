@@ -30,9 +30,15 @@ namespace arkanoidSFML {
 	BallSFML::~BallSFML() {}
 
 	void BallSFML::update() {
-		// Move the ball
-		sprite.move(velocity.x, velocity.y);
-		setPosition(std::move(transformation->convertVector(sprite.getPosition())));
+		if(!notMoving) {
+			// Move the ball
+			sprite.move(velocity.x, velocity.y);
+			setPosition(std::move(transformation->convertVector(sprite.getPosition())));
+		} else {
+			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
+				notMoving = false;
+			}
+		}
 	}
 
 	void BallSFML::draw() const {

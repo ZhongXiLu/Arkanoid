@@ -14,7 +14,7 @@ namespace arkanoid {
 
 	Ball::Ball() {}
 
-	Ball::Ball(double x, double y, double speed, pair<double, double> size) : velocity(speed, -speed), origin(x, y), Entity(x, y, size) {}
+	Ball::Ball(double x, double y, double speed, pair<double, double> size) : velocity(speed, -speed), origin(x,y), notMoving(true), Entity(x, y, size) {}
 
 	Ball::~Ball() {}
 
@@ -107,7 +107,8 @@ namespace arkanoid {
 	void Ball::reset() {
 		position = origin;
 		velocity.x = abs(velocity.x);
-		velocity.y = -1*abs(velocity.y);
+		velocity.y = abs(velocity.y);
+		notMoving = true;
 	}
 
 }
