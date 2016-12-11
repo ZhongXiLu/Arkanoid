@@ -12,9 +12,9 @@ using namespace std;
 
 namespace arkanoid {
 
-	Ball::Ball() {}
+	Ball::Ball() : notMoving(true), random(Random::getInstance()) {}
 
-	Ball::Ball(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, -newSpeed), origin(x,y), speed(newSpeed), notMoving(true), Entity(x, y, size) {}
+	Ball::Ball(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, -newSpeed), origin(x,y), speed(newSpeed), notMoving(true), random(Random::getInstance()), Entity(x, y, size) {}
 
 	Ball::~Ball() {}
 
@@ -109,8 +109,8 @@ namespace arkanoid {
 
 			}
 
-			velocity.x = speed * cos(angle * (M_PI/180));
-			velocity.y = -1 * speed * sin(angle * (M_PI/180));
+			velocity.x = speed * cos((angle + random->randomDouble(-5, 5)) * (M_PI/180));
+			velocity.y = -1 * speed * sin((angle + random->randomDouble(-5, 5)) * (M_PI/180));
 
 		}
 	}

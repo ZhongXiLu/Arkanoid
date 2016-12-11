@@ -4,6 +4,7 @@
 #include "../entity.h"
 #include "../player/player.h"
 #include "../../math/vector2D.h"
+#include "../../math/random.h"
 
 #include <iostream>
 #include <memory>
@@ -21,8 +22,9 @@ namespace arkanoid {
 		Vector2D origin;
 
 		double speed;
-
 		bool notMoving;
+
+		Random* random;
 
 	public:
 
