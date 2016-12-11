@@ -27,7 +27,7 @@ namespace arkanoid {
 			entitiesDeleted++;
 		}
 		
-		ball->bounceIfPossible(player);		// TBI: player bounce algorithm
+		ball->bounceIfPossible(player);
 
 		// Update all Entities
 		for(auto &e: entities) {

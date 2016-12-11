@@ -20,6 +20,8 @@ namespace arkanoid {
 		Vector2D velocity;
 		Vector2D origin;
 
+		double speed;
+
 		bool notMoving;
 
 	public:
@@ -36,12 +38,12 @@ namespace arkanoid {
 		*
 		* Initialise the Ball at a specific position in the World.
 		*
-		* @param x		The x position (in the grid) of the Ball.
-		* @param y		The y position (in the grid) of the Ball.
-		* @param speed	(optional) The speed of the Ball.
-		* @param size	(optional) The size (width and height respectively) of the Ball.
+		* @param x			The x position (in the grid) of the Ball.
+		* @param y			The y position (in the grid) of the Ball.
+		* @param newSpeed	(optional) The speed of the Ball.
+		* @param size		(optional) The size (width and height respectively) of the Ball.
 		*/
-		Ball(double x, double y, double speed = 8.0, pair<double, double> size = make_pair(1.0, 1.0));
+		Ball(double x, double y, double newSpeed = 8.0, pair<double, double> size = make_pair(1.0, 1.0));
 
 		/**
 		* Destructor.

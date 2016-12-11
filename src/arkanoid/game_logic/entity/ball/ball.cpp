@@ -14,7 +14,7 @@ namespace arkanoid {
 
 	Ball::Ball() {}
 
-	Ball::Ball(double x, double y, double speed, pair<double, double> size) : velocity(speed, -speed), origin(x,y), notMoving(true), Entity(x, y, size) {}
+	Ball::Ball(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, -newSpeed), origin(x,y), speed(newSpeed), notMoving(true), Entity(x, y, size) {}
 
 	Ball::~Ball() {}
 
@@ -77,37 +77,48 @@ namespace arkanoid {
 	template vector<int> Ball::bounceIfPossible<Entity>(vector<unique_ptr<Entity>> const &entities);
 	template vector<int> Ball::bounceIfPossible<Wall>(vector<unique_ptr<Wall>> const &entities);
 
-	// *** TBI
 	void Ball::bounceIfPossible(unique_ptr<Player> const &player) {
 
-		if(collidesWith(*player)) {
+		if(collidesWith(*player) && !notMoving) {
 
-			// Calculate the gaps between the Ball and the collided Entity on all sides
-			const double gapRight = abs((position.x + size.first) - player->getPosition().x);
-			const double gapLeft = abs(position.x - (player->getPosition().x + player->getSize().first));
-			const double gapTop = abs(position.y - (player->getPosition().y + player->getSize().second));
-			const double gapBottom = abs((position.y + size.second) - player->getPosition().y);
+			const double maxPlayerPos = player->getPosition().x + player->getSize().first;
+			const double playerLength = maxPlayerPos - player->getPosition().x;
+			const double halfLength = playerLength / 2;
+			const double centerPlayer = maxPlayerPos - (playerLength / 2);
 
-			// Determine the smallest gaps, both horiztontally and vertically
-			const double minGapHor = min(gapRight, gapLeft);
-			const double minGapVer = min(gapTop, gapBottom);
-
-			// Change the Ball 's direction based on the calculation above
-			if(minGapHor < minGapVer) {
-				// Ball coming from left/right
-				velocity.x *= -1;
-			} else {
-				// Ball coming from top/bottom
-				velocity.y *= -1;
+			double collisionPoint = getPosition().x + (getSize().first / 2);
+			// Check if Ball is not outside the Players surface
+			if(collisionPoint > maxPlayerPos) {
+				collisionPoint = maxPlayerPos;
+			} else if(collisionPoint < player->getPosition().x) {
+				collisionPoint = player->getPosition().x;
 			}
+			const double relativeCollision = collisionPoint - player->getPosition().x;
+
+			double ratio = 0.0;		// how much the Ball is located towards the edge
+			double angle = 0.0;
+			if(collisionPoint > centerPlayer) {
+				// right half of the player
+				ratio = (relativeCollision - halfLength) / halfLength;
+				angle = 90.0 - (ratio * 70.0);		// maximum angle = 75°
+
+			} else {
+				// left half of the player
+				ratio = (halfLength - relativeCollision) / halfLength;
+				angle = 90.0 + (ratio * 70.0);		// maximum angle = 75°
+
+			}
+
+			velocity.x = speed * cos(angle * (M_PI/180));
+			velocity.y = -1 * speed * sin(angle * (M_PI/180));
 
 		}
 	}
 
 	void Ball::reset() {
 		position = origin;
-		velocity.x = abs(velocity.x);
-		velocity.y = abs(velocity.y);
+		velocity.x = speed;
+		velocity.y = -speed;
 		notMoving = true;
 	}
 
