@@ -39,8 +39,9 @@ namespace arkanoid {
 		ball->update();
 		player->update();
 
-		// Check if Ball has been missed
-		if(ball->getPosition().y > 7) {
+		// Check if Ball has been missed (or out of the world for some reason)
+		if(ball->getPosition().y > 7 || ball->getPosition().y < 0 ||
+			ball->getPosition().x > 9 || ball->getPosition().x < 0) {
 			player->reset();
 			ball->reset();
 		}
