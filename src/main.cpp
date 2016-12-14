@@ -34,7 +34,7 @@
 *
 * \section remarks Remarks
 * <ul>
-* 	<li>The directory "sprites" (in the project main directory) should be copied to the same directory of the executable. (sprites are needed for the program to work)</li>
+* 	<li>If the program is runned from a different place then in "bin", you should copy the "data" folder to the directory of the executable.</li>
 * </ul>
 */
 int main() {
