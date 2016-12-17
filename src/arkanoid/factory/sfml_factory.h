@@ -34,14 +34,14 @@ public:
 	*
 	* @return The PlayerSFML.
 	*/
-	unique_ptr<arkanoid::Player> createPlayer();
+	shared_ptr<arkanoid::Player> createPlayer();
 
 	/**
 	* Creates all the WallSMFL.
 	*
 	* @return List of all the WallSMFL.
 	*/
-	vector<unique_ptr<arkanoid::Wall>> createWalls();
+	vector<shared_ptr<arkanoid::Wall>> createWalls();
 
 	/**
 	* Creates all the BlockSMFL.
@@ -50,14 +50,14 @@ public:
 	*
 	* @return List of all the BlockSMFL.
 	*/
-	vector<unique_ptr<arkanoid::Block>> createBlocks(const string &file);
+	vector<shared_ptr<arkanoid::Block>> createBlocks(const string &file);
 
 	/**
 	* Creates the BallSFML.
 	*
 	* @return The BallSFML.
 	*/
-	unique_ptr<arkanoid::Ball> createBall();
+	shared_ptr<arkanoid::Ball> createBall();
 };
 
 #endif /* SFML_FACTORY_H */

@@ -70,14 +70,14 @@ namespace arkanoid {
 		* @return The indeces in the list of the Entity that the Ball collided with.
 		*/
 		template<typename T>
-		vector<int> bounceIfPossible(vector<unique_ptr<T>> const &entities);
+		vector<int> bounceIfPossible(vector<shared_ptr<T>> const &entities);
 
 		/**
 		* Checks if there's a collision with the Player, if there is, make the correct bounce (angle) depending on the point of collision.
 		*
 		* @param player		The Player of the World.
 		*/
-		void bounceIfPossible(unique_ptr<Player> const &player);
+		void bounceIfPossible(shared_ptr<Player> const &player);
 
 		/**
 		* Reset the direction of the Ball and set it at a specific position.

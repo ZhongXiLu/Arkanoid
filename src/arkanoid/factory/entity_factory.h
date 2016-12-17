@@ -21,14 +21,14 @@ public:
 	*
 	* @return The Player.
 	*/
-	virtual unique_ptr<arkanoid::Player> createPlayer() = 0;
+	virtual shared_ptr<arkanoid::Player> createPlayer() = 0;
 
 	/**
 	* Creates all the Wall.
 	*
 	* @return List of all the Wall.
 	*/
-	virtual vector<unique_ptr<arkanoid::Wall>> createWalls() = 0;
+	virtual vector<shared_ptr<arkanoid::Wall>> createWalls() = 0;
 
 	/**
 	* Creates all the Block.
@@ -37,14 +37,14 @@ public:
 	*
 	* @return List of all the Block.
 	*/
-	virtual vector<unique_ptr<arkanoid::Block>> createBlocks(const string &file) = 0;
+	virtual vector<shared_ptr<arkanoid::Block>> createBlocks(const string &file) = 0;
 
 	/**
 	* Creates the Ball.
 	*
 	* @return The Ball.
 	*/
-	virtual unique_ptr<arkanoid::Ball> createBall() = 0;
+	virtual shared_ptr<arkanoid::Ball> createBall() = 0;
 
 };
 

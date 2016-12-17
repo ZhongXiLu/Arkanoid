@@ -59,19 +59,19 @@ namespace arkanoid {
 		}
 	}
 
-	void World::addEntity(unique_ptr<arkanoid::Entity> entity) {
+	void World::addEntity(shared_ptr<arkanoid::Entity> entity) {
 		entities.push_back(std::move(entity));
 	}
 
-	void World::addWall(unique_ptr<arkanoid::Wall> wall) {
+	void World::addWall(shared_ptr<arkanoid::Wall> wall) {
 		walls.push_back(std::move(wall));
 	}
 
-	void World::setBall(unique_ptr<arkanoid::Ball> newBall) {
+	void World::setBall(shared_ptr<arkanoid::Ball> newBall) {
 		ball = std::move(newBall);
 	}
 
-	void World::setPlayer(unique_ptr<arkanoid::Player> newPlayer) {
+	void World::setPlayer(shared_ptr<arkanoid::Player> newPlayer) {
 		player = std::move(newPlayer);
 	}
 
