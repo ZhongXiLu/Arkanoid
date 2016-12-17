@@ -18,10 +18,10 @@ namespace arkanoid {
 	/// The World of the Arkanoid game that contains all Entity objects.
 	class World : public Entity {
 	private:
-		shared_ptr<Ball> ball;
-		shared_ptr<Player> player;
-		vector<shared_ptr<Wall>> walls;
-		vector<shared_ptr<Entity>> entities;
+		unique_ptr<Ball> ball;
+		unique_ptr<Player> player;
+		vector<unique_ptr<Wall>> walls;
+		vector<unique_ptr<Entity>> entities;
 
 	public:
 		/**
@@ -49,28 +49,28 @@ namespace arkanoid {
 		*
 		* @param entity		The Entity that will be added to the World.
 		*/
-		void addEntity(shared_ptr<arkanoid::Entity> entity);
+		void addEntity(unique_ptr<arkanoid::Entity> entity);
 
 		/**
 		* Adds a Wall to the World.
 		*
 		* @param wall		The Wall that will be added to the World.
 		*/
-		void addWall(shared_ptr<arkanoid::Wall> wall);
+		void addWall(unique_ptr<arkanoid::Wall> wall);
 
 		/**
 		* Set the Ball of the World.
 		*
 		* @param newBall	The new Ball of the World.
 		*/
-		void setBall(shared_ptr<arkanoid::Ball> newBall);
+		void setBall(unique_ptr<arkanoid::Ball> newBall);
 
 		/**
 		* Set the Player of the World.
 		*
 		* @param newPlayer	The new Player of the World.
 		*/
-		void setPlayer(shared_ptr<arkanoid::Player> newPlayer);
+		void setPlayer(unique_ptr<arkanoid::Player> newPlayer);
 
 	};
 

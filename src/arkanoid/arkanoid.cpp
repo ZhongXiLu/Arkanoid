@@ -41,13 +41,13 @@ void Arkanoid::initialise() {
 	world.setBall(std::move(factory.createBall()));
 
 	// Create Walls
-	vector<shared_ptr<arkanoid::Wall>> walls = std::move(factory.createWalls());
+	vector<unique_ptr<arkanoid::Wall>> walls = std::move(factory.createWalls());
 	for(auto &w: walls) {
 		world.addWall(std::move(w));
 	}
 
 	// Create Blocks
-	vector<shared_ptr<arkanoid::Block>> blocks = std::move(factory.createBlocks("data/levels/level_1/blocks.json"));
+	vector<unique_ptr<arkanoid::Block>> blocks = std::move(factory.createBlocks("data/levels/level_1/blocks.json"));
 	for(auto &b: blocks) {
 		world.addEntity(std::move(b));
 	}

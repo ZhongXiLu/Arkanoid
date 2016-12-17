@@ -23,7 +23,7 @@ namespace arkanoid {
 	void Ball::draw() const {}
 
 	template<typename T>
-	vector<int> Ball::bounceIfPossible(vector<shared_ptr<T>> const &entities) {
+	vector<int> Ball::bounceIfPossible(vector<unique_ptr<T>> const &entities) {
 
 		// Check for every Entity if there's a collision
 		vector<int> collisions;		// At most 2 collisions
@@ -74,10 +74,10 @@ namespace arkanoid {
 	}
 
 	// Prevent linker errors
-	template vector<int> Ball::bounceIfPossible<Entity>(vector<shared_ptr<Entity>> const &entities);
-	template vector<int> Ball::bounceIfPossible<Wall>(vector<shared_ptr<Wall>> const &entities);
+	template vector<int> Ball::bounceIfPossible<Entity>(vector<unique_ptr<Entity>> const &entities);
+	template vector<int> Ball::bounceIfPossible<Wall>(vector<unique_ptr<Wall>> const &entities);
 
-	void Ball::bounceIfPossible(shared_ptr<Player> const &player) {
+	void Ball::bounceIfPossible(unique_ptr<Player> const &player) {
 
 		if(collidesWith(*player) && !notMoving) {
 
