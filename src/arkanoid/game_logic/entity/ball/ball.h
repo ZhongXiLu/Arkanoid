@@ -63,6 +63,13 @@ namespace arkanoid {
 		void draw() const ;
 
 		/**
+		* Change the velocity of the Ball by a factor.
+		*
+		* @param factor	The factor.
+		*/
+		void speedUp(double factor);
+
+		/**
 		* Checks for all Entity if there's a collision, if there is, then "bounce" off the Entity, i.e. rotate 90° in the right direction.
 		*
 		* @param entities	List of all the Entity of the World (Ball not included).

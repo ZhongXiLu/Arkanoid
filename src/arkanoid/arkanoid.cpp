@@ -49,7 +49,7 @@ void Arkanoid::initialise() {
 	// Create Blocks
 	vector<unique_ptr<arkanoid::Block>> blocks = std::move(factory.createBlocks("data/levels/level_1/blocks.json"));
 	for(auto &b: blocks) {
-		world.addEntity(std::move(b));
+		world.addBlock(std::move(b));
 	}
 }
 

@@ -5,6 +5,7 @@
 #include "../game_gui/entity_sfml/ball_sfml/ball_sfml.h"
 #include "../game_gui/entity_sfml/wall_sfml/wall_sfml.h"
 #include "../game_gui/entity_sfml/block_sfml/block_sfml.h"
+#include "../game_gui/entity_sfml/block_sfml/special_block_sfml/speed_block_sfml.h"
 
 #include <iostream>
 #include <fstream>
@@ -69,8 +70,17 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 		vector<unordered_map<string, json>> data = jsonFile["blocks"].get<vector<unordered_map<string, json>>>();
 
 		for(auto d: data) {
-			unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
-			blocks.push_back(std::move(block));
+			string type = d["type"].get<string>();
+
+			if(type == "normal") {
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+				blocks.push_back(std::move(block));
+
+			} else if(type == "speed_block") {
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::SpeedBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+				blocks.push_back(std::move(block));
+			}
+			
 		}
 
 	} catch(...) {

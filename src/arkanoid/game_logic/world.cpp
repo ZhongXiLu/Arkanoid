@@ -19,19 +19,20 @@ namespace arkanoid {
 		// Update Ball + Check if there are collisions on the Ball
 		ball->bounceIfPossible<Wall>(walls);
 		
-		vector<int> collisions = std::move(ball->bounceIfPossible<Entity>(entities));
-		// Destroy all the Entities that collided
-		int entitiesDeleted = 0;
+		vector<int> collisions = std::move(ball->bounceIfPossible<Block>(blocks));
+		// Destroy all the Blocks that collided
+		int blocksDeleted = 0;
 		for(auto c: collisions) {
-			entities.erase(entities.begin() + c - entitiesDeleted);
-			entitiesDeleted++;
+			blocks[c]->effectBall(ball);
+			blocks.erase(blocks.begin() + c - blocksDeleted);
+			blocksDeleted++;
 		}
 		
 		ball->bounceIfPossible(player);
 
 		// Update all Entities
-		for(auto &e: entities) {
-			e->update();
+		for(auto &b: blocks) {
+			b->update();
 		}
 		for(auto &w: walls) {
 			w->update();
@@ -49,8 +50,8 @@ namespace arkanoid {
 	}
 
 	void World::draw() const {
-		for(const auto &e: entities) {
-			e->draw();
+		for(const auto &b: blocks) {
+			b->draw();
 		}
 		ball->draw();
 		player->draw();
@@ -59,8 +60,8 @@ namespace arkanoid {
 		}
 	}
 
-	void World::addEntity(unique_ptr<arkanoid::Entity> entity) {
-		entities.push_back(std::move(entity));
+	void World::addBlock(unique_ptr<arkanoid::Block> block) {
+		blocks.push_back(std::move(block));
 	}
 
 	void World::addWall(unique_ptr<arkanoid::Wall> wall) {

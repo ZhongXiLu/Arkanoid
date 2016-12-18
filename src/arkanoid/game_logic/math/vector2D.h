@@ -31,13 +31,13 @@ namespace arkanoid {
 		/**
 		* '+' Overloader.
 		*
-		* Translates the Vector2D over the other Vector2D.
+		* Adds a Vector2D to the current Vector2D.
 		*
-		* @param other	The other Vector2D on which this Vector2D will be translated on.
+		* @param other	The other Vector2D that will be added to this Vector2D.
 		*
-		* @return The result of the translation.
+		* @return The result of the operation.
 		*/
-		Vector2D operator+(const Vector2D &other);
+		Vector2D operator+(const Vector2D &other) const;
 
 		/**
 		* '=' Overloader.
@@ -47,6 +47,35 @@ namespace arkanoid {
 		* @param other The Vector2D that contains the new values 'x' and 'y'.
 		*/
 		void operator=(const Vector2D &other);
+
+		/**
+		* '+=' Overloader.
+		*
+		* Adds a Vector2D to the current Vector2D and asign it to this Vector2D.
+		*
+		* @param other The other Vector2D that will be added to this Vector2D.
+		*/
+		void operator+=(const Vector2D &other);
+
+		/**
+		* '*' Overloader.
+		*
+		* Multiply the Vector2D by a factor.
+		*
+		* @param factor	The factor.
+		*
+		* @return The result of the operation.
+		*/
+		Vector2D operator*(double factor) const;
+
+		/**
+		* '*=' Overloader.
+		*
+		* Multiply the Vector2D by a factor and asign it to this Vector2D.
+		*
+		* @param factor	The factor.
+		*/
+		void operator*=(double factor);
 
 		/**
 		* '<<' Overloader.

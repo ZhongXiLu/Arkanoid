@@ -14,8 +14,8 @@ using namespace std;
 namespace arkanoidSFML {
 
 	/// The SFML element that represents the Block in the game.
-	class BlockSFML : public arkanoid::Block {
-	private:
+	class BlockSFML : virtual public arkanoid::Block {
+	protected:
 		sf::RenderWindow &windowSFML;
 
 		sf::Sprite sprite; ///< The sprite of the BlockSFML.

@@ -1,6 +1,7 @@
 
 #include "ball.h"
 #include "../wall/wall.h"
+#include "../block/block.h"
 #include "../../math/vector2D.h"
 
 #include <iostream>
@@ -21,6 +22,10 @@ namespace arkanoid {
 	void Ball::update() {}
 
 	void Ball::draw() const {}
+
+	void Ball::speedUp(double factor) {
+		velocity *= factor;
+	}
 
 	template<typename T>
 	vector<int> Ball::bounceIfPossible(vector<unique_ptr<T>> const &entities) {
@@ -74,7 +79,7 @@ namespace arkanoid {
 	}
 
 	// Prevent linker errors
-	template vector<int> Ball::bounceIfPossible<Entity>(vector<unique_ptr<Entity>> const &entities);
+	template vector<int> Ball::bounceIfPossible<Block>(vector<unique_ptr<Block>> const &entities);
 	template vector<int> Ball::bounceIfPossible<Wall>(vector<unique_ptr<Wall>> const &entities);
 
 	void Ball::bounceIfPossible(unique_ptr<Player> const &player) {

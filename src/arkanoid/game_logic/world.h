@@ -5,6 +5,7 @@
 #include "entity/wall/wall.h"
 #include "entity/ball/ball.h"
 #include "entity/player/player.h"
+#include "entity/block/block.h"
 
 #include <iostream>
 #include <vector>
@@ -21,7 +22,7 @@ namespace arkanoid {
 		unique_ptr<Ball> ball;
 		unique_ptr<Player> player;
 		vector<unique_ptr<Wall>> walls;
-		vector<unique_ptr<Entity>> entities;
+		vector<unique_ptr<Block>> blocks;
 
 	public:
 		/**
@@ -45,11 +46,11 @@ namespace arkanoid {
 		void draw() const;
 
 		/**
-		* Adds an Entity to the World.
+		* Adds a Block to the World.
 		*
-		* @param entity		The Entity that will be added to the World.
+		* @param block		The Block that will be added to the World.
 		*/
-		void addEntity(unique_ptr<arkanoid::Entity> entity);
+		void addBlock(unique_ptr<arkanoid::Block> block);
 
 		/**
 		* Adds a Wall to the World.

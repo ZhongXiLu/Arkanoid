@@ -2,6 +2,7 @@
 #define BLOCK_H
 
 #include "../wall/wall.h"
+#include "../ball/ball.h"
 #include "../../math/vector2D.h"
 
 #include <iostream>
@@ -48,6 +49,14 @@ namespace arkanoid {
 		* Do nothing...
 		*/
 		void draw() const;
+
+		/**
+		* If there was a collision, effect the Ball if necessary.
+		* In this case, do nothing...
+		*
+		* @param ball	The Ball that will be effected.
+		*/
+		virtual void effectBall(unique_ptr<Ball> &ball) const;
 	};
 
 }
