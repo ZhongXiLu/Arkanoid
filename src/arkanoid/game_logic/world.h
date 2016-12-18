@@ -63,18 +63,25 @@ namespace arkanoid {
 		void addWall(unique_ptr<arkanoid::Wall> wall);
 
 		/**
-		* Set the Ball of the World.
+		* Sets the Ball of the World.
 		*
 		* @param newBall	The new Ball of the World.
 		*/
 		void setBall(unique_ptr<arkanoid::Ball> newBall);
 
 		/**
-		* Set the Player of the World.
+		* Sets the Player of the World.
 		*
 		* @param newPlayer	The new Player of the World.
 		*/
 		void setPlayer(unique_ptr<arkanoid::Player> newPlayer);
+
+		/**
+		* Checks if the level ended, i.e. when there are no more Block in the World.
+		*
+		* @return True if level ended, otherwise false.
+		*/
+		bool levelEnded() const;
 
 	};
 

@@ -67,7 +67,13 @@ void Arkanoid::run() {
 
 		while(timeSinceLastUpdate > TIME_PER_FRAME) {
 			processInput();
-			world.update();
+			if(!world.levelEnded()) {
+				world.update();
+			} else {
+				// End game
+				// TBI: load another level
+				windowSFML.close();
+			}
 			timeSinceLastUpdate -= TIME_PER_FRAME;
 		}
 

@@ -77,4 +77,8 @@ namespace arkanoid {
 		player = std::move(newPlayer);
 	}
 
+	bool World::levelEnded() const {
+		return blocks.size() == 0;
+	}
+
 }

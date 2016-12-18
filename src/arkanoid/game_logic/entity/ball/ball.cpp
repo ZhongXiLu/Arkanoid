@@ -16,7 +16,7 @@ namespace arkanoid {
 
 	Ball::Ball() : notMoving(true), random(Random::getInstance()) {}
 
-	Ball::Ball(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, -newSpeed), origin(x,y), speed(newSpeed), notMoving(true), random(Random::getInstance()), Entity(x, y, size) {}
+	Ball::Ball(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, -newSpeed), origin(x,y), speed(newSpeed), notMoving(true), invisible(false), spedUp(false), random(Random::getInstance()), Entity(x, y, size) {}
 
 	Ball::~Ball() {}
 
