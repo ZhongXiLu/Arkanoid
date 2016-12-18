@@ -1,3 +1,5 @@
+/// \file entity_factory.h
+
 #ifndef ENTITY_FACTORY_H
 #define ENTITY_FACTORY_H
 
@@ -12,37 +14,37 @@
 
 using namespace std;
 
-/// Abstract Factory: Creates Entity.
+/// Abstract Factory: Creates arkanoid::Entity.
 class EntityFactory {
 public:
 
 	/**
-	* Creates the Player.
+	* Creates the arkanoid::Player.
 	*
-	* @return The Player.
+	* @return The arkanoid::Player.
 	*/
 	virtual unique_ptr<arkanoid::Player> createPlayer() = 0;
 
 	/**
-	* Creates all the Wall.
+	* Creates all the arkanoid::Wall.
 	*
-	* @return List of all the Wall.
+	* @return List of all the arkanoid::Wall.
 	*/
 	virtual vector<unique_ptr<arkanoid::Wall>> createWalls() = 0;
 
 	/**
-	* Creates all the Block.
+	* Creates all the arkanoid::Block.
 	*
-	* @param file	The file where all the Block are specified.
+	* @param file	The file where all the arkanoid::Block are specified.
 	*
-	* @return List of all the Block.
+	* @return List of all the arkanoid::Block.
 	*/
 	virtual vector<unique_ptr<arkanoid::Block>> createBlocks(const string &file) = 0;
 
 	/**
-	* Creates the Ball.
+	* Creates the arkanoid::Ball.
 	*
-	* @return The Ball.
+	* @return The arkanoid::Ball.
 	*/
 	virtual unique_ptr<arkanoid::Ball> createBall() = 0;
 

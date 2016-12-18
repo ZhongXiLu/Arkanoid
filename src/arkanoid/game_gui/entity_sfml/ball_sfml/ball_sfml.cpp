@@ -1,3 +1,4 @@
+/// \file ball_sfml.cpp
 
 #include "ball_sfml.h"
 

@@ -1,3 +1,4 @@
+/// \file wall.cpp
 
 #include "wall.h"
 #include "../../math/vector2D.h"

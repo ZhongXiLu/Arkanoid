@@ -1,3 +1,5 @@
+/// \file arkanoid.h
+
 #ifndef ARKANOID_H
 #define ARKANOID_H
 
@@ -11,7 +13,7 @@
 
 using namespace std;
 
-/// The actual game that can be run. Interacts with the Game Logic and the Game GUI.
+/// The actual game that can be run. Interacts with the arkanoid and the arkanoidSFML.
 class Arkanoid {
 private:
 	arkanoid::World world;

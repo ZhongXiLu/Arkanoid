@@ -1,3 +1,4 @@
+/// \file player_sfml.cpp
 
 #include "player_sfml.h"
 

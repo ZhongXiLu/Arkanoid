@@ -1,3 +1,5 @@
+/// \file speed_block.h
+
 #ifndef SPEED_BLOCK_H
 #define SPEED_BLOCK_H
 

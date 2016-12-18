@@ -1,3 +1,4 @@
+/// \file random.cpp
 
 #include "random.h"
 

@@ -1,3 +1,5 @@
+/// \file player_sfml.h
+
 #ifndef PLAYER_SFML_H
 #define PLAYER_SFML_H
 
@@ -11,9 +13,10 @@
 
 using namespace std;
 
+/// All the game gui elements of the Arkanoid game.
 namespace arkanoidSFML {
 
-	/// The SFML element that represents the Player in the game.
+	/// The SFML element that represents the arkanoid::Player in the game.
 	class PlayerSFML : public arkanoid::Player {
 	private:
 		arkanoid::Vector2D screenOrigin;	///< The initial position of the PlayerSFML.
@@ -32,10 +35,10 @@ namespace arkanoidSFML {
 		* Creates a PlayerSFML sprite in the World at a specific position in the game window.
 		* Also applies the texture to this PlayerSFML.
 		*
-		* @param x				The x (on screen) position of the Player.
-		* @param y				The y (on screen) position of the Player.
+		* @param x				The x (on screen) position of the arkanoid::Player.
+		* @param y				The y (on screen) position of the arkanoid::Player.
 		* @param window			The SFML window.
-		* @param speed			(optional) The speed of the Player.
+		* @param speed			(optional) The speed of the arkanoid::Player.
 		* @param textureFile	(optional) The file that contains the texture of the PlayerSFML.
 		*/
 		PlayerSFML(double x, double y, sf::RenderWindow &window, double speed = 10.0, const string &textureFile = "data/sprites/player/player.png");
@@ -56,8 +59,8 @@ namespace arkanoidSFML {
 		void draw() const;
 
 		/**
-		* Resets the position of the Player to the one of the starting position.
-		* (-> call this method when the Player missed the Ball).
+		* Resets the position of the arkanoid::Player to the one of the starting position.
+		* (-> call this method when the arkanoid::Player missed the Ball).
 		*/
 		void reset();
 	};

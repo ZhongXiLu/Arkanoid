@@ -1,3 +1,5 @@
+/// \file sfml_factory.h
+
 #ifndef SFML_FACTORY_H
 #define SFML_FACTORY_H
 
@@ -30,32 +32,32 @@ public:
 	SFMLFactory(sf::RenderWindow &window);
 
 	/**
-	* Creates the PlayerSFML.
+	* Creates the arkanoidSFML::PlayerSFML.
 	*
-	* @return The PlayerSFML.
+	* @return The arkanoidSFML::PlayerSFML.
 	*/
 	unique_ptr<arkanoid::Player> createPlayer();
 
 	/**
-	* Creates all the WallSMFL.
+	* Creates all the arkanoidSFML::WallSFML.
 	*
-	* @return List of all the WallSMFL.
+	* @return List of all the arkanoidSFML::WallSFML.
 	*/
 	vector<unique_ptr<arkanoid::Wall>> createWalls();
 
 	/**
-	* Creates all the BlockSMFL.
+	* Creates all the arkanoidSFML::BlockSFML.
 	*
-	* @param file	The file where all the BlockSMFL are specified.
+	* @param file	The file where all the arkanoidSFML::BlockSFML are specified.
 	*
-	* @return List of all the BlockSMFL.
+	* @return List of all the arkanoidSFML::BlockSFML.
 	*/
 	vector<unique_ptr<arkanoid::Block>> createBlocks(const string &file);
 
 	/**
-	* Creates the BallSFML.
+	* Creates the arkanoidSFML::BallSFML.
 	*
-	* @return The BallSFML.
+	* @return The arkanoidSFML::BallSFML.
 	*/
 	unique_ptr<arkanoid::Ball> createBall();
 };

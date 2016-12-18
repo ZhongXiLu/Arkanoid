@@ -1,3 +1,5 @@
+/// \file invis_block_sfml.h
+
 #ifndef INVIS_BLOCK_SFML_H
 #define INVIS_BLOCK_SFML_H
 
@@ -13,7 +15,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	/// The SFML element that represents the InvisBlock in the game.
+	/// The SFML element that represents the arkanoid::InvisBlock in the game.
 	class InvisBlockSFML : public arkanoid::InvisBlock, public BlockSFML {
 	public:
 
@@ -23,8 +25,8 @@ namespace arkanoidSFML {
 		* Creates a InvisBlockSFML sprite in the World at a specific position in the game window.
 		* Also applies the texture to this InvisBlockSFML.
 		*
-		* @param x				The x (on screen) position of the Block.
-		* @param y				The y (on screen) position of the Block.
+		* @param x				The x (on screen) position of the arkanoid::Block.
+		* @param y				The y (on screen) position of the arkanoid::Block.
 		* @param textureFile 	(optional) The file that contains the texture of the InvisBlockSFML.
 		*/
 		InvisBlockSFML(double x, double y, sf::RenderWindow &window, const string &textureFile = "data/sprites/blocks/red_block.png");

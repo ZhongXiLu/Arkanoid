@@ -1,3 +1,5 @@
+/// \file wall_sfml.h
+
 #ifndef WALL_SFML_H
 #define WALL_SFML_H
 
@@ -13,7 +15,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	/// The SFML element that represents the Wall in the game.
+	/// The SFML element that represents the arkanoid::Wall in the game.
 	class WallSFML : public arkanoid::Wall {
 	private:
 		sf::RenderWindow &windowSFML;
@@ -31,8 +33,8 @@ namespace arkanoidSFML {
 		* Creates a WallSFML sprite in the World at a specific position in the game window.
 		* Also applies the texture to this WallSFML.
 		*
-		* @param x				The x (on screen) position of the Wall.
-		* @param y				The y (on screen) position of the Wall.
+		* @param x				The x (on screen) position of the arkanoid::Wall.
+		* @param y				The y (on screen) position of the arkanoid::Wall.
 		* @param textureFile 	(optional) The file that contains the texture of the WallSFML.
 		*/
 		WallSFML(double x, double y, sf::RenderWindow &window, const string &textureFile = "data/sprites/wall/wall.png");

@@ -1,3 +1,4 @@
+/// \file sfml_factory.cpp
 
 #include "sfml_factory.h"
 #include "nlohmann/json.hpp"

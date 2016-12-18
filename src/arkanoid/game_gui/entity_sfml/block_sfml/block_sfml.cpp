@@ -1,3 +1,4 @@
+/// \file block_sfml.cpp
 
 #include "block_sfml.h"
 

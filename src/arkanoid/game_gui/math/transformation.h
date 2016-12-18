@@ -1,3 +1,5 @@
+/// \file transformation.h
+
 #ifndef SCREEN_H
 #define SCREEN_H
 
@@ -64,9 +66,9 @@ namespace arkanoidSFML {
 		/**
 		* Converts a screen pixel to their corresponding game world coordinate.
 		*
-		* @param vector		The Vector2D (on screen) that needs to converted to the game world space.
+		* @param vector		The arkanoid::Vector2D (on screen) that needs to converted to the game world space.
 		*
-		* @return			The converted screen pixels (of the game window) as a Vector2D.
+		* @return			The converted screen pixels (of the game window) as a arkanoid::Vector2D.
 		*/
 		arkanoid::Vector2D convertVector(const sf::Vector2f &vector);
 

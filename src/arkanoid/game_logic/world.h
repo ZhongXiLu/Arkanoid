@@ -1,3 +1,5 @@
+/// \file world.h
+
 #ifndef WORLD_H
 #define WORLD_H
 
@@ -14,6 +16,7 @@
 
 using namespace std;
 
+/// All the game logic of the Arkanoid game.
 namespace arkanoid {
 
 	/// The World of the Arkanoid game that contains all Entity objects.

@@ -1,3 +1,5 @@
+/// \file ball_sfml.h
+
 #ifndef BALL_SFML_H
 #define BALL_SFML_H
 
@@ -13,7 +15,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	/// The SFML element that represents the Ball in the game.
+	/// The SFML element that represents the arkanoid::Ball in the game.
 	class BallSFML : public arkanoid::Ball {
 	private:
 		arkanoid::Vector2D screenOrigin;	///< The initial position of the BallSFML.
@@ -32,10 +34,10 @@ namespace arkanoidSFML {
 		* Creates a BallSFML sprite in the World at a specific position in the game window.
 		* Also applies the texture to this BallSFML.
 		*
-		* @param x				The x (on screen) position of the Ball.
-		* @param y				The y (on screen) position of the Ball.
+		* @param x				The x (on screen) position of the arkanoid::Ball.
+		* @param y				The y (on screen) position of the arkanoid::Ball.
 		* @param window			The SFML window.
-		* @param speed			(optional) The speed of the Ball.
+		* @param speed			(optional) The speed of the arkanoid::Ball.
 		* @param textureFile	(optional) The file that contains the texture of the BallSFML.
 		*/
 		BallSFML(double x, double y, sf::RenderWindow &window, double speed = 8.0, const string &textureFile = "data/sprites/ball/ball.png");
@@ -56,8 +58,8 @@ namespace arkanoidSFML {
 		void draw() const;
 
 		/**
-		* Reset the position and direction of the Ball to the one of the starting position.
-		* (-> call this method when the Player missed the Ball).
+		* Reset the position and direction of the arkanoid::Ball to the one of the starting position.
+		* (-> call this method when the Player missed the arkanoid::Ball).
 		*/
 		void reset();
 	};

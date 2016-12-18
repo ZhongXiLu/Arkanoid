@@ -1,3 +1,4 @@
+/// \file arkanoid.cpp
 
 #include "arkanoid.h"
 #include "factory/sfml_factory.h"

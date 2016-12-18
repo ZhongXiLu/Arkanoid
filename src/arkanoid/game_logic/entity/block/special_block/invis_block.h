@@ -1,3 +1,5 @@
+/// \file invis_block.h
+
 #ifndef INVIS_BLOCK_H
 #define INVIS_BLOCK_H
 

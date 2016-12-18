@@ -1,3 +1,5 @@
+/// \file wall.h
+
 #ifndef WALL_H
 #define WALL_H
 

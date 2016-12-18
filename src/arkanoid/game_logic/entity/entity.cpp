@@ -1,3 +1,4 @@
+/// \file entity.cpp
 
 #include "entity.h"
 #include "../math/vector2D.h"

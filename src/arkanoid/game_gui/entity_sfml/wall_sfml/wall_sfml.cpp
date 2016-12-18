@@ -1,3 +1,4 @@
+/// \file wall_sfml.cpp
 
 #include "wall_sfml.h"
 

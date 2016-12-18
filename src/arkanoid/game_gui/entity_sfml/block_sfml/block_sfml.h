@@ -1,3 +1,5 @@
+/// \file block_sfml.h
+
 #ifndef BLOCK_SFML_H
 #define BLOCK_SFML_H
 
@@ -13,7 +15,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	/// The SFML element that represents the Block in the game.
+	/// The SFML element that represents the arkanoid::Block in the game.
 	class BlockSFML : virtual public arkanoid::Block {
 	protected:
 		sf::RenderWindow &windowSFML;
@@ -31,8 +33,8 @@ namespace arkanoidSFML {
 		* Creates a BlockSFML sprite in the World at a specific position in the game window.
 		* Also applies the texture to this BlockSFML.
 		*
-		* @param x				The x (on screen) position of the Block.
-		* @param y				The y (on screen) position of the Block.
+		* @param x				The x (on screen) position of the arkanoid::Block.
+		* @param y				The y (on screen) position of the arkanoid::Block.
 		* @param textureFile 	(optional) The file that contains the texture of the BlockSFML.
 		*/
 		BlockSFML(double x, double y, sf::RenderWindow &window, const string &textureFile = "data/sprites/blocks/blue_block.png");
