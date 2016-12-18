@@ -70,14 +70,20 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 		vector<unordered_map<string, json>> data = jsonFile["blocks"].get<vector<unordered_map<string, json>>>();
 
 		for(auto d: data) {
-			string type = d["type"].get<string>();
+			string type = "";
+			try {
+				type = d["type"].get<string>();
+			} catch(...) {}
 
-			if(type == "normal") {
-				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+			if(type == "speed") {
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::SpeedBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
 				blocks.push_back(std::move(block));
 
-			} else if(type == "speed_block") {
-				unique_ptr<arkanoid::Block> block(new arkanoidSFML::SpeedBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+			} else if(type == "invis") {
+				// ...
+
+			} else {
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
 				blocks.push_back(std::move(block));
 			}
 			
