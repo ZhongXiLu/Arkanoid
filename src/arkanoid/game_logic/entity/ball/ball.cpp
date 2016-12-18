@@ -24,7 +24,10 @@ namespace arkanoid {
 	void Ball::draw() const {}
 
 	void Ball::speedUp(double factor) {
-		velocity *= factor;
+		if(!spedUp) {
+			velocity *= factor;
+			spedUp = true;
+		}
 	}
 
 	void Ball::setInvisible(bool invis) {
@@ -121,8 +124,9 @@ namespace arkanoid {
 			velocity.x = speed * cos((angle + random->randomDouble(-5, 5)) * (M_PI/180));
 			velocity.y = -1 * speed * sin((angle + random->randomDouble(-5, 5)) * (M_PI/180));
 
-			// Reset the invisibilty of the Ball
+			// Reset flags (from hitting a block)
 			invisible = false;
+			spedUp = false;
 
 		}
 	}
@@ -133,6 +137,7 @@ namespace arkanoid {
 		velocity.y = -speed;
 		notMoving = true;
 		invisible = false;
+		spedUp = false;
 	}
 
 }

@@ -24,6 +24,7 @@ namespace arkanoid {
 		double speed;
 		bool notMoving;
 		bool invisible;
+		bool spedUp;
 
 		Random* random;
 
