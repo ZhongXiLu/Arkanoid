@@ -23,7 +23,7 @@ namespace arkanoid {
 		// Destroy all the Blocks that collided
 		int blocksDeleted = 0;
 		for(auto c: collisions) {
-			blocks[c]->effectBall(ball);
+			blocks[c - blocksDeleted]->effectBall(ball);
 			blocks.erase(blocks.begin() + c - blocksDeleted);
 			blocksDeleted++;
 		}
