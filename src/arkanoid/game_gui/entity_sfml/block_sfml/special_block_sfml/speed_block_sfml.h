@@ -13,7 +13,7 @@ using namespace std;
 
 namespace arkanoidSFML {
 
-	/// The SFML element that represents the Block in the game.
+	/// The SFML element that represents the SpeedBlock in the game.
 	class SpeedBlockSFML : public arkanoid::SpeedBlock, public BlockSFML {
 	public:
 

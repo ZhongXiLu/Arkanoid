@@ -28,9 +28,7 @@ namespace arkanoidSFML {
 
 	BlockSFML::~BlockSFML() {}
 
-	void BlockSFML::update() {
-		// ...
-	}
+	void BlockSFML::update() {}
 
 	void BlockSFML::draw() const {
 		windowSFML.draw(sprite);

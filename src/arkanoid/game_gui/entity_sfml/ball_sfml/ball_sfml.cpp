@@ -42,7 +42,9 @@ namespace arkanoidSFML {
 	}
 
 	void BallSFML::draw() const {
-		windowSFML.draw(sprite);
+		if(!invisible) {
+			windowSFML.draw(sprite);
+		}
 	}
 
 	void BallSFML::reset() {

@@ -27,6 +27,10 @@ namespace arkanoid {
 		velocity *= factor;
 	}
 
+	void Ball::setInvisible(bool invis) {
+		invisible = invis;
+	}
+
 	template<typename T>
 	vector<int> Ball::bounceIfPossible(vector<unique_ptr<T>> const &entities) {
 
@@ -105,17 +109,20 @@ namespace arkanoid {
 			if(collisionPoint > centerPlayer) {
 				// right half of the player
 				ratio = (relativeCollision - halfLength) / halfLength;
-				angle = 90.0 - (ratio * 70.0);		// maximum angle = 75°
+				angle = 90.0 - (ratio * 70.0);		// maximum angle = 70°
 
 			} else {
 				// left half of the player
 				ratio = (halfLength - relativeCollision) / halfLength;
-				angle = 90.0 + (ratio * 70.0);		// maximum angle = 75°
+				angle = 90.0 + (ratio * 70.0);		// maximum angle = 70°
 
 			}
 
 			velocity.x = speed * cos((angle + random->randomDouble(-5, 5)) * (M_PI/180));
 			velocity.y = -1 * speed * sin((angle + random->randomDouble(-5, 5)) * (M_PI/180));
+
+			// Reset the invisibilty of the Ball
+			invisible = false;
 
 		}
 	}
@@ -125,6 +132,7 @@ namespace arkanoid {
 		velocity.x = speed;
 		velocity.y = -speed;
 		notMoving = true;
+		invisible = false;
 	}
 
 }

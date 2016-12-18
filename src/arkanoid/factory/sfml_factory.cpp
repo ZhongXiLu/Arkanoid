@@ -6,6 +6,7 @@
 #include "../game_gui/entity_sfml/wall_sfml/wall_sfml.h"
 #include "../game_gui/entity_sfml/block_sfml/block_sfml.h"
 #include "../game_gui/entity_sfml/block_sfml/special_block_sfml/speed_block_sfml.h"
+#include "../game_gui/entity_sfml/block_sfml/special_block_sfml/invis_block_sfml.h"
 
 #include <iostream>
 #include <fstream>
@@ -80,7 +81,8 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 				blocks.push_back(std::move(block));
 
 			} else if(type == "invis") {
-				// ...
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::InvisBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+				blocks.push_back(std::move(block));
 
 			} else {
 				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
