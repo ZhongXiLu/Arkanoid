@@ -72,22 +72,26 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 		vector<unordered_map<string, json>> data = jsonFile["blocks"].get<vector<unordered_map<string, json>>>();
 
 		for(auto d: data) {
-			string type = "";
-			try {
-				type = d["type"].get<string>();
-			} catch(...) {}
+			const string color = d["color"].get<string>();
 
-			if(type == "speed") {
-				// Change speed factor
-				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BallSpeedBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, 1.5, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+			if(color == "yellow" || color == "purple") {
+
+				double speedFactor = 0.0;
+				if(color == "yellow") {
+					speedFactor = 1.5;
+				} else {
+					speedFactor = 0.5;
+				}
+
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BallSpeedBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, speedFactor, "data/sprites/blocks/" + color + "_block.png"));
 				blocks.push_back(std::move(block));
 
-			} else if(type == "invis") {
-				unique_ptr<arkanoid::Block> block(new arkanoidSFML::InvisBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+			} else if(color == "red") {
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::InvisBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + color + "_block.png"));
 				blocks.push_back(std::move(block));
 
 			} else {
-				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + d["color"].get<string>() + "_block.png"));
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + color + "_block.png"));
 				blocks.push_back(std::move(block));
 			}
 			
