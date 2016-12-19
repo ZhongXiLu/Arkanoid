@@ -23,7 +23,7 @@ namespace arkanoid {
 	}
 
 	void SpeedBlock::effectBall(unique_ptr<Ball> &ball) const {
-		ball->speedUp(2.0);
+		ball->speedUp(1.5);
 	}
 	
 }
