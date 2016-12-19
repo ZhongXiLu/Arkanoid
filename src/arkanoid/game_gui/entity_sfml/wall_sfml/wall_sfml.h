@@ -35,6 +35,7 @@ namespace arkanoidSFML {
 		*
 		* @param x				The x (on screen) position of the arkanoid::Wall.
 		* @param y				The y (on screen) position of the arkanoid::Wall.
+		* @param window			The SFML window.
 		* @param textureFile 	(optional) The file that contains the texture of the WallSFML.
 		*/
 		WallSFML(double x, double y, sf::RenderWindow &window, const string &textureFile = "data/sprites/wall/wall.png");
