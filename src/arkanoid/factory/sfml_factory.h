@@ -4,10 +4,10 @@
 #define SFML_FACTORY_H
 
 #include "entity_factory.h"
-#include "../game_logic/entity/player/player.h"
-#include "../game_logic/entity/ball/ball.h"
-#include "../game_logic/entity/wall/wall.h"
-#include "../game_logic/entity/block/block.h"
+#include "../logic/entity/player/player.h"
+#include "../logic/entity/ball/ball.h"
+#include "../logic/entity/wall/wall.h"
+#include "../logic/entity/block/block.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>

@@ -3,7 +3,7 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-#include "../../game_logic/math/vector2D.h"
+#include "../../logic/math/vector2D.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>

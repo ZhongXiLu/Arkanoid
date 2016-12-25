@@ -3,7 +3,7 @@
 #ifndef INVIS_BLOCK_SFML_H
 #define INVIS_BLOCK_SFML_H
 
-#include "../../../../game_logic/entity/block/special_block/invis_block.h"
+#include "../../../../logic/entity/block/special_block/invis_block.h"
 #include "../block_sfml.h"
 
 #include <SFML/Graphics.hpp>

@@ -3,8 +3,8 @@
 #ifndef ARKANOID_H
 #define ARKANOID_H
 
-#include "game_logic/world.h"
-#include "game_gui/math/transformation.h"
+#include "logic/world.h"
+#include "gui/math/transformation.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>

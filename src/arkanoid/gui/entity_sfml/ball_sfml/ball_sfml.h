@@ -3,7 +3,7 @@
 #ifndef BALL_SFML_H
 #define BALL_SFML_H
 
-#include "../../../game_logic/entity/ball/ball.h"
+#include "../../../logic/entity/ball/ball.h"
 #include "../../math/transformation.h"
 
 #include <SFML/Graphics.hpp>

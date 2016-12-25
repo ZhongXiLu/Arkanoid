@@ -2,7 +2,7 @@
 
 #include "arkanoid.h"
 #include "factory/sfml_factory.h"
-#include "game_gui/math/transformation.h"
+#include "gui/math/transformation.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>

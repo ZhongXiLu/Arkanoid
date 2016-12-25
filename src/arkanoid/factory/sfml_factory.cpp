@@ -2,12 +2,12 @@
 
 #include "sfml_factory.h"
 #include "nlohmann/json.hpp"
-#include "../game_gui/entity_sfml/player_sfml/player_sfml.h"
-#include "../game_gui/entity_sfml/ball_sfml/ball_sfml.h"
-#include "../game_gui/entity_sfml/wall_sfml/wall_sfml.h"
-#include "../game_gui/entity_sfml/block_sfml/block_sfml.h"
-#include "../game_gui/entity_sfml/block_sfml/special_block_sfml/ball_speed_block_sfml.h"
-#include "../game_gui/entity_sfml/block_sfml/special_block_sfml/invis_block_sfml.h"
+#include "../gui/entity_sfml/player_sfml/player_sfml.h"
+#include "../gui/entity_sfml/ball_sfml/ball_sfml.h"
+#include "../gui/entity_sfml/wall_sfml/wall_sfml.h"
+#include "../gui/entity_sfml/block_sfml/block_sfml.h"
+#include "../gui/entity_sfml/block_sfml/special_block_sfml/ball_speed_block_sfml.h"
+#include "../gui/entity_sfml/block_sfml/special_block_sfml/invis_block_sfml.h"
 
 #include <iostream>
 #include <fstream>

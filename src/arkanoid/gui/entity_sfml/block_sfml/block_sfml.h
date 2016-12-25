@@ -3,7 +3,7 @@
 #ifndef BLOCK_SFML_H
 #define BLOCK_SFML_H
 
-#include "../../../game_logic/entity/block/block.h"
+#include "../../../logic/entity/block/block.h"
 #include "../../math/transformation.h"
 
 #include <SFML/Graphics.hpp>

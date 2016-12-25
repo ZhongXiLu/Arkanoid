@@ -3,7 +3,7 @@
 #ifndef WALL_SFML_H
 #define WALL_SFML_H
 
-#include "../../../game_logic/entity/wall/wall.h"
+#include "../../../logic/entity/wall/wall.h"
 #include "../../math/transformation.h"
 
 #include <SFML/Graphics.hpp>

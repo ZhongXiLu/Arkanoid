@@ -3,10 +3,10 @@
 #ifndef ENTITY_FACTORY_H
 #define ENTITY_FACTORY_H
 
-#include "../game_logic/entity/player/player.h"
-#include "../game_logic/entity/ball/ball.h"
-#include "../game_logic/entity/wall/wall.h"
-#include "../game_logic/entity/block/block.h"
+#include "../logic/entity/player/player.h"
+#include "../logic/entity/ball/ball.h"
+#include "../logic/entity/wall/wall.h"
+#include "../logic/entity/block/block.h"
 
 #include <iostream>
 #include <memory>

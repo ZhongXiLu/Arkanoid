@@ -3,7 +3,7 @@
 #ifndef PLAYER_SFML_H
 #define PLAYER_SFML_H
 
-#include "../../../game_logic/entity/player/player.h"
+#include "../../../logic/entity/player/player.h"
 #include "../../math/transformation.h"
 
 #include <SFML/Graphics.hpp>

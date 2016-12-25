@@ -3,7 +3,7 @@
 #ifndef BALL_SPEED_BLOCK_SFML_H
 #define BALL_SPEED_BLOCK_SFML_H
 
-#include "../../../../game_logic/entity/block/special_block/ball_speed_block.h"
+#include "../../../../logic/entity/block/special_block/ball_speed_block.h"
 #include "../block_sfml.h"
 
 #include <SFML/Graphics.hpp>
