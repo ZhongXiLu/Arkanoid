@@ -52,13 +52,6 @@ namespace arkanoid {
 		*/
 		void draw() const;
 
-		/**
-		* If there was a collision, effect the Ball if necessary.
-		* In this case, do nothing...
-		*
-		* @param ball	The Ball that will be effected.
-		*/
-		virtual void effectBall(unique_ptr<Ball> &ball) const;
 	};
 
 }

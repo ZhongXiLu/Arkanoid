@@ -1,6 +1,8 @@
 /// \file world.cpp
 
 #include "world.h"
+#include "entity/block/special_block/ball_speed_block.h"
+#include "entity/block/special_block/invis_block.h"
 
 #include <iostream>
 #include <vector>
@@ -24,7 +26,17 @@ namespace arkanoid {
 		// Destroy all the Blocks that collided
 		int blocksDeleted = 0;
 		for(auto c: collisions) {
-			blocks[c - blocksDeleted]->effectBall(ball);
+
+			// Check if it's a special Block
+			BallSpeedBlock* ballSpeedBlock = dynamic_cast<BallSpeedBlock*>((blocks[c - blocksDeleted]).get());
+			if(ballSpeedBlock) {
+				ballSpeedBlock->effectBall(ball);
+			}
+			InvisBlock* invisBlock = dynamic_cast<InvisBlock*>((blocks[c - blocksDeleted]).get());
+			if(invisBlock) {
+				invisBlock->effectBall(ball);
+			}
+
 			blocks.erase(blocks.begin() + c - blocksDeleted);
 			blocksDeleted++;
 		}

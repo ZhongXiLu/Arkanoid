@@ -59,7 +59,7 @@ namespace arkanoid {
 		*
 		* @param ball	The Ball that will be effected.
 		*/
-		virtual void effectBall(unique_ptr<Ball> &ball) const;
+		void effectBall(unique_ptr<Ball> &ball) const;
 	};
 
 }
