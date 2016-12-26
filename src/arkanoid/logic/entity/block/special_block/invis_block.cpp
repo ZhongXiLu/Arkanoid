@@ -23,7 +23,7 @@ namespace arkanoid {
 	}
 
 	void InvisBlock::effectBall(unique_ptr<Ball> &ball) const {
-		ball->setInvisible(true);
+		ball->setInvisible(120);	// in frames (2 seconds)
 	}
 	
 }

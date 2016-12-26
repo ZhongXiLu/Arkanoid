@@ -16,7 +16,7 @@ namespace arkanoid {
 
 	Ball::Ball() : notMoving(true), random(Random::getInstance()) {}
 
-	Ball::Ball(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, -newSpeed), origin(x,y), speed(newSpeed), notMoving(true), invisible(false), spedUp(false), random(Random::getInstance()), Entity(x, y, size) {}
+	Ball::Ball(double x, double y, double newSpeed, pair<double, double> size) : velocity(newSpeed, -newSpeed), origin(x,y), speed(newSpeed), notMoving(true), spedUp(false), random(Random::getInstance()), Entity(x, y, size) {}
 
 	Ball::~Ball() {}
 
@@ -31,8 +31,8 @@ namespace arkanoid {
 		}
 	}
 
-	void Ball::setInvisible(bool invis) {
-		invisible = invis;
+	void Ball::setInvisible(double period) {
+		invisDuration = period;
 	}
 
 	template<typename T>
@@ -126,7 +126,6 @@ namespace arkanoid {
 			velocity.y = -1 * speed * sin((angle + random->randomDouble(-5, 5)) * (M_PI/180));
 
 			// Reset flags (from hitting a block)
-			invisible = false;
 			spedUp = false;
 
 		}
@@ -137,7 +136,7 @@ namespace arkanoid {
 		velocity.x = speed;
 		velocity.y = -speed;
 		notMoving = true;
-		invisible = false;
+		invisDuration = 0;
 		spedUp = false;
 	}
 

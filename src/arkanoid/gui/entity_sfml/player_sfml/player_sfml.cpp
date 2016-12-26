@@ -33,9 +33,9 @@ namespace arkanoidSFML {
 	void PlayerSFML::update() {
 
 		// Check if any special effects ran out
-		if(effectDuration > 0) {
-			effectDuration--;
-			if(effectDuration == 0) {
+		if(speedUpDuration > 0) {
+			speedUpDuration--;
+			if(speedUpDuration == 0) {
 				speed = originalSpeed;
 			}
 		}

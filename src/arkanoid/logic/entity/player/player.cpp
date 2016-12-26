@@ -20,17 +20,17 @@ namespace arkanoid {
 	void Player::draw() const {}
 
 	void Player::speedUp(double factor) {
-		if(effectDuration == 0) {
+		if(speedUpDuration == 0) {
 			// Prevent multiple speed ups
 			speed *= factor;
+			speedUpDuration = 180;	///< 3 seconds
 		}
-		effectDuration = 180;	///< 5 seconds
 	}
 
 	void Player::reset() {
 		position = origin;
 		notMoving = true;
-		effectDuration = 0;
+		speedUpDuration = 0;
 	}
 	
 }

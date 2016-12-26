@@ -22,7 +22,7 @@ namespace arkanoid {
 		double originalSpeed;
 
 		bool notMoving;
-		int effectDuration;	///< In frames
+		int speedUpDuration;	///< In frames
 
 	public:
 

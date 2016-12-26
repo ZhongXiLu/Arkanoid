@@ -31,6 +31,10 @@ namespace arkanoidSFML {
 	BallSFML::~BallSFML() {}
 
 	void BallSFML::update() {
+		if(invisDuration > 0) {
+			invisDuration--;
+		}
+
 		if(!notMoving) {
 			// Move the ball
 			sprite.move(velocity.x, velocity.y);
@@ -43,7 +47,7 @@ namespace arkanoidSFML {
 	}
 
 	void BallSFML::draw() const {
-		if(!invisible) {
+		if(invisDuration == 0) {
 			windowSFML.draw(sprite);
 		}
 	}

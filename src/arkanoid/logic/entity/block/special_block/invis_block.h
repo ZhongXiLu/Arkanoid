@@ -51,8 +51,7 @@ namespace arkanoid {
 		void draw() const;
 
 		/**
-		* If there was a collision, effect the Ball if necessary.
-		* In this case, make the Ball invisible.
+		* Activate this InvisBlock 'speciality': make the Ball invisible for a period of time.
 		*
 		* @param ball	The Ball that will be effected.
 		*/
