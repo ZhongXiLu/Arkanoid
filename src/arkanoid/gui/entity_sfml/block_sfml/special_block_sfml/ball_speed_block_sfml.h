@@ -1,4 +1,4 @@
-/// \file speed_block_sfml.h
+/// \file ball_speed_block_sfml.h
 
 #ifndef BALL_SPEED_BLOCK_SFML_H
 #define BALL_SPEED_BLOCK_SFML_H

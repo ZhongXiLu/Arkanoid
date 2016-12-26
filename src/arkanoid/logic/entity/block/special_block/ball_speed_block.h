@@ -12,7 +12,7 @@ using namespace std;
 
 namespace arkanoid {
 
-	/// A "special" Block: when hit with a Ball, speed up the Ball.
+	/// A "special" Block: when hit with a Ball, speed up or slow down the Ball.
 	class BallSpeedBlock : virtual public Block {
 	private:
 		double speedFactor;
@@ -54,8 +54,7 @@ namespace arkanoid {
 		void draw() const;
 
 		/**
-		* If there was a collision, effect the Ball if necessary.
-		* In this case, speed up the Ball.
+		* Activate this BallSpeedBlock 'speciality': speed up or slow down the Ball, depending on the speed factor.
 		*
 		* @param ball	The Ball that will be effected.
 		*/

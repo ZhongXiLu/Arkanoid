@@ -7,6 +7,7 @@
 #include "../gui/entity_sfml/wall_sfml/wall_sfml.h"
 #include "../gui/entity_sfml/block_sfml/block_sfml.h"
 #include "../gui/entity_sfml/block_sfml/special_block_sfml/ball_speed_block_sfml.h"
+#include "../gui/entity_sfml/block_sfml/special_block_sfml/player_speed_block_sfml.h"
 #include "../gui/entity_sfml/block_sfml/special_block_sfml/invis_block_sfml.h"
 
 #include <iostream>
@@ -90,7 +91,12 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 				unique_ptr<arkanoid::Block> block(new arkanoidSFML::InvisBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + color + "_block.png"));
 				blocks.push_back(std::move(block));
 
+			} else if(color == "green") {
+				unique_ptr<arkanoid::Block> block(new arkanoidSFML::PlayerSpeedBlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, 2.0, "data/sprites/blocks/" + color + "_block.png"));
+				blocks.push_back(std::move(block));
+
 			} else {
+				// Normal Block
 				unique_ptr<arkanoid::Block> block(new arkanoidSFML::BlockSFML(d["x"].get<double>(), d["y"].get<double>(), windowSFML, "data/sprites/blocks/" + color + "_block.png"));
 				blocks.push_back(std::move(block));
 			}

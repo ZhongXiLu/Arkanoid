@@ -1,4 +1,4 @@
-/// \file speed_block_sfml.cpp
+/// \file ball_speed_block_sfml.cpp
 
 #include "ball_speed_block_sfml.h"
 

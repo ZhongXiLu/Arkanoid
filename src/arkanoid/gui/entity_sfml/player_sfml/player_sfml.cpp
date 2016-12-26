@@ -32,6 +32,14 @@ namespace arkanoidSFML {
 
 	void PlayerSFML::update() {
 
+		// Check if any special effects ran out
+		if(effectDuration > 0) {
+			effectDuration--;
+			if(effectDuration == 0) {
+				speed = originalSpeed;
+			}
+		}
+
 		if(!notMoving) {
 
 			// Note: prevents user from pressing both left and right arrow key

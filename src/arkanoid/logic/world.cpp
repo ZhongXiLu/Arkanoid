@@ -2,6 +2,7 @@
 
 #include "world.h"
 #include "entity/block/special_block/ball_speed_block.h"
+#include "entity/block/special_block/player_speed_block.h"
 #include "entity/block/special_block/invis_block.h"
 
 #include <iostream>
@@ -35,6 +36,10 @@ namespace arkanoid {
 			InvisBlock* invisBlock = dynamic_cast<InvisBlock*>((blocks[c - blocksDeleted]).get());
 			if(invisBlock) {
 				invisBlock->effectBall(ball);
+			}
+			PlayerSpeedBlock* playerSpeedBlock = dynamic_cast<PlayerSpeedBlock*>((blocks[c - blocksDeleted]).get());
+			if(playerSpeedBlock) {
+				playerSpeedBlock->effectPlayer(player);
 			}
 
 			blocks.erase(blocks.begin() + c - blocksDeleted);
