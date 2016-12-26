@@ -15,7 +15,7 @@ const sf::Time TIME_PER_FRAME = sf::seconds(1.0/60.0);
 
 // MIGHT CHANGE IT LATER --> READ FROM CONFIG FILE
 Arkanoid::Arkanoid() : 
-windowSFML(sf::VideoMode(900.0, 700.0), "arkanoid") {
+windowSFML(sf::VideoMode(896.0, 704.0), "arkanoid") {
 
 	// Create singleton Transformation first instance
 	transformation = transformation->getInstance(9, 7, windowSFML.getSize().x, windowSFML.getSize().y);

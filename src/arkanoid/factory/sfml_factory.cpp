@@ -33,7 +33,7 @@ vector<unique_ptr<arkanoid::Wall>> SFMLFactory::createWalls() {
 
 	vector<unique_ptr<arkanoid::Wall>> walls;
 
-	for(double w = 0.0; w < 700.0; w += 30.0) {
+	for(double w = 0.0; w < 700.0; w += 32.0) {
 		{
 			unique_ptr<arkanoid::Wall> wall(new arkanoidSFML::WallSFML(0.0, w, windowSFML));
 			walls.push_back(std::move(wall));
@@ -43,7 +43,7 @@ vector<unique_ptr<arkanoid::Wall>> SFMLFactory::createWalls() {
 			walls.push_back(std::move(wall));
 		}
 	}
-	for(double w = 0.0; w < 900.0; w += 30) {
+	for(double w = 0.0; w < 900.0; w += 32) {
 		unique_ptr<arkanoid::Wall> wall(new arkanoidSFML::WallSFML(w, 0.0, windowSFML));
 		walls.push_back(std::move(wall));
 	}
