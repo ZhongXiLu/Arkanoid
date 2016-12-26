@@ -28,6 +28,7 @@ namespace arkanoid {
 	}
 
 	void Player::reset() {
+		speed = originalSpeed;
 		position = origin;
 		notMoving = true;
 		speedUpDuration = 0;
