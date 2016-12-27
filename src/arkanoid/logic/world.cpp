@@ -14,12 +14,14 @@ using namespace std;
 
 namespace arkanoid {
 
+	constexpr double gridW = 9.0;
+	constexpr double gridH = 7.0;
+
 	World::World() {}
 
 	World::~World() {}
 
-	void World::update() {
-		
+	void World::checkCollisions() {
 		// Update Ball + Check if there are collisions on the Ball
 		ball->bounceIfPossible<Wall>(walls);
 		
@@ -47,6 +49,10 @@ namespace arkanoid {
 		}
 		
 		ball->bounceIfPossible(player);
+	}
+
+	void World::update() {
+		checkCollisions();
 
 		// Update all Entities
 		for(auto &b: blocks) {
@@ -59,8 +65,8 @@ namespace arkanoid {
 		player->update();
 
 		// Check if Ball has been missed (or out of the world for some reason)
-		if(ball->getPosition().y > 7 || ball->getPosition().y < 0 ||
-			ball->getPosition().x > 9 || ball->getPosition().x < 0) {
+		if(ball->getPosition().y > gridH || ball->getPosition().y < 0 ||
+			ball->getPosition().x > gridW || ball->getPosition().x < 0) {
 			player->reset();
 			ball->reset();
 		}

@@ -27,6 +27,11 @@ namespace arkanoid {
 		vector<unique_ptr<Wall>> walls;
 		vector<unique_ptr<Block>> blocks;
 
+		/**
+		* Checks for all Entity if there's a collision, if there is, make the correct move(s) with the necessary effects.
+		*/
+		void checkCollisions();
+
 	public:
 		/**
 		* Default Constructor.
