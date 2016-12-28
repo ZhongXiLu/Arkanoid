@@ -19,14 +19,18 @@ private:
 	arkanoid::World world;
 	arkanoidSFML::Transformation* transformation;	///< Transformation object for translations between coordinates and pixels.
 
+	int currentLevel;
+
 	sf::RenderWindow windowSFML;
 	sf::Sprite background;
 	sf::Texture texture;	///< Texture of the background
 
 	/**
 	* Creates all Entity for the World.
+	*
+	* @param level	The level that will be loaded and played.
 	*/
-	void initialise();
+	void initialise(int level);
 
 	/**
 	* Checks for user input in the game window and process this input.
@@ -49,8 +53,10 @@ public:
 
 	/**
 	* Run the Arkanoid game until the user closes the window.
+	*
+	* @param level	(optional) The level the Arkanoid game will start with.
 	*/
-	void run();
+	void run(int level = 1);
 };
 
 #endif /* ARKANOID_H */

@@ -3,6 +3,7 @@
 #include "arkanoid/arkanoid.h"
 
 #include <iostream>
+#include <string>
 
 /**
 * \mainpage Arkanoid
@@ -46,12 +47,38 @@
 * 	<li>If the program is runned from a different place then in "bin", you should copy the "data" folder to the directory of the executable.</li>
 * </ul>
 */
-int main() {
+int main(int argc, char* argv[]) {
 
 	try {
 
 		Arkanoid arkanoid;
-		arkanoid.run();
+
+		// Start from level_1
+		if(argc == 1) {
+			arkanoid.run();
+
+		// Jump to a level
+		} else if(argc == 2) {
+			try {
+				string arg = string(argv[1]);
+				if(arg.substr(0, 3) == "-l=") {
+					int level;
+					try {
+						level = stoi(arg.substr(3, arg.size()-3));
+					} catch(...) {
+						throw runtime_error("Second argument should be \"-l=<level>\" (with <level> an int)");
+					}
+					arkanoid.run(level);
+				} else {
+				throw runtime_error("Second argument should be \"-l=<level>\" (with <level> an int)");
+				}
+			} catch(...) {
+				throw;
+			}
+
+		} else {
+			throw runtime_error("Unvalid arguments");
+		}
 
 	} catch(exception &e) {
 		cout << "ERROR: " << e.what() << endl;

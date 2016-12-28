@@ -32,7 +32,8 @@ windowSFML(sf::VideoMode(896.0, 704.0), "arkanoid") {
 	background.setTextureRect(sf::IntRect(0, 0, windowSFML.getSize().x, windowSFML.getSize().y));
 }
 
-void Arkanoid::initialise() {
+void Arkanoid::initialise(int level) {
+
 	SFMLFactory factory(windowSFML);
 
 	// Create Player
@@ -48,14 +49,20 @@ void Arkanoid::initialise() {
 	}
 
 	// Create Blocks
-	vector<unique_ptr<arkanoid::Block>> blocks = std::move(factory.createBlocks("data/levels/level_1/blocks.json"));
-	for(auto &b: blocks) {
-		world.addBlock(std::move(b));
+	try {
+		vector<unique_ptr<arkanoid::Block>> blocks = std::move(factory.createBlocks("data/levels/level_" + to_string(level) + "/blocks.json"));
+		for(auto &b: blocks) {
+			world.addBlock(std::move(b));
+		}
+	} catch(...) {
+		throw runtime_error("Cannot find level " + to_string(level));
 	}
 }
 
-void Arkanoid::run() {
-	initialise();
+void Arkanoid::run(int level) {
+	currentLevel = level;
+
+	initialise(currentLevel);
 
 	sf::Clock clock;
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;

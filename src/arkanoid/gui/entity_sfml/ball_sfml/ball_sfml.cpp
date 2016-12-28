@@ -47,7 +47,7 @@ namespace arkanoidSFML {
 	}
 
 	void BallSFML::draw() const {
-		if(invisDuration == 0) {
+		if(invisDuration == 0.0) {
 			windowSFML.draw(sprite);
 		}
 	}

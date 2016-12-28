@@ -99,7 +99,7 @@ namespace arkanoid {
 			const double halfLength = playerLength / 2;
 			const double centerPlayer = maxPlayerPos - (playerLength / 2);
 
-			double collisionPoint = getPosition().x + (getSize().first / 2);
+			double collisionPoint = position.x + (size.first / 2);
 			// Check if Ball is not outside the Players surface
 			if(collisionPoint > maxPlayerPos) {
 				collisionPoint = maxPlayerPos;
