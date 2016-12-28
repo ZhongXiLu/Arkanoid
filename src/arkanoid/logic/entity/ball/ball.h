@@ -25,7 +25,7 @@ namespace arkanoid {
 
 		double speed;
 		bool notMoving;
-		double invisDuration;
+		int invisDuration;
 		bool spedUp;
 
 		Random* random;
@@ -76,9 +76,9 @@ namespace arkanoid {
 		/**
 		* Make the Ball invisible for a period of time.
 		*
-		* @param period	The period the Ball becomes invisible.
+		* @param period	The period the Ball becomes invisible (in frames).
 		*/
-		void setInvisible(double period);
+		void setInvisible(int period);
 
 		/**
 		* Checks for all Entity if there's a collision, if there is, then "bounce" off the Entity, i.e. rotate 90° in the right direction.

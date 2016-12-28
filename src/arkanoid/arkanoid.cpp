@@ -1,7 +1,6 @@
 /// \file arkanoid.cpp
 
 #include "arkanoid.h"
-#include "factory/sfml_factory.h"
 #include "gui/math/transformation.h"
 
 #include <SFML/Graphics.hpp>
@@ -15,7 +14,7 @@ const sf::Time TIME_PER_FRAME = sf::seconds(1.0/60.0);
 
 // MIGHT CHANGE IT LATER --> READ FROM CONFIG FILE
 Arkanoid::Arkanoid() : 
-windowSFML(sf::VideoMode(896.0, 704.0), "arkanoid") {
+windowSFML(sf::VideoMode(896.0, 704.0), "arkanoid"), factory(windowSFML) {
 
 	// Create singleton Transformation first instance
 	transformation = transformation->getInstance(9, 7, windowSFML.getSize().x, windowSFML.getSize().y);
@@ -32,10 +31,7 @@ windowSFML(sf::VideoMode(896.0, 704.0), "arkanoid") {
 	background.setTextureRect(sf::IntRect(0, 0, windowSFML.getSize().x, windowSFML.getSize().y));
 }
 
-void Arkanoid::initialise(int level) {
-
-	SFMLFactory factory(windowSFML);
-
+void Arkanoid::initialise() {
 	// Create Player
 	world.setPlayer(std::move(factory.createPlayer()));
 
@@ -47,7 +43,9 @@ void Arkanoid::initialise(int level) {
 	for(auto &w: walls) {
 		world.addWall(std::move(w));
 	}
+}
 
+void Arkanoid::loadLevel(int level) {
 	// Create Blocks
 	try {
 		vector<unique_ptr<arkanoid::Block>> blocks = std::move(factory.createBlocks("data/levels/level_" + to_string(level) + "/blocks.json"));
@@ -62,7 +60,8 @@ void Arkanoid::initialise(int level) {
 void Arkanoid::run(int level) {
 	currentLevel = level;
 
-	initialise(currentLevel);
+	initialise();
+	loadLevel(currentLevel);
 
 	sf::Clock clock;
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
@@ -77,9 +76,17 @@ void Arkanoid::run(int level) {
 			if(!world.levelEnded()) {
 				world.update();
 			} else {
-				// End game
-				// TBI: load another level
-				windowSFML.close();
+				// Level ended --> load next level
+				currentLevel++;
+				try {
+					loadLevel(currentLevel);
+				} catch(...) {
+					// No more levels available --> end game
+					windowSFML.close();
+					cout << "Congratulations, you beat the game! \\(^o^)/" << endl;
+					return;
+				}
+				world.reset();
 			}
 			timeSinceLastUpdate -= TIME_PER_FRAME;
 		}

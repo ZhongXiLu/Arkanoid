@@ -104,4 +104,9 @@ namespace arkanoid {
 		return blocks.size() == 0;
 	}
 
+	void World::reset() {
+		player->reset();
+		ball->reset();
+	}
+
 }

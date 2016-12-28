@@ -88,6 +88,11 @@ namespace arkanoid {
 		*/
 		bool levelEnded() const;
 
+		/**
+		* Resets the World: Player and Ball will be places in their initial location.
+		* Call when new level starts or when game is bugged out...
+		*/
+		void reset();
 	};
 
 }

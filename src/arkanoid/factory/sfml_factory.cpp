@@ -56,14 +56,14 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 	ifstream stream(file);
 
 	if(!stream.good()) {
-		throw runtime_error("Couldn't open data/levels/level_1/blocks.json.");
+		throw runtime_error("Couldn't open " + file);
 	}
 	
 	// Parse json file
 	try {
 		stream >> jsonFile;
 	} catch(...) {
-		throw runtime_error("Couldn't parse data/levels/level_1/blocks.json.");
+		throw runtime_error("Couldn't parse " + file);
 	}
 
 	vector<unique_ptr<arkanoid::Block>> blocks;
@@ -111,7 +111,7 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 		}
 
 	} catch(...) {
-		throw runtime_error("Invalid data in data/levels/level_1/blocks.json.");
+		throw runtime_error("Invalid data in " + file);
 	}
 
 	return blocks;

@@ -31,7 +31,7 @@ namespace arkanoid {
 		}
 	}
 
-	void Ball::setInvisible(double period) {
+	void Ball::setInvisible(int period) {
 		invisDuration = period;
 	}
 

@@ -4,6 +4,7 @@
 #define ARKANOID_H
 
 #include "logic/world.h"
+#include "factory/sfml_factory.h"
 #include "gui/math/transformation.h"
 
 #include <SFML/Graphics.hpp>
@@ -18,7 +19,7 @@ class Arkanoid {
 private:
 	arkanoid::World world;
 	arkanoidSFML::Transformation* transformation;	///< Transformation object for translations between coordinates and pixels.
-
+	SFMLFactory factory;
 	int currentLevel;
 
 	sf::RenderWindow windowSFML;
@@ -26,11 +27,17 @@ private:
 	sf::Texture texture;	///< Texture of the background
 
 	/**
-	* Creates all Entity for the World.
+	* Creates the arkanoid::Player, arkanoid::Ball and arkanoid::Wall for the arkanoid::World.
+	*/
+	void initialise();
+
+	/**
+	* Loads a level in the Arkanoid game (is done when a level is finished).
+	* Basically, creates the arkanoid::Block for the arkanoid::World.
 	*
 	* @param level	The level that will be loaded and played.
 	*/
-	void initialise(int level);
+	void loadLevel(int level);
 
 	/**
 	* Checks for user input in the game window and process this input.
@@ -38,7 +45,7 @@ private:
 	void processInput();
 
 	/**
-	* Renders all the sprites of the World in the window.
+	* Renders all the sprites of the arkanoid::World in the window.
 	*/
 	void render();
 
