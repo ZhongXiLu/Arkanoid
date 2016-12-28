@@ -24,22 +24,33 @@
 * \section howToRun How to run
 *
 * \code{.sh}
-* ./arkanoid
+* ./arkanoid <level_nr>
 * \endcode
+* <p>(optional) <level_nr>: The level the Arkanoid game will start with.</p>
+*
+* \section gameplay Gameplay
+*
+* <p>The goal of the game is to clear every block in the current level by hitting it with the Ball. (Note: some blocks have special effects) However, you should try to NOT let the ball hit the bottom of the screen by moving the paddle horizontally.</p>
+* <p>If you manage to clear a level, the next level will be loaded. You beat the game if you can clear every level.</p>
+* <p>Good luck and have fun!</p>
 *
 * \section controls Controls
 * <ul>
 * 	<li><b>Spacebar</b>: shoot the ball after start game or after death</li>
 * 	<li><b>Left arrow</b>: move the player to the left</li>
 * 	<li><b>Right arrow</b>: move the player to the right</li>
+* 	<li><b>Escape</b>: ONLY press it if the game bugs out and is unplayable; resets player and ball</li>
 * </ul>
 *
 *
 * \section blocks Blocks
+* <p>If multiple effects are activated, the first one will stay active and the second one will be discarded; if both are the same, the duration is reset.
 * <ul>
-* 	<li><b>Blue block</b>: when hit, gets destroyed</li>
-* 	<li><b>Yellow block</b>: when hit, gets destroyed + <b>speed up</b> the ball by factor two until player hits the ball or misses the ball</li>
-* 	<li><b>Red block</b>: when hit, gets destroyed + make the ball <b>invisible</b> until player hits the ball or misses the ball</li>
+* 	<li><b>Blue block</b>: when hit, gets destroyed (arkanoid::Block)</li>
+* 	<li><b>Green block</b>: when hit, gets destroyed + speed up the player by factor 2 for 3 seconds (arkanoid::PlayerSpeedBlock)</li>
+* 	<li><b>Yellow block</b>: when hit, gets destroyed + speed up the ball by factor 1.5 until player hits the ball or misses the ball (arkanoid::BallSpeedBlock)</li>
+* 	<li><b>Purple block</b>: when hit, gets destroyed + slow down the ball by factor 0.5 until player hits the ball or misses the ball (arkanoid::BallSpeedBlock)</li>
+* 	<li><b>Red block</b>: when hit, gets destroyed + make the ball invisible for 2 seconds (arkanoid::InvisBlock)</li>
 * </ul>
 *
 * \section remarks Remarks
