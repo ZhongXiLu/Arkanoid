@@ -99,6 +99,11 @@ void Arkanoid::processInput() {
 	sf::Event event;
 	while(windowSFML.pollEvent(event)) {
 
+		// Reset world (if game happen to bug out)
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
+			world.reset();
+		}
+
 		if(event.type == sf::Event::Closed) {
 			windowSFML.close();
 		}
