@@ -55,11 +55,14 @@ namespace arkanoid {
 				if(entities[collisions[0]]->getPosition().x == entities[collisions[1]]->getPosition().x) {
 					// Ball coming from left/right
 					velocity.x *= -1;
-				} else {
+				} else if(entities[collisions[0]]->getPosition().y == entities[collisions[1]]->getPosition().y) {
 					// Ball coming from top/bottom
 					velocity.y *= -1;
+				} else {
+					// EDGE CASE
+					velocity *= -1;
 				}
-			} else {
+			} else if(collisions.size() == 1) {
 				// Use procedure for one Entity
 
 				// Calculate the gaps between the Ball and the collided Entity on all sides
@@ -80,6 +83,9 @@ namespace arkanoid {
 					// Ball coming from top/bottom
 					velocity.y *= -1;
 				}
+			} else {
+				// 3 collisions
+				velocity *= 1;
 			}
 		}
 
