@@ -18,7 +18,5 @@ namespace arkanoid {
 	void Block::update() {}
 
 	void Block::draw() const {}
-
-	// void Block::effectBall(unique_ptr<Ball> &ball) const {}
 	
 }

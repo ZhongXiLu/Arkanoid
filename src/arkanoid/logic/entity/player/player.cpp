@@ -23,7 +23,7 @@ namespace arkanoid {
 		if(speedUpDuration == 0) {
 			// Prevent multiple speed ups
 			speed *= factor;
-			speedUpDuration = 180;	///< 3 seconds
+			speedUpDuration = 180;	// 180 frames = 3 seconds
 		}
 	}
 

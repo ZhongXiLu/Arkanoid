@@ -22,8 +22,6 @@ using json = nlohmann::json;
 
 SFMLFactory::SFMLFactory(sf::RenderWindow &window) : windowSFML(window) {}
 
-// TBI: read data from file?
-
 unique_ptr<arkanoid::Player> SFMLFactory::createPlayer() {
 	unique_ptr<arkanoid::Player> player(new arkanoidSFML::PlayerSFML(400.0, 600.0, windowSFML));
 	return player;
@@ -33,18 +31,20 @@ vector<unique_ptr<arkanoid::Wall>> SFMLFactory::createWalls() {
 
 	vector<unique_ptr<arkanoid::Wall>> walls;
 
-	for(double w = 0.0; w < 700.0; w += 32.0) {
+	// Create walls on the left and right side of the screen
+	for(double y = 0.0; y < 700.0; y += 32.0) {
 		{
-			unique_ptr<arkanoid::Wall> wall(new arkanoidSFML::WallSFML(0.0, w, windowSFML));
+			unique_ptr<arkanoid::Wall> wall(new arkanoidSFML::WallSFML(0.0, y, windowSFML));
 			walls.push_back(std::move(wall));
 		}
 		{
-			unique_ptr<arkanoid::Wall> wall(new arkanoidSFML::WallSFML(864.0, w, windowSFML));
+			unique_ptr<arkanoid::Wall> wall(new arkanoidSFML::WallSFML(864.0, y, windowSFML));
 			walls.push_back(std::move(wall));
 		}
 	}
-	for(double w = 0.0; w < 900.0; w += 32) {
-		unique_ptr<arkanoid::Wall> wall(new arkanoidSFML::WallSFML(w, 0.0, windowSFML));
+	// Create walls on the top side of the screen
+	for(double x = 0.0; x < 900.0; x += 32) {
+		unique_ptr<arkanoid::Wall> wall(new arkanoidSFML::WallSFML(x, 0.0, windowSFML));
 		walls.push_back(std::move(wall));
 	}
 
@@ -78,7 +78,9 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 		for(double r = 0; r < data.size(); r++) {	// row
 			for(double c = 0; c < data[r].size(); c++) {	// column
 
+				// Check what type the current Block is
 				if(data[r][c] == "Y" || data[r][c] == "P") {
+					// BallSpeedBlock
 
 					double speedFactor = 0.0;
 					string color;
@@ -94,10 +96,12 @@ vector<unique_ptr<arkanoid::Block>> SFMLFactory::createBlocks(const string &file
 					blocks.push_back(std::move(block));
 
 				} else if(data[r][c] == "R") {
+					// InvisBlock
 					unique_ptr<arkanoid::Block> block(new arkanoidSFML::InvisBlockSFML(offset + blockSizeW*c, offset + blockSizeH*r, windowSFML, "data/sprites/blocks/red_block.png"));
 					blocks.push_back(std::move(block));
 
 				} else if(data[r][c] == "G") {
+					// PlayerSpeedBlock
 					unique_ptr<arkanoid::Block> block(new arkanoidSFML::PlayerSpeedBlockSFML(offset + blockSizeW*c, offset + blockSizeH*r, windowSFML, 2.0, "data/sprites/blocks/green_block.png"));
 					blocks.push_back(std::move(block));
 

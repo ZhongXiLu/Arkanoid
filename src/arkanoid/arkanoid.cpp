@@ -12,7 +12,6 @@ using namespace std;
 
 const sf::Time TIME_PER_FRAME = sf::seconds(1.0/60.0);
 
-// MIGHT CHANGE IT LATER --> READ FROM CONFIG FILE
 Arkanoid::Arkanoid() : 
 windowSFML(sf::VideoMode(896.0, 704.0), "arkanoid"), factory(windowSFML) {
 
@@ -26,7 +25,7 @@ windowSFML(sf::VideoMode(896.0, 704.0), "arkanoid"), factory(windowSFML) {
 		throw runtime_error("Couldn't load background texture image: data/sprites/background/background.jpg");
 	}
 	texture.setSmooth(true);
-	texture.setRepeated(true);
+	texture.setRepeated(true);		// Repeat background texture, so that it fits the screen
 	background.setTexture(texture);
 	background.setTextureRect(sf::IntRect(0, 0, windowSFML.getSize().x, windowSFML.getSize().y));
 }
@@ -60,6 +59,7 @@ void Arkanoid::loadLevel(int level) {
 void Arkanoid::run(int level) {
 	currentLevel = level;
 
+	// Create game entities and load first level
 	initialise();
 	loadLevel(currentLevel);
 

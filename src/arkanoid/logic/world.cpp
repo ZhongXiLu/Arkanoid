@@ -30,7 +30,7 @@ namespace arkanoid {
 		int blocksDeleted = 0;
 		for(auto c: collisions) {
 
-			// Check if it's a special Block
+			// Check if it's a special Block, if so, activate it's 'special power'
 			BallSpeedBlock* ballSpeedBlock = dynamic_cast<BallSpeedBlock*>((blocks[c - blocksDeleted]).get());
 			if(ballSpeedBlock) {
 				ballSpeedBlock->effectBall(ball);
@@ -48,6 +48,7 @@ namespace arkanoid {
 			blocksDeleted++;
 		}
 		
+		// Check if there is a collision with the Player
 		ball->bounceIfPossible(player);
 	}
 
@@ -74,6 +75,7 @@ namespace arkanoid {
 	}
 
 	void World::draw() const {
+		// Draw all Entities
 		for(const auto &b: blocks) {
 			b->draw();
 		}
