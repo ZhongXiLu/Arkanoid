@@ -24,9 +24,10 @@
 * \section howToRun How to run
 *
 * \code{.sh}
-* ./arkanoid <level_nr>
+* ./arkanoid
+* ./arkanoid -l=5
 * \endcode
-* <p>(optional) <level_nr>: The level the Arkanoid game will start with.</p>
+* <p>(optional) "-l=<level>" (with <level> a number): The level the Arkanoid game will start with. (choose from 1 up to 5)</p>
 *
 * \section gameplay Gameplay
 *
@@ -77,7 +78,7 @@ int main(int argc, char* argv[]) {
 					try {
 						level = stoi(arg.substr(3, arg.size()-3));
 					} catch(...) {
-						throw runtime_error("Second argument should be \"-l=<level>\" (with <level> an int)");
+						throw runtime_error("Second argument should be \"-l=<level>\" (with <level> a number)");
 					}
 					arkanoid.run(level);
 				} else {
