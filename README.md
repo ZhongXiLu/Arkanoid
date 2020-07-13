@@ -1,7 +1,4 @@
-More details on how to build, how to run, gameplay, controls, blocks, ... can be found in the doxygen documentation.
 
+## Arkanoid
 
-```
-doxygen "<config-file>"
-open html/index.html
-```
+More information about the project can be found in the [documentation](https://zhongxilu.github.io/Arkanoid/).
